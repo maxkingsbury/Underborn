@@ -1,21 +1,13 @@
-// Player movement speed
-var move_speed = 2;
+var left = keyboard_check(ord("A"));
+var right = keyboard_check(ord("D"));
+var up = keyboard_check(ord("W"));
+var down = keyboard_check(ord("S"));
 
-// Get input
-var move_x = keyboard_check(ord("D")) - keyboard_check(ord("A"));
-var move_y = keyboard_check(ord("S")) - keyboard_check(ord("W"));
+var hor = right - left;
+var vertical = down - up;
 
-// Apply movement
-x += move_x * move_speed;
-y += move_y * move_speed;
+x += hor * move_speed;
+y += vertical * move_speed;
 
-// Change sprite based on movement
-if (move_x != 0 || move_y != 0) {
-    sprite_index = spr_PlayerRunning; // Running animation
-} else {
-    sprite_index = spr_PlayerIdle; // Idle animation
-}
-
-// Flip sprite based on direction
-if (move_x > 0) image_xscale = 1;  // Facing right
-if (move_x < 0) image_xscale = -1; // Facing left
+if (hor > 0) { image_xscale = 1 }
+if (hor < 0) { image_xscale = -1 }
