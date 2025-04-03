@@ -2,8 +2,8 @@
 image_speed = 1;
 move_speed = 2;
 
-alarTime0 = 80;
-alarTime1 = 120;
+swordTime = 40;
+twinbladeTime = 80;
 
-alarm[0] = alarTime0;
-alarm[1] = alarTime1;
+alarm[0] = swordTime;
+alarm[1] = twinbladeTime;
