@@ -12,11 +12,8 @@ y += move_y * move_speed;
 // Change sprite based on movement
 if (move_x != 0 || move_y != 0) {
     sprite_index = spr_PlayerRunning; // Running animation
-    image_speed = 1; // Ensure animation plays
 } else {
     sprite_index = spr_PlayerIdle; // Idle animation
-    image_index = 0; // Reset to first frame
-    image_speed = 0; // Stop animation
 }
 
 // Flip sprite based on direction
