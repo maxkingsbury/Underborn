@@ -1,2 +1,2 @@
 # Underborn
- A dungeon crawler
+ An open map roguelike
