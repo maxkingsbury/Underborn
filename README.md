@@ -1,2 +1,2 @@
 # Underborn
- An open map roguelike
+ An open world roguelike
