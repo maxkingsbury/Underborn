@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"PlayButton",
+  "%Name":"exitButton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"PlayButton",
+  "name":"exitButton",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlay",
-    "path":"sprites/sPlay/sPlay.yy",
+    "name":"sExit",
+    "path":"sprites/sExit/sExit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

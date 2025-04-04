@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"PlayButton",
+  "%Name":"optionsButton",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"PlayButton",
+  "name":"optionsButton",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlay",
-    "path":"sprites/sPlay/sPlay.yy",
+    "name":"sOptions",
+    "path":"sprites/sOptions/sOptions.yy",
   },
   "spriteMaskId":null,
   "visible":true,
