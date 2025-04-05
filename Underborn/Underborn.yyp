@@ -46,6 +46,7 @@
   "resources":[
     {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},},
     {"id":{"name":"fntMainBig","path":"fonts/fntMainBig/fntMainBig.yy",},},
+    {"id":{"name":"backButton","path":"objects/backButton/backButton.yy",},},
     {"id":{"name":"exitButton","path":"objects/exitButton/exitButton.yy",},},
     {"id":{"name":"floorController","path":"objects/floorController/floorController.yy",},},
     {"id":{"name":"gameController","path":"objects/gameController/gameController.yy",},},
@@ -62,6 +63,7 @@
     {"id":{"name":"upgradesButton","path":"objects/upgradesButton/upgradesButton.yy",},},
     {"id":{"name":"gameRoom","path":"rooms/gameRoom/gameRoom.yy",},},
     {"id":{"name":"introRoom","path":"rooms/introRoom/introRoom.yy",},},
+    {"id":{"name":"optionsRoom","path":"rooms/optionsRoom/optionsRoom.yy",},},
     {"id":{"name":"startRoom","path":"rooms/startRoom/startRoom.yy",},},
     {"id":{"name":"upgradeRoom","path":"rooms/upgradeRoom/upgradeRoom.yy",},},
     {"id":{"name":"sBackground","path":"sprites/sBackground/sBackground.yy",},},
@@ -89,6 +91,7 @@
     {"roomId":{"name":"gameRoom","path":"rooms/gameRoom/gameRoom.yy",},},
     {"roomId":{"name":"upgradeRoom","path":"rooms/upgradeRoom/upgradeRoom.yy",},},
     {"roomId":{"name":"introRoom","path":"rooms/introRoom/introRoom.yy",},},
+    {"roomId":{"name":"optionsRoom","path":"rooms/optionsRoom/optionsRoom.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
