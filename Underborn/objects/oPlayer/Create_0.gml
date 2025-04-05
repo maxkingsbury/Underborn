@@ -7,3 +7,14 @@ twinbladeTime = 80;
 
 alarm[0] = swordTime;
 alarm[1] = twinbladeTime;
+
+slot[0] = "Slash";
+slot[1] = "Twinblade";
+slot[2] = "";
+slot[3] = "";
+slot[4] = "";
+slot[5] = "";
+
+
+damageSword = 1;
+damageTwinblade = 1;

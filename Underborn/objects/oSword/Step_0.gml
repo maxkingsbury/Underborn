@@ -1,3 +1,4 @@
+event_inherited();
 
 if (oPlayer.image_xscale = 1){
 	x = oPlayer.x + addX

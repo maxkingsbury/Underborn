@@ -1,3 +1,4 @@
+
 with(oEnemyParent) {
 	direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 	speed = walk_speed;
@@ -6,7 +7,6 @@ with(oEnemyParent) {
 	else {image_xscale = -1;}
 	
 	depth = -y;
-	
 	
 }
 
