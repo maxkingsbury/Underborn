@@ -1,5 +1,5 @@
 // Inherit the parent event
 event_inherited();
 
-dmg = oPlayer.damageTwinblade;
+dmg = oPlayer1.damageTwinblade;
 
