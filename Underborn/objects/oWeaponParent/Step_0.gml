@@ -14,9 +14,9 @@ if (_num > 0)
 			_list[| i].y = _list[| i].y + lengthdir_y(3, dir);
 			
 			(_list[| i]).hp -= dmg;
-			if ((_list[| i]).hp) <= 0 {
-				instance_destroy(_list[| i]);
-			}
+			//if ((_list[| i]).hp) <= 0 {
+			//	instance_destroy(_list[| i]);
+			//}
 		}
     }
 }

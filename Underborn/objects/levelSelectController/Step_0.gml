@@ -12,12 +12,12 @@ if (keyboard_check_pressed(vk_down)) {
 if (keyboard_check_pressed(vk_enter)) {
     if (menu_stage == 0) {
         character_selected = true;
-        selected_character = character_options[menu_index];
+        selected_character = character_options[menu_index].sName;
         menu_index = 0;
         menu_stage = 1;
     } else if (menu_stage == 1) {
         level_selected = true;
-        selected_level = level_options[menu_index];
+        selected_level = level_options[menu_index].sName;
         menu_stage = 2;
     } else if (menu_stage == 2) {
         // Start the game
