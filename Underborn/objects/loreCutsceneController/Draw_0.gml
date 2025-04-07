@@ -50,6 +50,6 @@ if (finished_line && input_cooldown <= 0) {
     draw_set_font(fntLoreSmall);
     draw_set_color(make_color_rgb(180, 200, 255)); // soft bluish prompt
 	draw_set_alpha(0.6);
-    draw_text(display_get_width()/2, display_get_height() - 50, "Press SPACE to continue...");
+    draw_text(display_get_width()/2, display_get_height() - 150, "Press SPACE to continue...");
 	draw_set_alpha(1);
 }

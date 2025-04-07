@@ -12,3 +12,7 @@ alarm[1] = alaTime1;
 alarm[2] = alarmSpawnTime;
 
 
+// collecting
+alaTime3 = 20;
+alarm[3] = alaTime3;
+

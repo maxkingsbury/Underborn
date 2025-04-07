@@ -18,3 +18,5 @@ slot[5] = "";
 
 damageSword = 1;
 damageTwinblade = 1;
+
+collectRadius = 50;
