@@ -56,6 +56,7 @@
     {"id":{"name":"floorController","path":"objects/floorController/floorController.yy",},},
     {"id":{"name":"gameController","path":"objects/gameController/gameController.yy",},},
     {"id":{"name":"initController","path":"objects/initController/initController.yy",},},
+    {"id":{"name":"inventoryController","path":"objects/inventoryController/inventoryController.yy",},},
     {"id":{"name":"levelSelectController","path":"objects/levelSelectController/levelSelectController.yy",},},
     {"id":{"name":"loreCutsceneController","path":"objects/loreCutsceneController/loreCutsceneController.yy",},},
     {"id":{"name":"oEnemyBat","path":"objects/oEnemyBat/oEnemyBat.yy",},},
