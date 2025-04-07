@@ -15,30 +15,31 @@ draw_set_halign(fa_center);
 draw_text(display_get_gui_width() / 2, 16, time_text);
 
 
-// Setting for weapon boxes
-var box_width = 64;
-var box_height = 64;
-var spacing = 10;
-var total_boxes = 6;
+draw_set_font(fntLoreBig);
+draw_set_color(c_white);
+draw_text_ext_transformed(50, 50, instance_number(oEnemyParent), 0, 500, 1, 1, 0);
 
-// Calculate total width of the entire UI bar
-var total_width = (box_width * total_boxes) + (spacing * (total_boxes - 1));
 
-// Get screen dimensions
+
+var slot_width = 80;
+var slot_height = 80;
+var slot_spacing = 15;
 var screen_w = display_get_gui_width();
 var screen_h = display_get_gui_height();
-
-// Starting X and Y positions (centered horizontally, near bottom vertically)
+var total_width = slot_count * slot_width + (slot_count - 1) * slot_spacing;
 var start_x = (screen_w - total_width) / 2;
-var start_y = screen_h - box_height - 20; // 20px padding from bottom
+var start_y = screen_h - slot_height - 20;
 
-// Draw the 6 boxes
-for (var i = 0; i < total_boxes; i++) {
-    var x1 = start_x + i * (box_width + spacing);
-    var y1 = start_y;
-    var x2 = x1 + box_width;
-    var y2 = y1 + box_height;
-    
-    draw_set_color(c_white);
-    draw_rectangle(x1, y1, x2, y2, false); // false = not filled (outline only)
+for (var i = 0; i < slot_count; i++) {
+    var tx = start_x + i * (slot_width + slot_spacing);
+    var ty = start_y;
+    draw_set_color(c_gray);
+    draw_rectangle(tx, ty, tx + slot_width, ty + slot_height, false);
+
+	if (is_struct(slots[i])) {
+		var sWidth = sprite_get_width(slots[i].sprite);
+		var sHeight = sprite_get_height(slots[i].sprite);
+		draw_sprite_ext(slots[i].sprite, 0, tx + (((slot_width - sWidth) / 2)+5), ty + (slot_height - sHeight) / 2 + 15, 2, 2, 0, c_white, 1 );
+	}
 }
+

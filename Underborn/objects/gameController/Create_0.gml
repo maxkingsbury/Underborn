@@ -17,3 +17,26 @@ alarm[2] = alarmSpawnTime;
 alaTime3 = 10;
 alarm[3] = alaTime3;
 
+// Inventory system
+slot_count = 6;
+slots = array_create(slot_count, undefined);
+dragging_item = undefined;
+
+// Test item struct (you can expand this later)
+var test_item = {
+    sprite: sSword
+};
+var test_item2 = {
+    sprite: sTwinblade
+};
+
+slots[0] = test_item;
+slots[1] = test_item2;
+slots[2] = test_item2;
+slots[3] = test_item;
+slots[4] = test_item2;
+slots[5] = test_item;
+
+
+mx = mouse_x;
+my = mouse_y;
