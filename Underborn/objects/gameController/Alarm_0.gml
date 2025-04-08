@@ -1,10 +1,12 @@
 
+/// @description Enemy movement
+
 with(oEnemyParent) {
 	direction = point_direction(x, y, oPlayer1.x, oPlayer1.y);
 	speed = walk_speed;
 	
-	if (oPlayer1.x > x) {image_xscale = 0.75;}
-	else {image_xscale = -0.75;}
+	if (oPlayer1.x > x) {image_xscale = scale;}
+	else {image_xscale = -scale;}
 	
 	depth = -y;
 	

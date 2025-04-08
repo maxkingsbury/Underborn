@@ -1,4 +1,4 @@
-
+/// @description Coin pickup
 
 var _list = ds_list_create();
 var _num = collision_circle_list(oPlayer1.x, oPlayer1.y, oPlayer1.collectRadius, oGoldCoinSmall, false, true, _list, false);

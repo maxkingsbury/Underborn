@@ -1,11 +1,12 @@
 // Inherit the parent event
 event_inherited();
-scale = 0.75;
+
+scale = 1.5;
 
 image_xscale = scale;
 image_yscale = scale;
 
-hp = 1
+hp = 10
 walk_speed = 0.6;
 
 spr = sEnemyBat;

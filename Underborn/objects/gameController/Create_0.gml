@@ -7,6 +7,8 @@ alaTime1 = 20;
 //enemy spawning
 alarmSpawnTime = 15;
 
+boss1_spawned = false;
+
 
 alarm[0] = alaTime;
 alarm[1] = alaTime1;
@@ -33,9 +35,7 @@ var test_item2 = {
 slots[0] = test_item;
 slots[1] = test_item2;
 slots[2] = test_item2;
-slots[3] = test_item;
-slots[4] = test_item2;
-slots[5] = test_item;
+
 
 
 mx = mouse_x;

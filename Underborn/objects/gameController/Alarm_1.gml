@@ -1,4 +1,4 @@
-
+/// @description White sprite
 
 with(oEnemyParent) {
 	if (sprite_index == sprW) {
