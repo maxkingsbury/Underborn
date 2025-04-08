@@ -1,7 +1,7 @@
-/// @description Slot 2
+/// @description Slot 4
 var time = 60;
 
-switch(slot[1]) {
+switch(slot[3]) {
 
 	case "Slash": 
 		event_user(0); 
@@ -22,4 +22,4 @@ switch(slot[1]) {
 	
 }
 
-alarm[1] = time;
+alarm[3] = time;
