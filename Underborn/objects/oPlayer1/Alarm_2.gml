@@ -1,6 +1,6 @@
-/// @description Slot 1
+/// @description Slot 3
 
-switch(slot[0]) {
+switch(slot[2]) {
 
 	case "Slash": 
 		event_user(0); 
@@ -14,5 +14,4 @@ switch(slot[0]) {
 	
 }
 
-
-alarm[0] = swordTime;
+alarm[2] = javelinTime;

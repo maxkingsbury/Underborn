@@ -14,8 +14,8 @@ instance_deactivate_region(_vx - 200, _vy - 200, _vw + 300, _vh + 300, 0, 1);
 
 // Boss spawn at 1 minute
 if (!boss1_spawned && minutes >= 1) {
-    var boss_x = oPlayer1.x + lengthdir_x(220, irandom_range(0, 360));
-    var boss_y = oPlayer1.y + lengthdir_y(220, irandom_range(0, 360));
+    var boss_x = oPlayer1.x + lengthdir_x(200, irandom_range(0, 360));
+    var boss_y = oPlayer1.y + lengthdir_y(200, irandom_range(0, 360));
 
     instance_create_layer(boss_x, boss_y, "Instances", oBoss1); 
 
@@ -41,8 +41,16 @@ if (instance_number(oEnemyParent) < 50){
 	            valid_spawn = true;
 	        }
 	    }
+		
+		var percent = random(1); // Generates a random number between 0 and 1
 
-	    instance_create_layer(XX, YY, "Instances", oEnemyBat);
+		if (percent < 0.85) {
+			instance_create_layer(XX, YY, "Instances", oEnemyBat);
+		} else {
+		    instance_create_layer(XX, YY, "Instances", oEnemySlime);
+		}
+		
+	    
 	}
 }
 

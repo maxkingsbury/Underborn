@@ -1,3 +1,5 @@
+/// @description Slot 2
+
 switch(slot[1]) {
 
 	case "Slash": 
@@ -5,6 +7,9 @@ switch(slot[1]) {
 		break;
 	case "Twinblade": 
 		event_user(1); 
+		break;
+	case "Javelin": 
+		event_user(2); 
 		break;
 	
 }

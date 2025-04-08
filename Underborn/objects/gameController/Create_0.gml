@@ -26,17 +26,18 @@ dragging_item = undefined;
 
 // Test item struct (you can expand this later)
 var test_item = {
-    sprite: sSword
+    sprite: sSwordSpr
 };
 var test_item2 = {
     sprite: sTwinblade
 };
+var test_item3 = {
+    sprite: sJavelin
+};
 
 slots[0] = test_item;
 slots[1] = test_item2;
-slots[2] = test_item2;
-
-
+slots[2] = test_item3;
 
 mx = mouse_x;
 my = mouse_y;
