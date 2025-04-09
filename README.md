@@ -1,6 +1,12 @@
-# Underborn
+<div align="center">
+  <h1>Underborn</h1>
+</div>
 
-**Underborn** is a roguelike with fast-paced action, procedural gameplay, and deep lore. You will battle through waves of enemies, uncover hidden stories, and unlock new abilities as you dive deep into this game.
+
+<div align="center">
+  <h3>Underborn is a roguelike with fast-paced action, procedural gameplay, and deep lore. <br> You will battle through waves of enemies and unlock new abilities as you progress.</h3>
+</div>
+
 
 ---
 
