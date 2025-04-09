@@ -1,3 +1,5 @@
+audio_play_sound(sndGameMusic, 1, true);
+
 room_start_time = current_time; 
 speed = 0;
 

@@ -15,9 +15,9 @@ alarm[4] = 100;
 alarm[5] = 100;
 
 
-slot[0] = "";
+slot[0] = "Slash";
 slot[1] = "Bow";
-slot[2] = "";
+slot[2] = "Javelin";
 slot[3] = "";
 slot[4] = "";
 slot[5] = "";

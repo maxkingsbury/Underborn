@@ -4,6 +4,13 @@ if (current_line < array_length(lore_lines)) {
     // Typing effect
     if (!finished_line) {
         if (char_timer++ >= text_speed) {
+			
+			var rand = random(1);
+			if (rand > 0.5) {
+				audio_play_sound(sndText1, 0.5, 0);
+			} else {
+				audio_play_sound(sndText2, 0.5, 0);
+			}
             char_timer = 0;
             if (string_length(displayed_text) < string_length(full_line)) {
                 displayed_text = string_copy(full_line, 1, string_length(displayed_text) + 1);

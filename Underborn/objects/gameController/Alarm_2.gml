@@ -23,8 +23,9 @@ if (!boss1_spawned && minutes >= 1) {
     var boss_y = oPlayer1.y + lengthdir_y(200, irandom_range(0, 360));
 
     instance_create_layer(boss_x, boss_y, "Instances", oBoss1); 
-
-    boss1_spawned = true; // Prevents re-spawning
+	if (instance_exists(oBoss1)) {
+		boss1_spawned = true; // Prevents re-spawning
+	} 
 }
 
 if (instance_number(oEnemyParent) < 50){
