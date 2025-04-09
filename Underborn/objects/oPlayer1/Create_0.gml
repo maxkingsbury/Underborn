@@ -29,3 +29,6 @@ damageJavelin = 1;
 damageArrow = 1;
 
 collectRadius = 50;
+
+xp = 0; 
+xpNext = 100;

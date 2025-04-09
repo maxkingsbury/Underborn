@@ -1,6 +1,11 @@
 
 /// @description Enemy spawner
 
+
+alarm[2] = alarmSpawnTime;
+
+if (instance_exists(oUpgrade)){ exit; }
+
 var elapsed = current_time - room_start_time
 var total_seconds = floor(elapsed / 1000);
 var minutes = floor(total_seconds / 60);
@@ -54,5 +59,3 @@ if (instance_number(oEnemyParent) < 50){
 	}
 }
 
-
-alarm[2] = alarmSpawnTime;

@@ -1,3 +1,5 @@
+if (instance_exists(oUpgrade)){ exit; }
+
 // Movement input
 var left = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));

@@ -1,5 +1,7 @@
 /// @description Arrow
 
+if (instance_exists(oUpgrade)){ exit; }
+
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 
 if (nearest_enemy != noone) {

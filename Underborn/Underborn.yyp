@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Underborn",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -38,14 +38,16 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.0.190",
   },
   "name":"Underborn",
   "resources":[
+    {"id":{"name":"Animation_BounceIn","path":"animcurves/Animation_BounceIn/Animation_BounceIn.yy",},},
     {"id":{"name":"fntLore","path":"fonts/fntLore/fntLore.yy",},},
     {"id":{"name":"fntLoreBig","path":"fonts/fntLoreBig/fntLoreBig.yy",},},
     {"id":{"name":"fntLoreSmall","path":"fonts/fntLoreSmall/fntLoreSmall.yy",},},
@@ -69,6 +71,7 @@
     {"id":{"name":"optionsButton","path":"objects/optionsButton/optionsButton.yy",},},
     {"id":{"name":"oSword","path":"objects/oSword/oSword.yy",},},
     {"id":{"name":"oTwinblade","path":"objects/oTwinblade/oTwinblade.yy",},},
+    {"id":{"name":"oUpgrade","path":"objects/oUpgrade/oUpgrade.yy",},},
     {"id":{"name":"oWeaponParent","path":"objects/oWeaponParent/oWeaponParent.yy",},},
     {"id":{"name":"PlayButton","path":"objects/PlayButton/PlayButton.yy",},},
     {"id":{"name":"settingsController","path":"objects/settingsController/settingsController.yy",},},
@@ -104,6 +107,9 @@
     {"id":{"name":"sTitle","path":"sprites/sTitle/sTitle.yy",},},
     {"id":{"name":"sTwinblade","path":"sprites/sTwinblade/sTwinblade.yy",},},
     {"id":{"name":"sUpgrades","path":"sprites/sUpgrades/sUpgrades.yy",},},
+    {"id":{"name":"sUpgradeTest_1","path":"sprites/sUpgradeTest_1/sUpgradeTest_1.yy",},},
+    {"id":{"name":"sUpgradeTest_2","path":"sprites/sUpgradeTest_2/sUpgradeTest_2.yy",},},
+    {"id":{"name":"sUpgradeTest","path":"sprites/sUpgradeTest/sUpgradeTest.yy",},},
     {"id":{"name":"sWeapons","path":"sprites/sWeapons/sWeapons.yy",},},
     {"id":{"name":"tile_set","path":"tilesets/tile_set/tile_set.yy",},},
   ],

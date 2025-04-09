@@ -1,7 +1,7 @@
 room_start_time = current_time; 
 speed = 0;
 
-alaTime = 20;
+alaTime = 1;
 alaTime1 = 20;
 
 //enemy spawning

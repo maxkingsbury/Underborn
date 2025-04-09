@@ -1,5 +1,7 @@
 /// @description Twinblade
 
+if (instance_exists(oUpgrade)){ exit; }
+
 var twinblade = instance_create_layer(x, y, "Instances", oTwinblade);
 
 twinblade.direction = irandom_range(45, 135);
