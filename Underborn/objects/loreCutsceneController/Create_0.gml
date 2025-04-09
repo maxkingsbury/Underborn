@@ -1,6 +1,5 @@
 // List of lore lines
 lore_lines = [
-	"",
     "They called it death... \n But for you, it was only the beginning.",
     "...",
     "Your body, broken.",
@@ -9,7 +8,7 @@ lore_lines = [
     "Yet something, maybe someone, reached into the void.",
     "A flicker of light; a whisper of power.",
     "...",
-    "Now, bound by forces you don't understand,\n you rise not alive,\n but not truly dead.",
+    "Now you are bound by forces you don't understand,\n you rise not alive,\n but not truly dead either.",
     "...",
     "In this realm of shadows\n you must fight through endless waves of lost souls.",
     "...",
@@ -21,13 +20,13 @@ lore_lines = [
 
 current_line = 0;
 displayed_text = "";
-text_speed = 2; // Lower = faster
+text_speed = 2; 
 char_timer = 0;
 finished_line = false;
 input_cooldown = 10;
 
-// Firefly setup
-firefly_count = 75;
+
+firefly_count = 100;
 fireflies = array_create(firefly_count);
 
 for (var i = 0; i < firefly_count; i++) {

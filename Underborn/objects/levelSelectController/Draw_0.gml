@@ -48,6 +48,13 @@ if (menu_stage == 0) {
 	draw_set_font(fntLoreSmall);
     draw_text(cx - 550, cy+40, character_options[menu_index].stats);	
 	draw_set_font(fntLore);
+	
+	// Draw instructions
+    draw_set_color(c_white);
+	draw_set_font(fntLore);
+	draw_text(cx, cy + 600, "Use the arrow keys to select a character");
+	draw_text(cx, cy + 640, "Press ENTER when ready to continue");
+
 } 
 else if (menu_stage == 1) {
 	draw_set_alpha(0.2);
@@ -82,10 +89,17 @@ else if (menu_stage == 1) {
 	draw_set_font(fntLoreSmall);
     draw_text(cx - 550, cy+40, level_options[menu_index].stats);	
 	draw_set_font(fntLore);
+	
+	// Draw instructions
+    draw_set_color(c_white);
+	draw_set_font(fntLore);
+	draw_text(cx, cy + 600, "Use the arrow keys to select a level");
+	draw_text(cx, cy + 640, "Press ENTER when ready to continue");
+
 } 
 else {
     draw_set_color(c_white);
     draw_text(cx, cy, "Character:     " + selected_character);
     draw_text(cx, cy + 40, "Level:     " + selected_level);
-    draw_text(cx, cy + 100, "Press ENTER to Begin");
+    draw_text(cx, cy + 200, "Press ENTER to Begin");
 }
