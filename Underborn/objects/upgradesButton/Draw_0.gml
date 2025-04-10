@@ -17,5 +17,9 @@ draw_text(x - glow_offset, y - glow_offset, "Upgrades");  // Top-left glow
 draw_set_alpha(1);
 
 // Now, draw the actual text on top (no offset, normal color)
-draw_set_color(#4C0001);  // Original text color
+if (hovered) {
+    draw_set_color(#993000);  // Highlight color on hover
+} else {
+    draw_set_color(#4C0001);   // Default color
+}
 draw_text(x, y, "Upgrades");

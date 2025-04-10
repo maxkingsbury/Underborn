@@ -3,7 +3,7 @@ image_speed = 1;
 move_speed = 1;
 
 swordTime = 20;
-twinbladeTime = 10;
+twinbladeTime = 30;
 javelinTime = 60;
 arrowTime = 20;
 
@@ -16,17 +16,17 @@ alarm[5] = 100;
 
 
 slot[0] = "Slash";
-slot[1] = "Bow";
-slot[2] = "Javelin";
-slot[3] = "";
+slot[1] = "Twinblade";
+slot[2] = "";
+slot[3] = "Bow";
 slot[4] = "";
 slot[5] = "";
 
 
-damageSword = 1;
+damageSword = 3;
 damageTwinblade = 1;
-damageJavelin = 1;
-damageArrow = 1;
+damageJavelin = 2;
+damageArrow = 2;
 
 collectRadius = 50;
 

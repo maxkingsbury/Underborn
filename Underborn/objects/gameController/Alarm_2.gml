@@ -6,7 +6,11 @@ alarm[2] = alarmSpawnTime;
 
 if (instance_exists(oUpgrade)){ exit; }
 
-var elapsed = current_time - room_start_time
+var actual_time = current_time;
+if (is_paused) {
+    actual_time = pause_start_time;
+}
+var elapsed = actual_time - room_start_time - pause_offset;
 var total_seconds = floor(elapsed / 1000);
 var minutes = floor(total_seconds / 60);
 
@@ -28,7 +32,7 @@ if (!boss1_spawned && minutes >= 1) {
 	} 
 }
 
-if (instance_number(oEnemyParent) < 50){
+if (instance_number(oEnemyParent) < 100){
 	var spawn_radius = 220;
 	var buffer = 100; // Must match your activation buffer
 
@@ -50,7 +54,7 @@ if (instance_number(oEnemyParent) < 50){
 		
 		var percent = random(1); // Generates a random number between 0 and 1
 
-		if (percent < 0.85) {
+		if (percent < 0.9) {
 			instance_create_layer(XX, YY, "Instances", oEnemyBat);
 		} else {
 		    instance_create_layer(XX, YY, "Instances", oEnemySlime);

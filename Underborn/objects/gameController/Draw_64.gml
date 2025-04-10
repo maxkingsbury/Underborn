@@ -1,7 +1,11 @@
 draw_set_font(fntLoreBig);
 draw_set_color(c_white);
 
-var elapsed = current_time - room_start_time; // in milliseconds
+var actual_time = current_time;
+if (is_paused) {
+    actual_time = pause_start_time;
+}
+var elapsed = actual_time - room_start_time - pause_offset;
 var total_seconds = floor(elapsed / 1000);
 var minutes = floor(total_seconds / 60);
 var seconds = total_seconds mod 60;
