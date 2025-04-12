@@ -4,5 +4,5 @@ if (global.firstPlay == true){
 	global.firstPlay = false;
 	room_goto(tutorialRoom);
 } else {
-room_goto(levelSelectRoom);
+	room_goto(levelSelectRoom);
 }

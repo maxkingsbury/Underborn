@@ -9,8 +9,8 @@
   "name":"startRoomController",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Objects/Controllers.yy",
+    "name":"Room Controllers",
+    "path":"folders/Objects/Controllers/Room Controllers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -23,3 +23,7 @@ if (hor != 0 || vertical != 0) {
 } else {
     sprite_index = spr_PlayerIdle;
 }
+
+if (keyboard_check(ord("K"))) {
+	room_goto(startRoom);
+}

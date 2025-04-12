@@ -22,7 +22,7 @@ instance_activate_region(_vx - 100, _vy - 100, _vw + 200, _vh + 200, true);
 instance_deactivate_region(_vx - 200, _vy - 200, _vw + 300, _vh + 300, 0, 1);
 
 // Boss spawn at 1 minute
-if (!boss1_spawned && minutes >= 1) {
+if (!boss1_spawned && minutes >= 0) {
     var boss_x = oPlayer1.x + lengthdir_x(200, irandom_range(0, 360));
     var boss_y = oPlayer1.y + lengthdir_y(200, irandom_range(0, 360));
 

@@ -10,3 +10,5 @@ image_yscale = scale;
 last_x = x;
 last_y = y;
 stuck_timer = 0;
+
+num = 1; 

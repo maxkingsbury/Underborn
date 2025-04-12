@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Assets",
-    "path":"folders/Sprites/Assets.yy",
+    "name":"Pickups",
+    "path":"folders/Sprites/Assets/Pickups.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
