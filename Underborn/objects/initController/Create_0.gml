@@ -8,6 +8,8 @@ if (!variable_global_exists("hasInitialized")) {
     global.firstPlay = true;
     global.diamonds = 10;
     global.coins = 500;
-    
-    room_goto(startRoom);
+	global.upgrades = []
+
 }
+
+global.selected_slot = -1;
