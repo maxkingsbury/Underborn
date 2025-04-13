@@ -2,7 +2,7 @@ var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
 for (var i = 0; i < 3; i++) {
-    var yy = 200 + i * 80;
+    var yy = 400 + i * 80;
 
     if (mx > display_get_gui_width()/2 - 100 && mx < display_get_gui_width()/2 + 100 &&
         my > yy - 30 && my < yy + 30 &&
