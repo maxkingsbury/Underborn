@@ -6,8 +6,8 @@ if (!variable_global_exists("hasInitialized")) {
     window_set_fullscreen(true);
 
     global.firstPlay = true;
-    global.diamonds = 0;
-    global.coins = 0;
+    global.diamonds = 10;
+    global.coins = 500;
     
     room_goto(startRoom);
 }

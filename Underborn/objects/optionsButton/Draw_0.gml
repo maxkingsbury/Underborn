@@ -3,13 +3,13 @@ var glow_color = make_color_rgb(255, 140, 0);  // Bright orange glow (change as 
 var glow_offset = 1;  // Distance of glow from the text
 
 // Draw the glow effect first (behind the main text)
-draw_set_font(fntMainBig);
+draw_set_font(fntLoreBig);
 draw_set_color(glow_color);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
 // Draw the glow by slightly offsetting the text multiple times for a blurred effect
-draw_set_alpha(0.2);
+draw_set_alpha(0.3);
 draw_text(x + glow_offset, y + glow_offset, "Options");  // Bottom-right glow
 draw_text(x - glow_offset, y + glow_offset, "Options");  // Bottom-left glow
 draw_text(x + glow_offset, y - glow_offset, "Options");  // Top-right glow
