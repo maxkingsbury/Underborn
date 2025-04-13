@@ -13,6 +13,6 @@ function create_save_data() {
         coins: global.coins,
         diamonds: global.diamonds,
         upgrades: global.upgrades,
-		lastSave: global.last_save_time
+		lastSave: global.last_save_time,
     };
 }

@@ -9,7 +9,15 @@ if (!variable_global_exists("hasInitialized")) {
     global.diamonds = 10;
     global.coins = 500;
 	global.upgrades = []
+	
+	global.upgrade_pool = [
+	    sUpgradeTest,
+	    sUpgradeTest_1,
+	    sUpgradeTest_2,
+	    // add more here
+	];
 
 }
 
 global.selected_slot = -1;
+

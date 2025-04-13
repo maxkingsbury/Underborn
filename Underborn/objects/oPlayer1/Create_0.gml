@@ -31,4 +31,4 @@ damageArrow = 2;
 collectRadius = 50;
 
 xp = 0; 
-xpNext = 100;
+xpNext = 10;
