@@ -50,6 +50,7 @@
   "name":"Underborn",
   "resources":[
     {"id":{"name":"Animation_BounceIn","path":"animcurves/Animation_BounceIn/Animation_BounceIn.yy",},},
+    {"id":{"name":"Animation_BounceOut","path":"animcurves/Animation_BounceOut/Animation_BounceOut.yy",},},
     {"id":{"name":"fntLore","path":"fonts/fntLore/fntLore.yy",},},
     {"id":{"name":"fntLoreBig","path":"fonts/fntLoreBig/fntLoreBig.yy",},},
     {"id":{"name":"fntLoreSmall","path":"fonts/fntLoreSmall/fntLoreSmall.yy",},},

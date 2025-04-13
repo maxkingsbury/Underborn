@@ -5,6 +5,7 @@ state = "pop in";
 
 // animation curve
 getCurve = animcurve_get_channel(Animation_BounceIn, 0);
+getCurve2 = animcurve_get_channel(Animation_BounceOut, 0);
 percent = 0;
 
 // set initial y below the target, e.g. 40 pixels below

@@ -9,7 +9,7 @@ if(xp >= xpNext){
 	var _vx = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0])/2);
 	var _vy = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0])/2);
 
-	// shuffle pool
+	// Fisher–Yates shuffle the pool
 	for (var i = array_length(global.upgrade_pool) - 1; i > 0; i--) {
 	    var j = irandom(i);
 	    var temp = global.upgrade_pool[i];

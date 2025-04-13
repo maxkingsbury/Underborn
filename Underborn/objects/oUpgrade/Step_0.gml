@@ -9,8 +9,8 @@ if (state = "pop in") {
 }
 
 if (state = "go away") {
-	percent -= 1/60;
-	var pos = animcurve_channel_evaluate(getCurve, percent);
+	percent -= 1/50;
+	var pos = animcurve_channel_evaluate(getCurve2, percent);
 	
 	y = destinationY - pos;
 	
