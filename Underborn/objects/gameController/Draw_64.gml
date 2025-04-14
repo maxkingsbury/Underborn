@@ -43,11 +43,12 @@ for (var i = 0; i < slot_count; i++) {
     draw_rectangle(tx, ty, tx + slot_width, ty + slot_height, false);
 
     // Draw the weapon sprite in the slot if there is a weapon
-    var weapon = oPlayer.slot[i];
+	var weapon = global.weapon_data[? oPlayer.slot[i]];
+
     if (weapon != undefined) {
         // Apply the offset (move sprite right and down)
         draw_sprite_ext(weapon.sprite, 0, tx + (slot_width - sprite_get_width(weapon.sprite)) / 2 + offset_x, 
-                        ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 2, 2, 0, c_white, 1);
+        ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 2, 2, 0, c_white, 1);
     }
 }
 

@@ -1,5 +1,5 @@
 // Player movement speed
-move_speed = round(1 + (global.selected_character.pSpeed/5));
+move_speed = global.selected_character.pSpeed;
 image_speed = 1;
 
 swordTime = 20;

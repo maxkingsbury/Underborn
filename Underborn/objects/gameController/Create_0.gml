@@ -37,7 +37,6 @@ slot_count = 6;
 slots = array_create(slot_count, undefined);
 dragging_item = undefined;
 
-slots[0] = get_weapon_sprite(oPlayer.slot[0]);
 
 mx = mouse_x;
 my = mouse_y;
