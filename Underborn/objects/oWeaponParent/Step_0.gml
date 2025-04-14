@@ -13,7 +13,13 @@ if (_num > 0)
 			_list[| i].x = _list[| i].x + lengthdir_x(3, dir);
 			_list[| i].y = _list[| i].y + lengthdir_y(3, dir);
 			
-			(_list[| i]).hp -= dmg;
+			var final_damage = dmg;
+			
+			if (random(1) < global.crit_chance) {
+			    final_damage *= 2; // double damage on crit
+			    part_particles_create(global.crit_ps, x, y, part_crit, 10);
+			}
+			(_list[| i]).hp -= final_damage;
 			//if ((_list[| i]).hp) <= 0 {
 			//	instance_destroy(_list[| i]);
 			//}

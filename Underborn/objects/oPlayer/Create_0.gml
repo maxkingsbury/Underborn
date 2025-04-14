@@ -1,5 +1,6 @@
 // Player movement speed
-move_speed = global.selected_character.pSpeed;
+mvspd = global.move_speed + global.selected_character.pSpeed;
+
 image_speed = 1;
 
 swordTime = 20;
@@ -22,12 +23,14 @@ slot[3] = undefined;
 slot[4] = undefined;
 slot[5] = undefined;
 
-damageSword = 3 * global.selected_character.pDamage;
-damageTwinblade = 1 * global.selected_character.pDamage;
-damageJavelin = 2 * global.selected_character.pDamage;
-damageArrow = 2 * global.selected_character.pDamage;
+damageSword = 3 * global.selected_character.pDamage * global.damage;
+damageTwinblade = 1 * global.selected_character.pDamage * global.damage;
+damageJavelin = 2 * global.selected_character.pDamage * global.damage;
+damageArrow = 2 * global.selected_character.pDamage * global.damage;
 
 collectRadius = 50;
 
 xp = 0; 
 xpNext = 5;
+
+

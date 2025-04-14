@@ -1,0 +1,1 @@
+global.crit_ps = part_system_create();

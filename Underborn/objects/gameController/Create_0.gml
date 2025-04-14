@@ -6,7 +6,6 @@ player.pDamage = c.pDamage;
 player.pSpeed = c.pSpeed;
 player.slot[0] = c.start_weapon;
 
-
 room_start_time = current_time;
 pause_offset = 0;
 pause_start_time = 0;

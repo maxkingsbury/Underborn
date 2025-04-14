@@ -22,7 +22,7 @@ instance_activate_region(_vx - 100, _vy - 100, _vw + 200, _vh + 200, true);
 instance_deactivate_region(_vx - 200, _vy - 200, _vw + 300, _vh + 300, 0, 1);
 
 // Boss spawn at 1 minute
-if (!boss1_spawned && minutes >= 0) {
+if (!boss1_spawned && minutes >= 1) {
     var boss_x = oPlayer.x + lengthdir_x(200, irandom_range(0, 360));
     var boss_y = oPlayer.y + lengthdir_y(200, irandom_range(0, 360));
 
@@ -35,32 +35,58 @@ if (!boss1_spawned && minutes >= 0) {
 if (instance_number(oEnemyParent) < 100){
 	var spawn_radius = 220;
 	var buffer = 100; // Must match your activation buffer
+	
+	if (minutes <= 1){
+		repeat(2) {
+		    var valid_spawn = false;
+		    var XX, YY;
 
-	repeat(2) {
-	    var valid_spawn = false;
-	    var XX, YY;
+		    while (!valid_spawn) {
+		        var dir = irandom_range(0, 360);
+		        XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+		        YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
 
-	    while (!valid_spawn) {
-	        var dir = irandom_range(0, 360);
-	        XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
-	        YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
-
-	        // Check if it's inside the active region
-	        if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
-	            YY > _vy - buffer && YY < _vy + _vh + buffer) {
-	            valid_spawn = true;
-	        }
-	    }
+		        // Check if it's inside the active region
+		        if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+		            YY > _vy - buffer && YY < _vy + _vh + buffer) {
+		            valid_spawn = true;
+		        }
+		    }
 		
-		var percent = random(1); // Generates a random number between 0 and 1
+			var percent = random(1); // Generates a random number between 0 and 1
 
-		if (percent < 0.9) {
-			instance_create_layer(XX, YY, "Instances", oEnemyBat);
-		} else {
-		    instance_create_layer(XX, YY, "Instances", oEnemySlime);
+			if (percent < 0.9) {
+				instance_create_layer(XX, YY, "Instances", oEnemyBat);
+			} else {
+			    instance_create_layer(XX, YY, "Instances", oEnemySlime);
+			}
 		}
+	}
+	if (minutes > 1 && minutes <= 2) {
+		repeat(2) {
+			var valid_spawn = false;
+			var XX, YY;
+
+			while (!valid_spawn) {
+			    var dir = irandom_range(0, 360);
+			    XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+			    YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
+
+			    // Check if it's inside the active region
+			    if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+			        YY > _vy - buffer && YY < _vy + _vh + buffer) {
+			        valid_spawn = true;
+			    }
+			}
 		
-	    
+			var percent = random(1); // Generates a random number between 0 and 1
+
+			if (percent < 0.4) {
+				instance_create_layer(XX, YY, "Instances", oEnemyBat);
+			} else {
+				instance_create_layer(XX, YY, "Instances", oEnemySlime);
+			}
+		}
 	}
 }
 

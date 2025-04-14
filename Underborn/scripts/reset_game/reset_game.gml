@@ -25,7 +25,7 @@ function reset_game(slot) {
 	        x: 0, y: 0,
 	        cost_coins: 100, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
-	        unlocks: [4, 5],
+	        unlocks: [4],
 	        radius: 150, angle: -30
 	    },
 	    { // 3 - Child of Damage Up
@@ -36,15 +36,7 @@ function reset_game(slot) {
 	        unlocks: [],
 	        radius: 300, angle: 240
 	    },
-	    { // 4 - First child of Speed Up
-	        name: "Sprint",
-	        x: 0, y: 0,
-	        cost_coins: 100, cost_diamonds: 1,
-	        unlocked: false, purchased: false,
-	        unlocks: [],
-	        radius: 250, angle: -70
-	    },
-	    { // 5 - Second child of Speed Up
+	    { // 4 - Second child of Speed Up
 	        name: "Dodge Boost",
 	        x: 0, y: 0,
 	        cost_coins: 100, cost_diamonds: 1,

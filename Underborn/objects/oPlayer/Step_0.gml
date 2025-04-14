@@ -11,8 +11,8 @@ if (!instance_exists(oUpgrade)) {
 	var vertical = down - up;
 
 	// Apply movement
-	x += hor * move_speed;
-	y += vertical * move_speed;
+	x += hor * mvspd;
+	y += vertical * mvspd;
 
 	// Flip sprite based on horizontal direction
 	if (hor > 0) image_xscale = 1;
