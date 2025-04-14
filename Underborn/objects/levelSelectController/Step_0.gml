@@ -22,6 +22,9 @@ if (keyboard_check_pressed(vk_enter)) {
 		audio_play_sound(sndConfirm, 0.5, false);
         character_selected = true;
         global.selected_character = character_options[menu_index];
+		var char = global.selected_character;
+		// Assign weapon to player’s first slot (or any slot)
+		slot[0] = global.weapon_data[? char.start_weapon];
         menu_index = 0;
         menu_stage = 1;
     } else if (menu_stage == 1) {

@@ -2,6 +2,7 @@ function reset_game(slot) {
     var default_save_data = {
         coins: 0,
         diamonds: 0,
+		firstPlay: true,
         upgrades: [
             { // 0 - Root node
 	        name: "Health Up",

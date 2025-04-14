@@ -1,4 +1,5 @@
 function create_save_data() {
+	
 	if (!variable_global_exists("last_save_time")) {
 		var raw_time = date_datetime_string(date_current_datetime());
 		if (string_pos("AM", raw_time) > 0 || string_pos("PM", raw_time) > 0) {
@@ -14,5 +15,6 @@ function create_save_data() {
         diamonds: global.diamonds,
         upgrades: global.upgrades,
 		lastSave: global.last_save_time,
+		firstPlay: global.firstPlay,
     };
 }

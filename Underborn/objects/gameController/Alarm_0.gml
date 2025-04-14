@@ -11,9 +11,9 @@ if (instance_exists(oUpgrade)) {
 with(oEnemyParent) {
 	if (instance_exists(oUpgrade)) { image_speed = 0; }
 	image_speed = 1;
-	mp_potential_step(oPlayer1.x, oPlayer1.y, walk_speed, false);
+	mp_potential_step(oPlayer.x, oPlayer.y, walk_speed, false);
 	
-	if (oPlayer1.x > x) {image_xscale = scale;}
+	if (oPlayer.x > x) {image_xscale = scale;}
 	else {image_xscale = -scale;}
 	
 	depth = -y;
@@ -22,7 +22,7 @@ with(oEnemyParent) {
 
 
 
-oPlayer1.depth = -oPlayer1.y;
+oPlayer.depth = -oPlayer.y;
 
 alarm[0] = alaTime;
 

@@ -23,8 +23,8 @@ instance_deactivate_region(_vx - 200, _vy - 200, _vw + 300, _vh + 300, 0, 1);
 
 // Boss spawn at 1 minute
 if (!boss1_spawned && minutes >= 0) {
-    var boss_x = oPlayer1.x + lengthdir_x(200, irandom_range(0, 360));
-    var boss_y = oPlayer1.y + lengthdir_y(200, irandom_range(0, 360));
+    var boss_x = oPlayer.x + lengthdir_x(200, irandom_range(0, 360));
+    var boss_y = oPlayer.y + lengthdir_y(200, irandom_range(0, 360));
 
     instance_create_layer(boss_x, boss_y, "Instances", oBoss1); 
 	if (instance_exists(oBoss1)) {
@@ -42,8 +42,8 @@ if (instance_number(oEnemyParent) < 100){
 
 	    while (!valid_spawn) {
 	        var dir = irandom_range(0, 360);
-	        XX = oPlayer1.x + lengthdir_x(spawn_radius, dir);
-	        YY = oPlayer1.y + lengthdir_y(spawn_radius, dir);
+	        XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+	        YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
 
 	        // Check if it's inside the active region
 	        if (XX > _vx - buffer && XX < _vx + _vw + buffer &&

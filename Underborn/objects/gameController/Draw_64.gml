@@ -22,15 +22,19 @@ draw_set_color(c_white);
 // instance count if needed
 // draw_text_ext_transformed(50, 50, instance_number(oEnemyParent), 0, 500, 1, 1, 0);
 
-// INVENTORY SLOTS
-var slot_width = 80;
-var slot_height = 80;
+// In your GUI Draw Event (probably in the `oPlayer` or `oHUD` object)
+var slot_width = 64;
+var slot_height = 64;
 var slot_spacing = 15;
 var screen_w = display_get_gui_width();
 var screen_h = display_get_gui_height();
+var slot_count = 6; // assuming 5 slots in hotbar
 var total_width = slot_count * slot_width + (slot_count - 1) * slot_spacing;
-var start_x = (screen_w - total_width) / 2;
+var start_x = ((screen_w - total_width) / 2) + 10;
 var start_y = screen_h - slot_height - 20;
+
+var offset_x = 8;  // Move sprite to the right by 5 pixels
+var offset_y = 12;  // Move sprite down by 5 pixels
 
 for (var i = 0; i < slot_count; i++) {
     var tx = start_x + i * (slot_width + slot_spacing);
@@ -38,11 +42,13 @@ for (var i = 0; i < slot_count; i++) {
     draw_set_color(c_dkgray);
     draw_rectangle(tx, ty, tx + slot_width, ty + slot_height, false);
 
-	if (is_struct(slots[i])) {
-		var sWidth = sprite_get_width(slots[i].sprite);
-		var sHeight = sprite_get_height(slots[i].sprite);
-		draw_sprite_ext(slots[i].sprite, 0, tx + (((slot_width - sWidth) / 2)+5), ty + (slot_height - sHeight) / 2 + 15, 2, 2, 0, c_white, 1 );
-	}
+    // Draw the weapon sprite in the slot if there is a weapon
+    var weapon = oPlayer.slot[i];
+    if (weapon != undefined) {
+        // Apply the offset (move sprite right and down)
+        draw_sprite_ext(weapon.sprite, 0, tx + (slot_width - sprite_get_width(weapon.sprite)) / 2 + offset_x, 
+                        ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 2, 2, 0, c_white, 1);
+    }
 }
 
 // === XP Bar Settings ===
@@ -53,7 +59,7 @@ var bar_width = 400;
 var bar_height = 32;
 
 // === XP Progress Calculation ===
-var xp_ratio = clamp(oPlayer1.xp / oPlayer1.xpNext, 0, 1);
+var xp_ratio = clamp(oPlayer.xp / oPlayer.xpNext, 0, 1);
 
 // === Background Bar ===
 draw_set_color(c_black);
@@ -65,7 +71,7 @@ draw_rectangle(bar_x, bar_y, bar_x + (bar_width * xp_ratio), bar_y + bar_height,
 
 // === XP Text ===
 draw_set_color(c_white);
-draw_text(bar_x + bar_width / 2, bar_y - 5, string(oPlayer1.xp) + " / " + string(oPlayer1.xpNext));
+draw_text(bar_x + bar_width / 2, bar_y - 5, string(oPlayer.xp) + " / " + string(oPlayer.xpNext));
 
-draw_text(10, 10, "XP: " + string(oPlayer1.xp));
-draw_text(10, 30, "Next: " + string(oPlayer1.xpNext));
+draw_text(10, 10, "XP: " + string(oPlayer.xp));
+draw_text(10, 30, "Next: " + string(oPlayer.xpNext));

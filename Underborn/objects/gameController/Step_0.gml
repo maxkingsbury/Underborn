@@ -9,3 +9,5 @@ if (instance_exists(oUpgrade)) {
         pause_offset += current_time - pause_start_time;
     }
 }
+
+slots[0] = get_weapon_sprite(oPlayer.slot[0]);

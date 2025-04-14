@@ -1,4 +1,4 @@
-var player = instance_create_layer(1600, 1600, "Instances", oPlayer1);
+var player = instance_create_layer(1600, 1600, "Instances", oPlayer);
 var c = global.selected_character;
 
 player.sprite_index = c.anim_idle;
@@ -37,27 +37,7 @@ slot_count = 6;
 slots = array_create(slot_count, undefined);
 dragging_item = undefined;
 
-// Test item struct (you can expand this later)
-var test_item = {
-    sprite: sSwordSpr
-};
-var test_item2 = {
-    sprite: sTwinblade
-};
-var test_item3 = {
-    sprite: sJavelin
-};
-var test_item4 = {
-    sprite: sShortbow
-};
-
-slots[0] = oPlayer1.slot[0];
-slots[1] = oPlayer1.slot[1];
-slots[2] = oPlayer1.slot[2];
-slots[3] = oPlayer1.slot[3];
-slots[4] = oPlayer1.slot[4];
-slots[5] = oPlayer1.slot[5];
-
+slots[0] = get_weapon_sprite(oPlayer.slot[0]);
 
 mx = mouse_x;
 my = mouse_y;

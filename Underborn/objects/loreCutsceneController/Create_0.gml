@@ -1,5 +1,6 @@
 // List of lore lines
 lore_lines = [
+	"",
     "They called it death... \n But for you, it was only the beginning.",
     "...",
     "Your body, broken.",

@@ -18,7 +18,6 @@ if (hor > 0) image_xscale = 1;
 if (hor < 0) image_xscale = -1;
 
 // Set sprite based on movement
-
 var c = global.selected_character;
 if (hor != 0 || vertical != 0) {
 	sprite_index = c.anim_walk;
@@ -39,11 +38,11 @@ if (place_meeting(x, y, oXpOrb)) {
     
     if (xpOrb != noone) {
         // Collect the XP
-        oPlayer1.xp += 1;
-        if (oPlayer1.xp >= oPlayer1.xpNext) {
-            oPlayer1.xp -= oPlayer1.xpNext;
-            oPlayer1.xpNext *= 1.1;
-            oPlayer1.xpNext = round(oPlayer1.xpNext);
+        oPlayer.xp += 1;
+        if (oPlayer.xp >= oPlayer.xpNext) {
+            oPlayer.xp -= oPlayer.xpNext;
+            oPlayer.xpNext *= 1.1;
+            oPlayer.xpNext = round(oPlayer.xpNext);
             
             var _vx = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0])/2);
 			var _vy = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0])/2);
