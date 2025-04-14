@@ -73,5 +73,4 @@ draw_rectangle(bar_x, bar_y, bar_x + (bar_width * xp_ratio), bar_y + bar_height,
 draw_set_color(c_white);
 draw_text(bar_x + bar_width / 2, bar_y - 5, string(oPlayer.xp) + " / " + string(oPlayer.xpNext));
 
-draw_text(10, 10, "XP: " + string(oPlayer.xp));
-draw_text(10, 30, "Next: " + string(oPlayer.xpNext));
+draw_text(100, 100, "Press K for die");

@@ -30,7 +30,7 @@ if (!variable_global_exists("upgrades")) {
 	        cost_coins: 100, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        unlocks: [],
-	        radius: 250, angle: 240
+	        radius: 300, angle: 240
 	    },
 	    { // 4 - First child of Speed Up
 	        name: "Sprint",
@@ -38,7 +38,7 @@ if (!variable_global_exists("upgrades")) {
 	        cost_coins: 100, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        unlocks: [],
-	        radius: 200, angle: -70
+	        radius: 250, angle: -70
 	    },
 	    { // 5 - Second child of Speed Up
 	        name: "Dodge Boost",

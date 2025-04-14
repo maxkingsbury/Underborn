@@ -23,8 +23,15 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
 
     // Draw the upgrade name
     draw_set_color(c_white);
-    draw_text(upg.x, upg.y - 40, upg.name);
-
+    draw_text(upg.x, upg.y - 60, upg.name);
+	draw_set_font(fntLoreSmall);
+	draw_set_color(c_yellow);
+	draw_text(upg.x, upg.y - 90, string(upg.cost_coins) + " Coins");
+	draw_set_color(c_aqua);
+	draw_text(upg.x, upg.y - 110, string(upg.cost_diamonds) + " Diamond(s)");
+	draw_set_font(fntLore);
+	draw_set_color(c_white);
+	
     // Draw lines to child nodes
     for (var j = 0; j < array_length(upg.unlocks); j++) {
         var child_index = upg.unlocks[j];

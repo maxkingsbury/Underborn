@@ -1,7 +1,7 @@
 function reset_game(slot) {
     var default_save_data = {
-        coins: 0,
-        diamonds: 0,
+        coins: 300,
+        diamonds: 4,
 		firstPlay: true,
         upgrades: [
             { // 0 - Root node
@@ -34,7 +34,7 @@ function reset_game(slot) {
 	        cost_coins: 100, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        unlocks: [],
-	        radius: 250, angle: 240
+	        radius: 300, angle: 240
 	    },
 	    { // 4 - First child of Speed Up
 	        name: "Sprint",
@@ -42,7 +42,7 @@ function reset_game(slot) {
 	        cost_coins: 100, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        unlocks: [],
-	        radius: 200, angle: -70
+	        radius: 250, angle: -70
 	    },
 	    { // 5 - Second child of Speed Up
 	        name: "Dodge Boost",
