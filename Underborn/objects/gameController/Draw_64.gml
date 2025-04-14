@@ -63,7 +63,9 @@ draw_rectangle(bar_x - 1, bar_y - 1, bar_x + bar_width + 1, bar_y + bar_height +
 draw_set_color(c_teal);
 draw_rectangle(bar_x, bar_y, bar_x + (bar_width * xp_ratio), bar_y + bar_height, false);
 
-// === Optional: XP Text ===
+// === XP Text ===
 draw_set_color(c_white);
 draw_text(bar_x + bar_width / 2, bar_y - 5, string(oPlayer1.xp) + " / " + string(oPlayer1.xpNext));
 
+draw_text(10, 10, "XP: " + string(oPlayer1.xp));
+draw_text(10, 30, "Next: " + string(oPlayer1.xpNext));

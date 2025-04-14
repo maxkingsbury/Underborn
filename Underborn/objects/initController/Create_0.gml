@@ -6,6 +6,10 @@ if (!variable_global_exists("hasInitialized")) {
     window_set_fullscreen(true);
 
     global.firstPlay = true;
+	
+	global.selected_character = "";
+	global.selected_level = "";
+	
     global.diamonds = 10;
     global.coins = 500;
 	global.upgrades = []

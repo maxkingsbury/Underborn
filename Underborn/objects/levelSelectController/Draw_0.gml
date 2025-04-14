@@ -99,7 +99,7 @@ else if (menu_stage == 1) {
 } 
 else {
     draw_set_color(c_white);
-    draw_text(cx, cy, "Character:     " + selected_character);
-    draw_text(cx, cy + 40, "Level:     " + selected_level);
+    draw_text(cx, cy, "Character:     " + global.selected_character.sName);
+    draw_text(cx, cy + 40, "Level:     " + global.selected_level.sName);
     draw_text(cx, cy + 200, "Press ENTER to Begin");
 }

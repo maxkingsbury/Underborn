@@ -1,6 +1,6 @@
 // Player movement speed
 image_speed = 1;
-move_speed = 1;
+move_speed = global.selected_character.pSpeed;
 
 swordTime = 20;
 twinbladeTime = 30;
@@ -15,18 +15,18 @@ alarm[4] = 100;
 alarm[5] = 100;
 
 
-slot[0] = "Slash";
-slot[1] = "Twinblade";
+slot[0] = "";
+slot[1] = "";
 slot[2] = "";
-slot[3] = "Bow";
+slot[3] = "";
 slot[4] = "";
 slot[5] = "";
 
 
-damageSword = 3;
-damageTwinblade = 1;
-damageJavelin = 2;
-damageArrow = 2;
+damageSword = 3 * global.selected_character.pDamage;
+damageTwinblade = 1 * global.selected_character.pDamage;
+damageJavelin = 2 * global.selected_character.pDamage;
+damageArrow = 2 * global.selected_character.pDamage;
 
 collectRadius = 50;
 
