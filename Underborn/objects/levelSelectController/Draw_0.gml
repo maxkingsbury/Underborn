@@ -1,4 +1,4 @@
-draw_rectangle_colour(0, 0, display_get_width(), display_get_height(),
+draw_rectangle_colour(0, 0, surface_get_width(application_surface), surface_get_height(application_surface),
                       make_color_rgb(255, 255, 0), make_color_rgb(0, 0, 0),
                       make_color_rgb(0, 0, 0), make_color_rgb(0,0,0), false);
 
@@ -7,7 +7,7 @@ draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
-var cx = display_get_width() / 2;
+var cx = surface_get_width(application_surface) / 2;
 var cy = 300;
 
 draw_text(cx, 150, "Choose Your Fate");

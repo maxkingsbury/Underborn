@@ -19,7 +19,15 @@ switch(slot[0]) {
 		event_user(3); 
 		time = arrowTime;
 		break;
-	
+	case "Ice Shard":
+		event_user(4); 
+		time = iceShardTime;
+		break;
+	case "Fireball":
+		event_user(5); 
+		time = fireballTime;
+		break;
+		
 }
 
 alarm[0] = time;

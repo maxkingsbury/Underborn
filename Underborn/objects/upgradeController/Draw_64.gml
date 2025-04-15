@@ -12,6 +12,16 @@ draw_set_color(c_white);
 for (var i = 0; i < array_length(global.upgrades); i++) {
     var upg = global.upgrades[i];
 
+	// Draw lines to child nodes
+    for (var j = 0; j < array_length(upg.unlocks); j++) {
+        var child_index = upg.unlocks[j];
+        var child_upg = global.upgrades[child_index];
+        draw_set_color(c_white);
+		draw_set_alpha(0.5);
+        draw_line(upg.x, upg.y, child_upg.x, child_upg.y);
+		draw_set_alpha(1);
+    }
+
     // Draw the upgrade node
     var col = c_gray;
     if (upg.purchased) col = c_lime;
@@ -32,16 +42,6 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
 	draw_set_font(fntLore);
 	draw_set_color(c_white);
 	
-    // Draw lines to child nodes
-    for (var j = 0; j < array_length(upg.unlocks); j++) {
-        var child_index = upg.unlocks[j];
-        var child_upg = global.upgrades[child_index];
-        draw_set_color(c_white);
-		draw_set_alpha(0.5);
-        draw_line(upg.x, upg.y, child_upg.x, child_upg.y);
-		draw_set_alpha(1);
-    }
-
     // Hover highlight effect
     var mx = device_mouse_x_to_gui(0);
     var my = device_mouse_y_to_gui(0);

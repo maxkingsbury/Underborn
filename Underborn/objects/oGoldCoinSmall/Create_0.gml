@@ -1,3 +1,5 @@
+event_inherited();
+
 canFly = false;
 
 image_xscale = 0.5

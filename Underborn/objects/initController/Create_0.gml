@@ -2,15 +2,16 @@ if (!variable_global_exists("hasInitialized")) {
     global.hasInitialized = true;
 
     // Only run ONCE per game session
-    window_enable_borderless_fullscreen(true);
     window_set_fullscreen(true);
 
 	// Global weapon data
 	global.weapon_data = ds_map_create();
-	global.weapon_data[? "Slash"] = {name: "Slash", sprite: sSwordSpr};
-	global.weapon_data[? "Twinblade"] = {name: "Twinblade", sprite: sTwinblade};
-	global.weapon_data[? "Javelin"] = {name: "Javelin", sprite: sJavelin};
-	global.weapon_data[? "Bow"] = {name: "Bow", sprite: sShortbow};
+	global.weapon_data[? "Slash"] = {name: "Slash", sprite: sSwordIcon};
+	global.weapon_data[? "Twinblade"] = {name: "Twinblade", sprite: sTwinbladeIcon};
+	global.weapon_data[? "Javelin"] = {name: "Javelin", sprite: sJavelinIcon};
+	global.weapon_data[? "Bow"] = {name: "Bow", sprite: sShortbowIcon};
+	global.weapon_data[? "Ice Shard"] = {name: "Ice Shard", sprite: sIceShardIcon};
+	global.weapon_data[? "Fireball"] = {name: "Fireball", sprite: sFireballIcon};
 	
 	global.selected_character = "";
 	global.selected_level = "";
@@ -33,6 +34,10 @@ if (!variable_global_exists("hasInitialized")) {
 	    sUpgradeTest,
 	    sUpgradeTest_1,
 	    sUpgradeTest_2,
+		sUpgradeTest_3,
+	    sUpgradeTest_4,
+		sUpgradeTest_5,
+		
 	    // add more here
 	];
 

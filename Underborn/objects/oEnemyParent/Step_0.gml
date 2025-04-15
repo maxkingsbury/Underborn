@@ -9,7 +9,7 @@ with (oEnemyParent) {
 
         if (dist < 16 && dist > 0) {
 			if (scale > 1) {
-				push_strength = 2;
+				push_strength = 5;
 			} else {
 				push_strength = 2;
 			}

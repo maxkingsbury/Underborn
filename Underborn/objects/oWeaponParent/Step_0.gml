@@ -17,7 +17,7 @@ if (_num > 0)
 			
 			if (random(1) < global.crit_chance) {
 			    final_damage *= 2; // double damage on crit
-			    part_particles_create(global.crit_ps, x, y, part_crit, 10);
+			    part_particles_create(global.crit_ps, _list[| i].x, _list[| i].y, part_crit, 30);
 			}
 			(_list[| i]).hp -= final_damage;
 			//if ((_list[| i]).hp) <= 0 {

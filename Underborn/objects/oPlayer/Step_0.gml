@@ -58,19 +58,19 @@ if (place_meeting(x, y, oXpOrb)) {
 			    global.upgrade_pool[j] = temp;
 			}
 	
-			var a = instance_create_depth(_vx, _vy, 2000, oUpgrade);
+			var a = instance_create_depth(_vx, _vy, -2000, oUpgrade);
 			a.destinationY = _vy;
 			a.image_alpha = 1;
 			a.sprite_index = global.upgrade_pool[0];
 			a.depth = -2000
 	
-			var b = instance_create_depth(_vx, _vy, 2000, oUpgrade);
+			var b = instance_create_depth(_vx, _vy, -2000, oUpgrade);
 			b.destinationY = _vy - 34;
 			b.image_alpha = 1;
 			b.sprite_index = global.upgrade_pool[1];
 			b.depth = -2000
 	
-			var c = instance_create_depth(_vx, _vy, 2000, oUpgrade);
+			var c = instance_create_depth(_vx, _vy, -2000, oUpgrade);
 			c.destinationY = _vy + 34;
 			c.image_alpha = 1;
 			c.sprite_index = global.upgrade_pool[2];

@@ -6,7 +6,7 @@ image_xscale = scale;
 image_yscale = scale;
 
 hp = 2
-walk_speed = 0.6;
+walk_speed = 0.3;
 
 spr = sEnemyBat;
 sprW = sEnemyBatWhite;

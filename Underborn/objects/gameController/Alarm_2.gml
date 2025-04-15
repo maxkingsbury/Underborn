@@ -19,10 +19,31 @@ var _vy = camera_get_view_y(view_camera[0]);
 var _vw = camera_get_view_width(view_camera[0]);
 var _vh = camera_get_view_height(view_camera[0]);
 instance_activate_region(_vx - 100, _vy - 100, _vw + 200, _vh + 200, true);
-instance_deactivate_region(_vx - 200, _vy - 200, _vw + 300, _vh + 300, 0, 1);
+instance_deactivate_region(
+    _vx - 200,    // Left: 200px before the viewport's X position
+    _vy - 200,    // Top: 200px before the viewport's Y position
+    _vw + 400,    // Width: Viewport + 200px on the right side
+    _vh + 450,    // Height: Viewport + 200px on the bottom
+    false,        // false means deactivate outside the region
+    true          // true means include all objects (not excluding any)
+);
+
+if (instance_exists(oBoss1)) {
+    var dist = point_distance(oBoss1.x, oBoss1.y, oPlayer.x, oPlayer.y);
+    
+    // If boss is too far away (e.g., off-screen)
+    if (dist > 300) {
+        // Teleport boss randomly near player
+        var angle = random(360);
+        var radius = 250; 
+
+        oBoss1.x = oPlayer.x + lengthdir_x(radius, angle);
+        oBoss1.y = oPlayer.y + lengthdir_y(radius, angle);
+    }
+}
 
 // Boss spawn at 1 minute
-if (!boss1_spawned && minutes >= 1) {
+if (!boss1_spawned && minutes >= 0) {
     var boss_x = oPlayer.x + lengthdir_x(200, irandom_range(0, 360));
     var boss_y = oPlayer.y + lengthdir_y(200, irandom_range(0, 360));
 

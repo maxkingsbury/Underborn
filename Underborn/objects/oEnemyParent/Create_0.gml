@@ -1,4 +1,4 @@
-walk_speed = 0.3;
+walk_speed = 0.2;
 
 hp = 5;
 

@@ -12,7 +12,7 @@ if (nearest_enemy != noone) {
     with (projectile) {
 		direction_to_enemy += irandom_range(-30,30)
         direction = direction_to_enemy;
-        speed = 5;
+        speed = 2;
         image_angle = direction - 90; // Rotate the sprite to match movement direction
     }
 }

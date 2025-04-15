@@ -24,7 +24,7 @@ draw_set_color(c_white);
 
 // In your GUI Draw Event (probably in the `oPlayer` or `oHUD` object)
 var slot_width = 64;
-var slot_height = 64;
+var slot_height = 70;
 var slot_spacing = 15;
 var screen_w = display_get_gui_width();
 var screen_h = display_get_gui_height();
@@ -33,8 +33,8 @@ var total_width = slot_count * slot_width + (slot_count - 1) * slot_spacing;
 var start_x = ((screen_w - total_width) / 2) + 10;
 var start_y = screen_h - slot_height - 20;
 
-var offset_x = 8;  // Move sprite to the right by 5 pixels
-var offset_y = 12;  // Move sprite down by 5 pixels
+var offset_x = 35;  // Move sprite to the right by 5 pixels
+var offset_y = 40;  // Move sprite down by 5 pixels
 
 for (var i = 0; i < slot_count; i++) {
     var tx = start_x + i * (slot_width + slot_spacing);
@@ -48,7 +48,7 @@ for (var i = 0; i < slot_count; i++) {
     if (weapon != undefined) {
         // Apply the offset (move sprite right and down)
         draw_sprite_ext(weapon.sprite, 0, tx + (slot_width - sprite_get_width(weapon.sprite)) / 2 + offset_x, 
-        ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 2, 2, 0, c_white, 1);
+        ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 0.8, 0.8, 0, c_white, 1);
     }
 }
 

@@ -1,4 +1,4 @@
-draw_rectangle_colour(0, 0, display_get_width(), display_get_height(),
+draw_rectangle_colour(0, 0, display_get_gui_width(), display_get_gui_height(),
                       #005C7F, make_color_rgb(0, 0, 0),
                       make_color_rgb(0, 0, 0), make_color_rgb(0,0,0), false);
 
@@ -8,8 +8,8 @@ draw_set_valign(fa_middle);
 draw_set_font(fntLoreBig);
 
 var glow_offset = 2;
-var tx = display_get_width();
-var ty = display_get_height();
+var tx = display_get_gui_width();
+var ty = display_get_gui_height();
 
 draw_set_color(#00AEF0);
 draw_set_alpha(0.4);

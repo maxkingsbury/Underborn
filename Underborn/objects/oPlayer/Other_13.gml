@@ -12,7 +12,7 @@ if (nearest_enemy != noone) {
     with (projectile) {
 		direction_to_enemy += irandom_range(-5,5)
         direction = direction_to_enemy;
-        speed = 8;
+        speed = 3;
         image_angle = direction - 90;
     }
 }

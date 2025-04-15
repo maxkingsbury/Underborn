@@ -10,4 +10,3 @@ if (instance_exists(oUpgrade)) {
     }
 }
 
-slots[0] = get_weapon_sprite(oPlayer.slot[0]);
