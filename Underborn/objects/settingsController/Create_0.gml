@@ -6,6 +6,7 @@ if (!variable_global_exists("global.fullscreen_enabled")) {
     global.fullscreen_enabled = window_get_fullscreen();
 }
 
+
 // Centered positions based on the screen size
 tx = display_get_width() / 2;
 ty = display_get_height() / 2;

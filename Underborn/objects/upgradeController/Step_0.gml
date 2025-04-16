@@ -37,30 +37,6 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
                     // Mark the upgrade as purchased
                     upg.purchased = true;
 
-						// === Apply upgrade effect ===
-					switch (upg.name) {
-					    case "Health Up":
-							
-					        global.hp_max += 10;
-					        // global.player_hp = global.player_max_hp; // also heal if you want
-					        break;
-        
-					    case "Damage Up":
-					        global.damage += 1;
-					        break;
-        
-					    case "Speed Up":
-					        global.move_speed += 1;
-					        break;
-        
-					    case "Critical Hit":
-					        global.crit_chance += 0.1; // 10%
-					        break;
-        
-					    case "Dodge Boost":
-					        global.dodge_cooldown -= 300; // faster dodge?
-					        break;
-					}
 
                     // Unlock any child upgrades
                     for (var c = 0; c < array_length(upg.unlocks); c++) {

@@ -1,3 +1,6 @@
+global.enemiesKilled = 0;
+global.coinsThisRound = 0;
+
 var player = instance_create_layer(1600, 1600, "Instances", oPlayer);
 var c = global.selected_character;
 

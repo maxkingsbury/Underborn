@@ -8,3 +8,7 @@ twinblade.direction = irandom_range(45, 135);
 twinblade.speed = 4;
 twinblade.gravity = 0.1;
 twinblade.friction = 0.01;
+
+if (oPlayer.twinbladeLevel >= 2) {
+	twinblade.scale = 1.5;	
+}

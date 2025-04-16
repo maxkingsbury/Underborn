@@ -40,6 +40,7 @@ if (place_meeting(x, y, oXpOrb)) {
         // Collect the XP
         oPlayer.xp += 1;
         if (oPlayer.xp >= oPlayer.xpNext) {
+			oPlayer.level += 1;
             oPlayer.xp -= oPlayer.xpNext;
             oPlayer.xpNext *= 1.1;
             oPlayer.xpNext = round(oPlayer.xpNext);

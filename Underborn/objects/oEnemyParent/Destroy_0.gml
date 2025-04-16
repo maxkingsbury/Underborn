@@ -1,4 +1,4 @@
-
+global.enemiesKilled += 1;
 var rand = random(1);
 
 

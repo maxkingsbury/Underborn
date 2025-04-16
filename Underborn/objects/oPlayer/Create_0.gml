@@ -3,6 +3,13 @@ mvspd = global.move_speed + global.selected_character.pSpeed;
 
 image_speed = 1;
 
+swordLevel = 0;
+twinbladeLevel = 0;
+javelinLevel = 0;
+arrowLevel = 0;
+iceShardLevel = 0;
+fireballLevel = 0;
+
 swordTime = 20;
 twinbladeTime = 30;
 javelinTime = 60;
@@ -17,8 +24,22 @@ alarm[3] = arrowTime;
 alarm[4] = iceShardTime;
 alarm[5] = fireballTime;
 
+
+		
 var char = global.selected_character;
 slot[0] = global.weapon_data[? char.start_weapon];
+var weapon_struct = global.weapon_data[? char.start_weapon];
+var weapon_name = weapon_struct.name;
+
+switch (weapon_name) {
+	case "Slash":      swordLevel = 1; break;
+	case "Twinblade":  twinbladeLevel = 1; break;
+	case "Javelin":    javelinLevel = 1; break;
+	case "Bow":        arrowLevel = 1; break;
+	case "Ice Shard":  iceShardLevel = 1; break;
+	case "Fireball":   fireballLevel = 1; break;
+	// Add more as needed...
+}
 slot[1] = undefined;
 slot[2] = undefined;
 slot[3] = undefined;
@@ -34,7 +55,35 @@ damageFireball = 3 * global.selected_character.pDamage * global.damage;
 
 collectRadius = 50;
 
+level = 1;
 xp = 0; 
-xpNext = 5;
+xpNext =75;
 
-
+for (var i = 0; i < array_length(global.upgrades); i++) {
+    var upg = global.upgrades[i];
+	if (upg.purchased) {
+		switch (upg.name) {
+				case "Health Up":
+							
+					global.hp_max += 10;
+					// global.player_hp = global.player_max_hp; // also heal if you want
+					break;
+        
+				case "Damage Up":
+					global.damage += 1;
+					break;
+        
+				case "Speed Up":
+					global.move_speed += 1;
+					break;
+        
+				case "Critical Hit":
+					global.crit_chance += 0.5; // 10%
+					break;
+        
+				case "Dodge Boost":
+					global.dodge_cooldown -= 300; // faster dodge?
+					break;
+		}
+	}
+}

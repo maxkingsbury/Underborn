@@ -1,5 +1,7 @@
 event_inherited();
 
+image_yscale = scale;
+
 if (oPlayer.image_xscale = 1){
 	x = oPlayer.x + addX
 	y = oPlayer.y
@@ -8,5 +10,5 @@ if (oPlayer.image_xscale = 1){
 	y = oPlayer.y
 }
 
-if (oPlayer.image_xscale = 1) {image_xscale = 1.5;}
-else {image_xscale = -1.5;}
+if (oPlayer.image_xscale = 1) {image_xscale = scale;}
+else {image_xscale = -scale;}

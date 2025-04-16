@@ -9,21 +9,27 @@ if (state == "idle") {
 
 	if (sprite_index == sUpgradeTest) {
 	    weapon_to_add = "Slash";
+		oPlayer.swordLevel += 1;
 	}
 	if (sprite_index == sUpgradeTest_1) {
 	    weapon_to_add = "Fireball";
+		oPlayer.fireballLevel += 1;
 	}
 	if (sprite_index == sUpgradeTest_2) {
 	    weapon_to_add = "Ice Shard";
+		oPlayer.iceShardLevel += 1;
 	}
 	if (sprite_index == sUpgradeTest_3) {
 	    weapon_to_add = "Bow";
+		oPlayer.arrowLevel += 1;
 	}
 	if (sprite_index == sUpgradeTest_4) {
 	    weapon_to_add = "Javelin";
+		oPlayer.javelinLevel += 1;
 	}
 	if (sprite_index == sUpgradeTest_5) {
 	    weapon_to_add = "Twinblade";
+		oPlayer.twinbladeLevel += 1;
 	}
 	
 

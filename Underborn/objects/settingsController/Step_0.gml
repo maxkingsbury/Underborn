@@ -4,8 +4,8 @@ if (mouse_check_button(mb_left)) {
     var my = device_mouse_y(0);
     
     if (mx > slider_x && mx < slider_x + slider_width && abs(my - slider_y) < 20) {
-        var pct = (mx - slider_x) / slider_width;
-        global.master_volume = clamp(pct, 0, 1);
+        global.pct = (mx - slider_x) / slider_width;
+        global.master_volume = clamp(global.pct, 0, 1);
         audio_master_gain(global.master_volume);
     }
 }

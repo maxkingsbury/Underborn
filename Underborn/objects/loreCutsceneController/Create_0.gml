@@ -1,22 +1,20 @@
 // List of lore lines
 lore_lines = [
-	"",
-    "They called it death... \n But for you, it was only the beginning.",
+    "You fell.",
+    "Blade in your chest.\nAsh in your lungs.",
     "...",
-    "Your body, broken.",
-    "Your soul, cast into the hollow place between worlds.",
+    "The world turned away.",
+	"But a silent watcher remained.",
     "...",
-    "Yet something, maybe someone, reached into the void.",
-    "A flicker of light; a whisper of power.",
+    "A voice echoed in the darkness",
+    "It did not speak in words.\nIt spoke in will.",
     "...",
-    "Now you are bound by forces you don't understand,\n you rise not alive,\n but not truly dead either.",
+    "You were not saved.\nYou were chosen.",
+    "Pulled from death, not for mercy - but for purpose.",
     "...",
-    "In this realm of shadows\n you must fight through endless waves of lost souls.",
+    "Now you walk again.\nNot as you were, but as you must be.",
     "...",
-    "Each battle brings you closer... To truth.",
-    "To the world you left behind.",
-    "...",
-    "This is not only your rebirth.\n This is your reckoning..."
+    "Rise, underborn.\nThere is work yet to be done."
 ];
 
 current_line = 0;

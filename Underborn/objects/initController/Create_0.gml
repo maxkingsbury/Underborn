@@ -22,7 +22,7 @@ if (!variable_global_exists("hasInitialized")) {
 
 	global.move_speed = 0;
 	global.damage = 1;
-	global.crit_chance = 0.50;
+	global.crit_chance = 0;
 	global.can_dodge = false;
 	global.dodge_cooldown = 900;
 	global.firstPlay = true;
