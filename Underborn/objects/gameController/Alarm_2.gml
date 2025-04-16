@@ -4,7 +4,7 @@
 
 alarm[2] = alarmSpawnTime;
 
-if (instance_exists(oUpgrade)){ exit; }
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
 var actual_time = current_time;
 if (is_paused) {

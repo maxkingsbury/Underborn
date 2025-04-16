@@ -1,6 +1,6 @@
 /// @description Fireball
 
-if (instance_exists(oUpgrade)){ exit; }
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
 var angle = random(360); // Random direction in degrees
 

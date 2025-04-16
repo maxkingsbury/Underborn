@@ -137,5 +137,43 @@ draw_sprite(sCoinIcon, 0, x2, (y_pos - icon_size/2) +28);
 // Draw the coin count
 draw_text(x2 + icon_size + margin, y_pos, string(global.coinsThisRound));
 
-		  
 draw_set_font(fntLore); // Replace with your font
+
+if (global.isPaused) {
+    // Dim the screen
+    draw_set_color(c_black);
+    draw_set_alpha(0.5);
+    draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
+    draw_set_alpha(1);
+
+    var centerX = display_get_gui_width() / 2;
+
+    // Button dimensions
+    var bw = 300;
+    var bh = 80;
+    var bx = centerX - (bw / 2);
+
+    // Store Y positions for each button
+    global.resume_button = [bx, 200, bx + bw, 240];
+    global.inventory_button = [bx, 280, bx + bw, 320];
+    global.settings_button = [bx, 360, bx + bw, 400];
+    global.exit_button = [bx, 440, bx + bw, 480];
+
+    // Draw buttons
+    draw_set_color(c_dkgray);
+    draw_rectangle(bx, 205, bx + bw, 240, false);
+    draw_rectangle(bx, 285, bx + bw, 320, false);
+    draw_rectangle(bx, 365, bx + bw, 400, false);
+    draw_rectangle(bx, 445, bx + bw, 480, false);
+
+    draw_set_color(c_white);
+    draw_set_halign(fa_center);
+    draw_text(centerX, 205, "Resume");
+    draw_text(centerX, 285, "Inventory");
+    draw_text(centerX, 365, "Settings");
+    draw_text(centerX, 445, "Exit to Menu");
+}
+
+
+
+

@@ -23,8 +23,6 @@ alarm[2] = javelinTime;
 alarm[3] = arrowTime;
 alarm[4] = iceShardTime;
 alarm[5] = fireballTime;
-
-
 		
 var char = global.selected_character;
 slot[0] = global.weapon_data[? char.start_weapon];

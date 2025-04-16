@@ -1,6 +1,6 @@
 /// @description Twinblade
 
-if (instance_exists(oUpgrade)){ exit; }
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
 var twinblade = instance_create_layer(x, y, "Instances", oTwinblade);
 

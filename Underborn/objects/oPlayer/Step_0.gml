@@ -1,5 +1,9 @@
 
-if (instance_exists(oUpgrade)){ exit; }
+if (keyboard_check_pressed(vk_escape)) {
+    global.isPaused = !global.isPaused;
+}
+
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 if (!instance_exists(oUpgrade)) {
 	// Movement input
 	var left = keyboard_check(ord("A"));

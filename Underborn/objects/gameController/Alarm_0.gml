@@ -2,7 +2,7 @@
 /// @description Enemy movement
 
 
-if (instance_exists(oUpgrade)) {
+if (instance_exists(oUpgrade) || global.isPaused == true) {
     oEnemyParent.image_speed = 0;
     alarm[0] = 1;
     exit;

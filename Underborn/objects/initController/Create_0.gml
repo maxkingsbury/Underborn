@@ -4,6 +4,8 @@ if (!variable_global_exists("hasInitialized")) {
     // Only run ONCE per game session
     window_set_fullscreen(true);
 
+	global.isPaused = false;
+
 	// Global weapon data
 	global.weapon_data = ds_map_create();
 	global.weapon_data[? "Slash"] = {name: "Slash", sprite: sSwordIcon};

@@ -1,6 +1,6 @@
 /// @description Javelin
 
-if (instance_exists(oUpgrade)){ exit; }
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 
