@@ -20,4 +20,6 @@ function save_game(slot) {
     var file = file_text_open_write(filename);
     file_text_write_string(file, json);
     file_text_close(file);
+	
+	audio_play_sound(sndConfirm,0.5,0);
 }

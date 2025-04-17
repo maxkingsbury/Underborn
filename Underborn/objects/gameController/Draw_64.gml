@@ -54,7 +54,7 @@ for (var i = 0; i < slot_count; i++) {
 
 // Accessory Slot Layout (Bottom Right, Vertical Upward)
 var acc_slot_width = 64;
-var acc_slot_height = 94;
+var acc_slot_height = 70;
 var acc_slot_spacing = 15;
 var acc_slot_count = 4;
 
@@ -62,7 +62,7 @@ var acc_start_x = display_get_gui_width() - acc_slot_width - 20;
 var acc_start_y = display_get_gui_height() - acc_slot_height - 20;
 
 var acc_offset_x = 36;
-var acc_offset_y = 35;
+var acc_offset_y = 40;
 
 for (var i = 0; i < acc_slot_count; i++) {
     var ax = acc_start_x;
