@@ -22,7 +22,7 @@ draw_set_color(c_white);
 // instance count if needed
 // draw_text_ext_transformed(50, 50, instance_number(oEnemyParent), 0, 500, 1, 1, 0);
 
-// In your GUI Draw Event (probably in the `oPlayer` or `oHUD` object)
+// Weapon slot layout
 var slot_width = 64;
 var slot_height = 94;
 var slot_spacing = 15;
@@ -49,6 +49,36 @@ for (var i = 0; i < slot_count; i++) {
         // Apply the offset (move sprite right and down)
         draw_sprite_ext(weapon.sprite, 0, tx + (slot_width - sprite_get_width(weapon.sprite)) / 2 + offset_x, 
         ty + (slot_height - sprite_get_height(weapon.sprite)) / 2 + offset_y, 0.8, 0.8, 0, c_white, 1);
+    }
+}
+
+// Accessory Slot Layout (Bottom Right, Vertical Upward)
+var acc_slot_width = 64;
+var acc_slot_height = 94;
+var acc_slot_spacing = 15;
+var acc_slot_count = 4;
+
+var acc_start_x = display_get_gui_width() - acc_slot_width - 20;
+var acc_start_y = display_get_gui_height() - acc_slot_height - 20;
+
+var acc_offset_x = 36;
+var acc_offset_y = 35;
+
+for (var i = 0; i < acc_slot_count; i++) {
+    var ax = acc_start_x;
+    var ay = acc_start_y - i * (acc_slot_height + acc_slot_spacing); // Going up
+
+    draw_set_color(c_dkgray);
+    draw_rectangle(ax, ay, ax + acc_slot_width, ay + acc_slot_height, false);
+
+    // Draw accessory sprite if one is equipped
+    var accessory = global.accessory_data[? oPlayer.accessory[i]];
+    
+    if (accessory != undefined) {
+        draw_sprite_ext(accessory.sprite, 0,
+            ax + (acc_slot_width - sprite_get_width(accessory.sprite)) / 2 + acc_offset_x,
+            ay + (acc_slot_height - sprite_get_height(accessory.sprite)) / 2 + acc_offset_y,
+            0.8, 0.8, 0, c_white, 1);
     }
 }
 

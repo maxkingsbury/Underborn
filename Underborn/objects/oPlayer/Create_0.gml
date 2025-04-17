@@ -57,6 +57,40 @@ level = 1;
 xp = 0; 
 xpNext =75;
 
+// TEMP: Create dummy accessory data for GUI test
+if (!variable_global_exists("accessory_data")) {
+    global.accessory_data = ds_map_create();
+
+    var acc1 = {
+        name: "Ring of Speed",
+        sprite: sFireballIcon
+    };
+    var acc2 = {
+        name: "Amulet of Power",
+        sprite: sTwinbladeIcon
+    };
+    var acc3 = {
+        name: "Cloak of Shadows",
+        sprite: sSwordIcon
+    };
+    var acc4 = {
+        name: "Boots of Haste",
+        sprite: sIceShardIcon
+    };
+
+    global.accessory_data[? "ring_speed"] = acc1;
+    global.accessory_data[? "amulet_power"] = acc2;
+    global.accessory_data[? "cloak_shadow"] = acc3;
+    global.accessory_data[? "boots_haste"] = acc4;
+}
+
+// TEMP: Assign dummy accessories to player slots
+accessory = array_create(4);
+accessory[0] = "ring_speed";
+accessory[1] = undefined;
+accessory[2] = "cloak_shadow";
+accessory[3] = undefined;
+
 for (var i = 0; i < array_length(global.upgrades); i++) {
     var upg = global.upgrades[i];
 	if (upg.purchased) {

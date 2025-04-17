@@ -112,6 +112,7 @@
     {"id":{"name":"sndStartMenuMusic","path":"sounds/sndStartMenuMusic/sndStartMenuMusic.yy",},},
     {"id":{"name":"sndText1","path":"sounds/sndText1/sndText1.yy",},},
     {"id":{"name":"sndText2","path":"sounds/sndText2/sndText2.yy",},},
+    {"id":{"name":"sAccSpriteSheet","path":"sprites/sAccSpriteSheet/sAccSpriteSheet.yy",},},
     {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},
     {"id":{"name":"sCoinIcon","path":"sprites/sCoinIcon/sCoinIcon.yy",},},
     {"id":{"name":"sDiamond","path":"sprites/sDiamond/sDiamond.yy",},},
