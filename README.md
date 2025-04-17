@@ -23,7 +23,7 @@
 ## How to Play
 
 1. Go to releases
-2. Find and download the latest release 
+2. Find and download the latest release named Underborn.zip
 3. Extract and run `Underborn.exe`
 
 ## NOTE
