@@ -1,5 +1,5 @@
 // Player movement speed
-mvspd = global.move_speed + global.selected_character.pSpeed;
+mvspd = global.selected_character.pSpeed;
 
 image_speed = 1;
 
