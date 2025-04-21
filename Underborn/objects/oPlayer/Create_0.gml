@@ -10,12 +10,12 @@ arrowLevel = 0;
 iceShardLevel = 0;
 fireballLevel = 0;
 
-swordTime = 20;
-twinbladeTime = 30;
-javelinTime = 60;
-arrowTime = 20;
-iceShardTime = 15;
-fireballTime = 60;
+swordTime = global.weapon_data[? "Slash"].time;
+twinbladeTime = global.weapon_data[? "Twinblade"].time;
+javelinTime = global.weapon_data[? "Javelin"].time;
+arrowTime = global.weapon_data[? "Bow"].time;
+iceShardTime = global.weapon_data[? "Ice Shard"].time;
+fireballTime = global.weapon_data[? "Fireball"].time;
 
 alarm[0] = swordTime;
 alarm[1] = twinbladeTime;
@@ -119,3 +119,7 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
 		}
 	}
 }
+
+
+total_arc_degrees = 0;
+
