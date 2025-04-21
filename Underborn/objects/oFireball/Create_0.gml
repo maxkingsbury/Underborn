@@ -2,6 +2,7 @@
 event_inherited();
 
 dmg = global.weapon_data[? "Fireball"].damage;
+crit_chance = global.weapon_data[? "Fireball"].crit_chance + global.crit_chance;
 
 image_xscale = 2;
 image_yscale = 2;

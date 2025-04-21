@@ -14,7 +14,7 @@ character_options = [
 		anim_idle: spr_PlayerIdle,
 		anim_walk: spr_PlayerRunning,
 		
-		start_weapon: "Ice Shard",
+		start_weapon: "Bow",
 		pDamage: 1,
 		pSpeed: 2,
 	},

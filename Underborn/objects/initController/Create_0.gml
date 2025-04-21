@@ -14,7 +14,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sSwordIcon, 
 	    damage: 3, 
 	    time: 20, 
-	    crit_chance: 0.1, 
+	    crit_chance: 0, 
 	    range: 50,
 	    time_left: 0  // New field to track cooldown
 	};
@@ -24,7 +24,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sTwinbladeIcon, 
 	    damage: 1, 
 	    time: 30, 
-	    crit_chance: 0.2,  
+	    crit_chance: 0,  
 	    range: 30,
 	    time_left: 0
 	};
@@ -34,7 +34,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sJavelinIcon, 
 	    damage: 2, 
 	    time: 60, 
-	    crit_chance: 0.15, 
+	    crit_chance: 0, 
 	    range: 100,
 	    time_left: 0
 	};
@@ -44,7 +44,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sShortbowIcon, 
 	    damage: 2, 
 	    time: 20, 
-	    crit_chance: 0.1, 
+	    crit_chance: 0, 
 	    range: 150,
 	    time_left: 0
 	};
@@ -54,7 +54,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sIceShardIcon, 
 	    damage: 1, 
 	    time: 15, 
-	    crit_chance: 0.25,  
+	    crit_chance: 0,  
 	    range: 80,
 	    time_left: 0
 	};
@@ -64,7 +64,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    sprite: sFireballIcon, 
 	    damage: 3, 
 	    time: 60, 
-	    crit_chance: 0.2, 
+	    crit_chance: 0, 
 	    range: 100,
 	    time_left: 0
 	};
