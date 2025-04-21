@@ -21,7 +21,10 @@ with (oEnemyParent) {
         var dy = y - other.y;
         var dist = point_distance(x, y, other.x, other.y);
         if (dist < 16 && dist > 0) {
-            var push_strength = (scale > 1) ? 5 : 2;
+			var push_strength = 2
+			if (scale > 1) {
+				push_strength = 5;
+			} 
             var force = push_strength * (16 - dist) / 16;
             x += (dx / dist) * force;
             y += (dy / dist) * force;
