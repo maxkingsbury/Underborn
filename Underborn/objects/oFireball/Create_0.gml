@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-dmg = oPlayer.damageFireball;
+dmg = global.weapon_data[? "Fireball"].damage;
 
 image_xscale = 2;
 image_yscale = 2;

@@ -6,14 +6,68 @@ if (!variable_global_exists("hasInitialized")) {
 
 	global.isPaused = false;
 
-	// Global weapon data
 	global.weapon_data = ds_map_create();
-	global.weapon_data[? "Slash"] = {name: "Slash", sprite: sSwordIcon};
-	global.weapon_data[? "Twinblade"] = {name: "Twinblade", sprite: sTwinbladeIcon};
-	global.weapon_data[? "Javelin"] = {name: "Javelin", sprite: sJavelinIcon};
-	global.weapon_data[? "Bow"] = {name: "Bow", sprite: sShortbowIcon};
-	global.weapon_data[? "Ice Shard"] = {name: "Ice Shard", sprite: sIceShardIcon};
-	global.weapon_data[? "Fireball"] = {name: "Fireball", sprite: sFireballIcon};
+
+	global.weapon_data = ds_map_create();
+	global.weapon_data[? "Slash"] = {
+	    name: "Slash", 
+	    sprite: sSwordIcon, 
+	    damage: 3, 
+	    time: 20, 
+	    crit_chance: 0.1, 
+	    range: 50,
+	    time_left: 0  // New field to track cooldown
+	};
+
+	global.weapon_data[? "Twinblade"] = {
+	    name: "Twinblade", 
+	    sprite: sTwinbladeIcon, 
+	    damage: 1, 
+	    time: 30, 
+	    crit_chance: 0.2,  
+	    range: 30,
+	    time_left: 0
+	};
+
+	global.weapon_data[? "Javelin"] = {
+	    name: "Javelin", 
+	    sprite: sJavelinIcon, 
+	    damage: 2, 
+	    time: 60, 
+	    crit_chance: 0.15, 
+	    range: 100,
+	    time_left: 0
+	};
+
+	global.weapon_data[? "Bow"] = {
+	    name: "Bow", 
+	    sprite: sShortbowIcon, 
+	    damage: 2, 
+	    time: 20, 
+	    crit_chance: 0.1, 
+	    range: 150,
+	    time_left: 0
+	};
+
+	global.weapon_data[? "Ice Shard"] = {
+	    name: "Ice Shard", 
+	    sprite: sIceShardIcon, 
+	    damage: 1, 
+	    time: 15, 
+	    crit_chance: 0.25,  
+	    range: 80,
+	    time_left: 0
+	};
+
+	global.weapon_data[? "Fireball"] = {
+	    name: "Fireball", 
+	    sprite: sFireballIcon, 
+	    damage: 3, 
+	    time: 60, 
+	    crit_chance: 0.2, 
+	    range: 100,
+	    time_left: 0
+	};
 	
 	global.selected_character = "";
 	global.selected_level = "";

@@ -18,7 +18,7 @@ is_paused = false;
 speed = 0;
 
 alaTime = 1;
-alaTime1 = 17;
+alaTime1 = 10;
 
 //enemy spawning
 alarmSpawnTime = 15;

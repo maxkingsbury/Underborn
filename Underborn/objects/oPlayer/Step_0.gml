@@ -36,6 +36,8 @@ if (keyboard_check(ord("K"))) {
 	room_goto(startRoom);
 }
 
+
+
 // Check if the player is touching the XP orb (or near it)
 if (place_meeting(x, y, oXpOrb)) {
     var xpOrb = instance_place(x, y, oXpOrb); // Find the XP orb instance

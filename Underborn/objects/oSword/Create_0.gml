@@ -4,4 +4,4 @@ scale = 1.5;
 addX = 10;
 image_yscale = scale;
 
-dmg = oPlayer.damageSword;
+dmg = global.weapon_data[? "Slash"].damage;

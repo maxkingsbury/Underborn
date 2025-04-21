@@ -1,4 +1,5 @@
 dmg = 1;
+projectile_id = irandom(1000000);  // Generate a unique ID for this projectile
 
 part_crit = part_type_create();
 part_type_shape(part_crit, pt_shape_sphere);

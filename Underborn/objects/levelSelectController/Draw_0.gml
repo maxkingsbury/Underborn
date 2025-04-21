@@ -25,10 +25,10 @@ if (menu_stage == 0) {
 	draw_set_alpha(1);
     draw_rectangle_color(cx - 300, cy - 40, cx - 800, 600, #363636, #363636, #363636, #363636, 0);
 	
-    draw_text(cx, cy - 40, "Choose Your Character:");
+    //draw_text(cx, cy - 60, "Choose Your Character:");
 
     for (var i = 0; i < array_length(character_options); i++) {
-        var color = (i == menu_index) ? c_ltgrey : c_white;
+        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
         draw_set_color(color);
         draw_text(cx, cy + i * 40, character_options[i].sName);
     }
@@ -67,9 +67,9 @@ else if (menu_stage == 1) {
 	draw_set_alpha(1);
     draw_rectangle_color(cx - 300, cy - 40, cx - 800, 600, #363636, #363636, #363636, #363636, 0);
 	
-    draw_text(cx, cy - 40, "Choose Your Path:");
+    //draw_text(cx, cy - 40, "Choose Your Path:");
     for (var i = 0; i < array_length(level_options); i++) {
-        var color = (i == menu_index) ? c_ltgrey : c_white;
+        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
         draw_set_color(color);
         draw_text(cx, cy + i * 40, level_options[i].sName);
     }

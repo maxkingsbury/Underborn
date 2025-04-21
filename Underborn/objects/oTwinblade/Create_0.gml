@@ -3,5 +3,5 @@ event_inherited();
 
 scale = 1;
 
-dmg = oPlayer.damageTwinblade;
+dmg = global.weapon_data[? "Twinblade"].damage;
 
