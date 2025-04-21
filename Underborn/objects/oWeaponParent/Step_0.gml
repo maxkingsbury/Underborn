@@ -33,6 +33,17 @@ if (_num > 0) {
             // Set invincibility to prevent immediate hits from other projectiles
             enemy.invincibility = true;
             enemy.invincibility_timer = 10;
+            
+            // Handle piercing (if this projectile has pierce functionality)
+            if (variable_instance_exists(id, "pierce_count")) {
+                pierce_count++;
+                
+                // Check if projectile has hit max enemies
+                if (pierce_count >= max_pierce) {
+                    instance_destroy();  // Destroy projectile after hitting max enemies
+                    break;  // Exit the loop since the projectile is destroyed
+                }
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ character_options = [
 		anim_idle: spr_PlayerIdle,
 		anim_walk: spr_PlayerRunning,
 		
-		start_weapon: "Sword",
+		start_weapon: "Bow",
 		pDamage: 3,
 		pSpeed: 1,
 	},
