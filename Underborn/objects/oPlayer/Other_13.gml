@@ -1,29 +1,41 @@
 /// @description Arrow
+randomize();
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+if (arrowLevel > 7) {
+	arrowLevel = 7;
+}
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
+var total_arc_degrees = 0;
 if (nearest_enemy != noone) {
     var direction_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
     
     // Determine number of arrows based on level
-    var arrow_count = 1;
-    if (arrowLevel >= 7) arrow_count = 5;
-    else if (arrowLevel >= 5) arrow_count = 3;
-    else if (arrowLevel >= 3) arrow_count = 2;
+	var arrow_count = 1;
+
+
+	// Set arc width based on arrow count - using same values as your ice shard
+	if (arrow_count == 1) {
+	    total_arc_degrees = 0;
+	}
+
+
+	// Create arrows using your exact ice shard distribution method
+	for (var a = 0; a < arrow_count; a++) {
+	    // Using your exact lerp approach that works for ice shards
+	    var t = arrow_count == 1 ? 0.5 : a / (arrow_count - 1);
+	    var angle_offset = lerp(-total_arc_degrees / 2, total_arc_degrees / 2, t);
+	    var random_jitter = 0; // Set to 0 as requested, or use small value if desired
+	    var final_direction = direction_to_enemy + angle_offset + random_jitter;
     
-    for (var a = 0; a < arrow_count; a++) {
-        var angle_offset = 0;
-        if (arrow_count > 1) {
-            angle_offset = (a - (arrow_count-1)/2) * 15; // Spread multiple arrows
-        }
+	    var projectile = instance_create_layer(x, y, "Instances", oArrow);
+	    projectile.direction = final_direction;
+    
+	    with (projectile) {
+	        // CRUCIAL: Set the image_angle correctly
+	        image_angle = direction - 90;
         
-        var projectile = instance_create_layer(x, y, "Instances", oArrow);
-        with (projectile) {
-            // Apply base direction with improved accuracy based on level
-            var spread = 5;
-            if (other.arrowLevel >= 4) spread = 3; // Better accuracy
-            
-            direction_to_enemy += angle_offset + irandom_range(-spread, spread);
-            direction = direction_to_enemy;
+	        // Initialize pierce variables correctly
+	        pierce_count = 0;
             
             // Level-based improvements
             switch (other.arrowLevel) {

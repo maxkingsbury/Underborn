@@ -1,6 +1,8 @@
 /// @description Ice Shard
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
+var total_arc_degrees = 0;
 if (nearest_enemy != noone) {
     var direction_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
     

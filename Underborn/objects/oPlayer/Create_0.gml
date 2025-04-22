@@ -182,6 +182,3 @@ function apply_accessory_effects() {
     //if (hp > max_health) hp = max_health;
 }
 
-
-total_arc_degrees = 0;
-

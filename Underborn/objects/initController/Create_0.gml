@@ -13,7 +13,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    name: "Slash", 
 	    sprite: sSwordIcon, 
 	    damage: 3, 
-	    time: 20, 
+	    time: 100, 
 	    crit_chance: 0, 
 	    range: 50,
 	    time_left: 0  // New field to track cooldown
