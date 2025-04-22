@@ -4,6 +4,7 @@ if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 if (arrowLevel > 7) {
 	arrowLevel = 7;
 }
+
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 var total_arc_degrees = 0;
 if (nearest_enemy != noone) {

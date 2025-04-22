@@ -42,8 +42,8 @@ if (!variable_global_exists("hasInitialized")) {
 	global.weapon_data[? "Bow"] = {
 	    name: "Bow", 
 	    sprite: sShortbowIcon, 
-	    damage: 2, 
-	    time: 20, 
+	    damage: 1, 
+	    time: 35, 
 	    crit_chance: 0, 
 	    range: 150,
 	    time_left: 0
@@ -62,7 +62,7 @@ if (!variable_global_exists("hasInitialized")) {
 	global.weapon_data[? "Fireball"] = {
 	    name: "Fireball", 
 	    sprite: sFireballIcon, 
-	    damage: 3, 
+	    damage: 5, 
 	    time: 60, 
 	    crit_chance: 0, 
 	    range: 100,
