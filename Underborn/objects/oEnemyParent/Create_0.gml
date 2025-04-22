@@ -1,6 +1,6 @@
 walk_speed = 0.2;
 
-hp = 5;
+hp = 1;
 
 scale = 0.75;
 

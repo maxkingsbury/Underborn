@@ -55,40 +55,52 @@ collectRadius = 50;
 
 level = 1;
 xp = 0; 
-xpNext =75;
+xpNext = 20;
 
 // TEMP: Create dummy accessory data for GUI test
 if (!variable_global_exists("accessory_data")) {
-    global.accessory_data = ds_map_create();
+    // Add this when setting up your accessory_data map
+	global.accessory_data = ds_map_create();
 
-    var acc1 = {
-        name: "Ring of Speed",
-        sprite: sFireballIcon
-    };
-    var acc2 = {
-        name: "Amulet of Power",
-        sprite: sTwinbladeIcon
-    };
-    var acc3 = {
-        name: "Cloak of Shadows",
-        sprite: sSwordIcon
-    };
-    var acc4 = {
-        name: "Boots of Haste",
-        sprite: sIceShardIcon
-    };
+	// Example accessory with effects
+	global.accessory_data[? "speed_ring"] = {
+	    name: "Speed Ring",
+	    sprite: sSpeedRing,
+	    effect_type: "stat_boost",
+	    stat: "speed",
+	    value: 1.5
+	};
 
-    global.accessory_data[? "ring_speed"] = acc1;
-    global.accessory_data[? "amulet_power"] = acc2;
-    global.accessory_data[? "cloak_shadow"] = acc3;
-    global.accessory_data[? "boots_haste"] = acc4;
+	global.accessory_data[? "health_charm"] = {
+	    name: "Health Charm",
+	    sprite: sHealthCharm,
+	    effect_type: "stat_boost",
+	    stat: "max_health",
+	    value: 20
+	};
+
+	global.accessory_data[? "damage_ring"] = {
+	    name: "Ring of Power",
+	    sprite: sDamageRing,
+	    effect_type: "stat_boost",
+	    stat: "damage",
+	    value: 1.2
+	};
+
+	global.accessory_data[? "turtle_shield"] = {
+	    name: "Turtle Shield",
+	    sprite: sTurtleShield,
+	    effect_type: "status_effect",
+	    status: "shield",
+	    duration: 5 // Seconds to activate when hit
+	};
 }
 
 // TEMP: Assign dummy accessories to player slots
 accessory = array_create(4);
-accessory[0] = "ring_speed";
-accessory[1] = undefined;
-accessory[2] = "cloak_shadow";
+accessory[0] = "health_charm";
+accessory[1] = "speed_ring";
+accessory[2] = "turtle_shield";
 accessory[3] = undefined;
 
 for (var i = 0; i < array_length(global.upgrades); i++) {
@@ -118,6 +130,56 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
 					break;
 		}
 	}
+}
+
+// Player base stats (without accessories)
+base_max_health = 100;
+base_damage = 1;
+
+// Current modified stats (will be updated with accessories)
+movement_speed = mvspd;
+max_health = base_max_health;
+
+// Status effects
+has_shield = false;
+shield_timer = 0;
+apply_accessory_effects();
+
+// Accessory system
+function apply_accessory_effects() {
+    // Reset stats to base values
+    movement_speed = mvspd;
+    max_health = base_max_health;
+	
+    
+    // Apply each equipped accessory's effect
+    for (var i = 0; i < array_length(accessory); i++) {
+        var acc_id = accessory[i];
+        if (acc_id != "") {
+            var acc_data = global.accessory_data[? acc_id];
+            if (acc_data != undefined) {
+                switch(acc_data.effect_type) {
+                    case "stat_boost":
+                        switch(acc_data.stat) {
+                            case "speed":
+                                movement_speed *= acc_data.value;
+                                break;
+                            case "max_health":
+                                max_health += acc_data.value;
+                                break;
+                        }
+                        break;
+                    case "status_effect":
+                        // Status effects are usually checked when needed
+                        // For example, shield will be checked when taking damage
+                        break;
+                }
+            }
+        }
+    }
+    
+    // Make sure current health doesn't exceed new max health
+    //if (hp > max_health) hp = max_health;
 }
 
 

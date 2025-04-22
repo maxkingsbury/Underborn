@@ -20,12 +20,20 @@ with (oEnemyParent) {
         var dx = x - other.x;
         var dy = y - other.y;
         var dist = point_distance(x, y, other.x, other.y);
-        if (dist < 16 && dist > 0) {
-			var push_strength = 2
-			if (scale > 1) {
-				push_strength = 5;
-			} 
-            var force = push_strength * (16 - dist) / 16;
+        
+        // Calculate minimum distance based on both enemies' scales
+        var min_distance = 16; // Base distance for small enemies
+        
+        // Adjust minimum distance when either enemy is larger
+        if (scale > 1 || other.scale > 1) {
+            min_distance = 16 * max(scale, other.scale);
+        }
+        
+        if (dist < min_distance && dist > 0) {
+            // Use standard push strength of 2 for consistent behavior
+            var push_strength = 2;
+            
+            var force = push_strength * (min_distance - dist) / min_distance;
             x += (dx / dist) * force;
             y += (dy / dist) * force;
         }
