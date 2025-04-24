@@ -10,36 +10,37 @@ twinblade.friction = 0.01;
 switch (twinbladeLevel) {
     case 1:
         // Base twinblade
+		twinblade.scale = 0.75;
 		twinblade.max_pierce = 5;
         break;
         
     case 2:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
 		twinblade.max_pierce = 5;
         break;
         
     case 3:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
         twinblade.dmg += 2;
 		twinblade.max_pierce = 5;
         break;
         
     case 4:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
         twinblade.dmg += 3;
 		twinblade.max_pierce = 10;
         twinblade.friction = 0; // Travels further
         break;
         
     case 5:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
         twinblade.dmg += 4;
         twinblade.friction = 0;
         twinblade.max_pierce = 10; // Can hit 2 enemies
         break;
         
     case 6:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
         twinblade.dmg += 5;
         twinblade.friction = 0;
         twinblade.max_pierce = 10; // Can hit 3 enemies
@@ -49,13 +50,13 @@ switch (twinbladeLevel) {
         twinblade2.speed = 4;
         twinblade2.gravity = 0.1;
         twinblade2.friction = 0;
-        twinblade2.scale = 1.5;
+        twinblade2.scale = 1;
         twinblade2.dmg += 5;
         twinblade2.max_pierce = 25;
         break;
         
     case 7:
-        twinblade.scale = 1.5;
+        twinblade.scale = 1;
         twinblade.dmg += 7;
         twinblade.friction = 0;
         twinblade.max_pierce = 25;
@@ -70,7 +71,7 @@ switch (twinbladeLevel) {
             twin.speed = 4;
             twin.gravity = 0.1;
             twin.friction = 0;
-            twin.scale = 1.5;
+            twin.scale = 1;
             twin.dmg += 7;
             twin.max_pierce = 25;
             twin.crit_chance = 0.2;

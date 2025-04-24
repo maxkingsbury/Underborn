@@ -1,6 +1,7 @@
 /// @description Arrow
 randomize();
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
 if (arrowLevel > 7) {
 	arrowLevel = 7;
 }

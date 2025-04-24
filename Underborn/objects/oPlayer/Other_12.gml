@@ -2,7 +2,7 @@
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 if (nearest_enemy != noone) {
-    var direction_to_enemy = point_direction(x, y, nearest_enemy.x, nearest_enemy.y);
+    var direction_to_enemy = irandom_range(0,359); 
     
     // Determine how many javelins to create based on level
     var javelin_count = 1;
@@ -30,16 +30,19 @@ if (nearest_enemy != noone) {
                 case 1:
                     // Base javelin
                     max_pierce = 3;
+					scale = 0.75;
                     break;
                     
                 case 2:
                     max_pierce = 3;
                     dmg += 2;
+					scale = 0.75;
                     break;
                     
                 case 3:
                     max_pierce = 4;
                     dmg += 3;
+					scale = 0.75;
                     speed = 2.5; // Faster javelin
                     break;
                     
@@ -47,28 +50,28 @@ if (nearest_enemy != noone) {
                     max_pierce = 4;
                     dmg += 4;
                     speed = 2.5;
-                    scale = 1.3; // Larger javelin
+                    scale = 1; // Larger javelin
                     break;
                     
                 case 5:
                     max_pierce = 5;
                     dmg += 5;
                     speed = 3;
-                    scale = 1.5;
+                    scale = 1;
                     break;
                     
                 case 6:
                     max_pierce = 5;
                     dmg += 6;
                     speed = 3;
-                    scale = 1.5;
+                    scale = 1;
                     break;
                     
                 case 7:
                     max_pierce = 6;
                     dmg += 8;
                     speed = 3.5;
-                    scale = 1.7;
+                    scale = 1;
                     crit_chance = 0.2; // 20% crit chance
                     break;
             }

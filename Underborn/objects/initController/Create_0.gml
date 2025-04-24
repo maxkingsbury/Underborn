@@ -43,7 +43,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    name: "Bow", 
 	    sprite: sShortbowIcon, 
 	    damage: 1, 
-	    time: 35, 
+	    time: 60, 
 	    crit_chance: 0, 
 	    range: 150,
 	    time_left: 0

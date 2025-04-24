@@ -53,7 +53,7 @@ for (var i = 0; i < slot_count; i++) {
 }
 
 // Accessory Slot Layout (Bottom Right, Vertical Upward)
-var acc_slot_width = 64;
+var acc_slot_width = 70;
 var acc_slot_height = 70;
 var acc_slot_spacing = 15;
 var acc_slot_count = 4;
@@ -61,8 +61,8 @@ var acc_slot_count = 4;
 var acc_start_x = display_get_gui_width() - acc_slot_width - 20;
 var acc_start_y = display_get_gui_height() - acc_slot_height - 20;
 
-var acc_offset_x = 36;
-var acc_offset_y = 40;
+var acc_offset_x = 18;
+var acc_offset_y = 17;
 
 for (var i = 0; i < acc_slot_count; i++) {
     var ax = acc_start_x;
@@ -78,7 +78,7 @@ for (var i = 0; i < acc_slot_count; i++) {
         draw_sprite_ext(accessory.sprite, 0,
             ax + (acc_slot_width - sprite_get_width(accessory.sprite)) / 2 + acc_offset_x,
             ay + (acc_slot_height - sprite_get_height(accessory.sprite)) / 2 + acc_offset_y,
-            0.8, 0.8, 0, c_white, 1);
+            2.3, 2.3, 0, c_white, 1);
     }
 }
 
@@ -138,7 +138,11 @@ for (var i = 0; i < 6; i++) {
         draw_set_font(fntLoreSmall); // or whatever font you're using
         draw_set_halign(fa_center);
         draw_set_color(c_white);
-        draw_text(icon_x, icon_y + 20, "Lv. " + string(weapon_level));
+		if (weapon_level >= 7) {
+			draw_text(icon_x, icon_y + 20, "MAX");
+		} else {
+			draw_text(icon_x, icon_y + 20, "Lv. " + string(weapon_level));
+		}
     }
 }
 

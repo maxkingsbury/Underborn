@@ -22,14 +22,24 @@ if (_num > 0) {
             enemy.x += lengthdir_x(3, dir);
             enemy.y += lengthdir_y(3, dir);
             
+			var crit = false;
             var final_damage = dmg;
             // Check for critical hit
             if (random(1) < crit_chance) {
                 final_damage *= 2;
+				crit = true
                 part_particles_create(global.crit_ps, enemy.x, enemy.y, part_crit, 30);
             }
-            
+			
             enemy.hp -= final_damage;
+			
+			var damage_text = instance_create_layer(enemy.x, enemy.y - 16, "Effects", oDamageNumber);
+			damage_text.damage_value = final_damage;
+			if (crit) {
+			    damage_text.is_critical = true;
+				crit = false;
+			}
+			
             // Set invincibility to prevent immediate hits from other projectiles
             enemy.invincibility = true;
             enemy.invincibility_timer = 10;
