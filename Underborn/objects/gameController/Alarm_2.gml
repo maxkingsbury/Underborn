@@ -27,6 +27,7 @@ instance_deactivate_region(
     false,        // false means deactivate outside the region
     true          // true means include all objects (not excluding any)
 );
+instance_activate_object(oThumbstick);
 
 if (instance_exists(oBoss1)) {
     var dist = point_distance(oBoss1.x, oBoss1.y, oPlayer.x, oPlayer.y);
@@ -42,8 +43,8 @@ if (instance_exists(oBoss1)) {
     }
 }
 
-// Boss spawn at 1 minute
-if (!boss1_spawned && minutes >= 0) {
+// Boss spawning
+if (!boss1_spawned && minutes >= 1) {
     var boss_x = oPlayer.x + lengthdir_x(200, irandom_range(0, 360));
     var boss_y = oPlayer.y + lengthdir_y(200, irandom_range(0, 360));
 
@@ -53,7 +54,9 @@ if (!boss1_spawned && minutes >= 0) {
 	} 
 }
 
-if (instance_number(oEnemyParent) < 100){
+
+
+if (instance_number(oEnemyParent) < 200){
 	var spawn_radius = 220;
 	var buffer = 100; // Must match your activation buffer
 	
@@ -107,6 +110,23 @@ if (instance_number(oEnemyParent) < 100){
 			} else {
 				instance_create_layer(XX, YY, "Instances", oEnemySlime);
 			}
+		}
+	}
+	if (minutes > 3 && minutes <= 5) {
+		repeat(4) {
+			var valid_spawn = false;
+			var XX, YY;
+
+			while (!valid_spawn) {
+			    var dir = irandom_range(0, 360);
+			    XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+			    YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
+			    if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+			        YY > _vy - buffer && YY < _vy + _vh + buffer) {
+			        valid_spawn = true;
+			    }
+			}
+			instance_create_layer(XX, YY, "Instances", oEnemyBat);
 		}
 	}
 }

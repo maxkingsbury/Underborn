@@ -113,8 +113,6 @@ draw_set_color(c_white);
 draw_text(bar_x + bar_width / 2, bar_y, "Lv. " + string(oPlayer.level));
 
 
-draw_text(100, 100, "Press K for die");
-
 // draw weapon level text
 for (var i = 0; i < 6; i++) {
     var weapon_name = oPlayer.slot[i];

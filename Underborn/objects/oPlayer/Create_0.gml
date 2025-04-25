@@ -1,6 +1,8 @@
 // Player movement speed
 mvspd = global.selected_character.pSpeed;
-
+// Sub-pixel movement tracking
+x_remainder = 0;
+y_remainder = 0;
 image_speed = 1;
 
 swordLevel = 0;

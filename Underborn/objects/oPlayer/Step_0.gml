@@ -1,42 +1,67 @@
-
+/// oPlayer - Step Event
 if (keyboard_check_pressed(vk_escape)) {
     global.isPaused = !global.isPaused;
 }
-
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
-if (!instance_exists(oUpgrade)) {
-	// Movement input
-	var left = keyboard_check(ord("A"));
-	var right = keyboard_check(ord("D"));
-	var up = keyboard_check(ord("W"));
-	var down = keyboard_check(ord("S"));
 
-	var hor = right - left;
-	var vertical = down - up;
+// Variables to store movement input
+var move_x = 0;
+var move_y = 0;
+var is_moving = false;
 
-	// Apply movement
-	x += hor * mvspd;
-	y += vertical * mvspd;
+// Check for keyboard (WASD) input first
+var key_right = keyboard_check(ord("D"));
+var key_left = keyboard_check(ord("A"));
+var key_down = keyboard_check(ord("S"));
+var key_up = keyboard_check(ord("W"));
 
-	// Flip sprite based on horizontal direction
-	if (hor > 0) image_xscale = 1;
-	if (hor < 0) image_xscale = -1;
+// Calculate keyboard movement (horizontal and vertical)
+var hor_key = key_right - key_left;
+var ver_key = key_down - key_up;
 
-	// Set sprite based on movement
-	var c = global.selected_character;
-	if (hor != 0 || vertical != 0) {
-		sprite_index = c.anim_walk;
-	}
-	else { 
-		sprite_index = c.anim_idle;
-	}
+// If there's keyboard input, use it
+if (hor_key != 0 || ver_key != 0) {
+    
+    // Apply keyboard movement
+    move_x = hor_key * mvspd;
+    move_y = ver_key * mvspd;
+    is_moving = true;
+    
+    // Flip sprite based on horizontal direction
+    if (hor_key > 0) image_xscale = 1;
+    if (hor_key < 0) image_xscale = -1;
+}
+// If no keyboard input but thumbstick is active, use thumbstick
+else if (instance_exists(oThumbstick) && oThumbstick.thumb_active) {
+    // Get direction and magnitude from thumbstick
+    var move_dir = oThumbstick.thumb_direction;
+    var move_amount = oThumbstick.thumb_magnitude;
+    
+    // Calculate horizontal and vertical components
+    var hor = lengthdir_x(1, move_dir);
+    var ver = lengthdir_y(1, move_dir);
+    
+    // Apply movement (already normalized through direction calculation)
+    move_x = hor * mvspd * move_amount;
+    move_y = ver * mvspd * move_amount;
+    is_moving = (move_amount > 0);
+    
+    // Flip sprite based on horizontal direction
+    if (hor > 0) image_xscale = 1;
+    if (hor < 0) image_xscale = -1;
 }
 
-if (keyboard_check(ord("K"))) {
-	room_goto(startRoom);
+// Apply the calculated movement
+x = round(x + move_x);
+y = round(y + move_y);
+
+// Set sprite based on movement
+var s = global.selected_character;
+if (is_moving) {
+    sprite_index = s.anim_walk;
+} else {
+    sprite_index = s.anim_idle;
 }
-
-
 
 // Check if the player is touching the XP orb (or near it)
 if (place_meeting(x, y, oXpOrb)) {
