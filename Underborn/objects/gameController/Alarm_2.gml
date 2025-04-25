@@ -61,7 +61,7 @@ if (instance_number(oEnemyParent) < 200){
 	var buffer = 100; // Must match your activation buffer
 	
 	if (minutes <= 1){
-		repeat(2) {
+		repeat(3) {
 		    var valid_spawn = false;
 		    var XX, YY;
 
@@ -79,10 +79,12 @@ if (instance_number(oEnemyParent) < 200){
 		
 			var percent = random(1); // Generates a random number between 0 and 1
 
-			if (percent < 0.9) {
+			if (percent < 0.9 && percent >= 0.45) {
 				instance_create_layer(XX, YY, "Instances", oEnemyBat);
+			} else if (percent < 0.45) {
+			    instance_create_layer(XX, YY, "Instances", oEnemySpider);
 			} else {
-			    instance_create_layer(XX, YY, "Instances", oEnemySlime);
+				instance_create_layer(XX, YY, "Instances", oEnemySlime);
 			}
 		}
 	}
