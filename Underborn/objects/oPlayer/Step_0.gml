@@ -21,6 +21,12 @@ var ver_key = key_down - key_up;
 
 // If there's keyboard input, use it
 if (hor_key != 0 || ver_key != 0) {
+    // Normalize diagonal movement
+	if (hor_key != 0 && ver_key != 0) {
+	    var len = (sqrt(hor_key * hor_key + ver_key * ver_key))*0.9;
+	    hor_key = (hor_key / len);
+	    ver_key = (ver_key / len);
+	}
     
     // Apply keyboard movement
     move_x = hor_key * mvspd;

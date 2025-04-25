@@ -15,8 +15,8 @@ if (thumb_active) {
         thumb_base_y + lengthdir_y(thumb_base_radius * thumb_magnitude, thumb_direction),
         2
     );
-	*/
-    
+    */
+	
     // Draw stick circle
     draw_set_color(thumb_stick_color);
     draw_circle(thumb_current_x, thumb_current_y, thumb_stick_radius, false);
@@ -25,8 +25,6 @@ if (thumb_active) {
     draw_set_color(c_white);
     draw_set_alpha(thumb_alpha);
     draw_set_font(fntLoreSmall);
-    draw_text(thumb_base_x, thumb_base_y - thumb_base_radius - 20, 
-              "Direction: " + string(round(thumb_direction)));
     
     // Reset alpha
     draw_set_alpha(1.0);

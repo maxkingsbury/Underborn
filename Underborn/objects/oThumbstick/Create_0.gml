@@ -4,7 +4,7 @@ thumb_base_x = 0;
 thumb_base_y = 0;
 thumb_current_x = 0;
 thumb_current_y = 0;
-thumb_max_dist = 48;
+thumb_max_dist = 40;
 thumb_direction = 0;
 thumb_magnitude = 0;
 // Appearance

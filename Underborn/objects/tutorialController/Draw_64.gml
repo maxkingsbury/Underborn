@@ -36,13 +36,13 @@ draw_text(tx/2, ty/2-100, "Lets go over a quick lesson on how to play")
 // Draw the glow by slightly offsetting the text multiple times for a blurred effect
 draw_set_color(#00AEF0);
 draw_set_alpha(0.2);
-draw_text(tx/2 + glow_offset, ty/2-40 + glow_offset, "Press WASD to move around.");  // Bottom-right glow
-draw_text(tx/2 - glow_offset, ty/2-40 + glow_offset, "Press WASD to move around.");  // Bottom-left glow
-draw_text(tx/2 + glow_offset, ty/2-40 - glow_offset, "Press WASD to move around.");  // Top-right glow
-draw_text(tx/2 - glow_offset, ty/2-40 - glow_offset, "Press WASD to move around.");  // Top-left glow
+draw_text(tx/2 + glow_offset, ty/2-40 + glow_offset, "Press WASD to move around. Or click and drag the thumbstick");  // Bottom-right glow
+draw_text(tx/2 - glow_offset, ty/2-40 + glow_offset, "Press WASD to move around. Or click and drag the thumbstick");  // Bottom-left glow
+draw_text(tx/2 + glow_offset, ty/2-40 - glow_offset, "Press WASD to move around. Or click and drag the thumbstick");  // Top-right glow
+draw_text(tx/2 - glow_offset, ty/2-40 - glow_offset, "Press WASD to move around. Or click and drag the thumbstick");  // Top-left glow
 draw_set_alpha(1);
 draw_set_color(c_white);
-draw_text(tx/2, ty/2-40, "Press WASD to move around.")
+draw_text(tx/2, ty/2-40, "Press WASD to move around. Or click and drag the thumbstick")
 
 draw_set_color(#00AEF0);
 draw_set_alpha(0.2);
