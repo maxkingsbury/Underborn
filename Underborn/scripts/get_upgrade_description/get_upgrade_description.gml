@@ -38,7 +38,7 @@ function get_upgrade_description(upgrade_index) {
             return "Current: +" + string(current_percent) + "% Stamina Regen\nNext: +" + string(next_percent) + "% Stamina Regen";
             
         case 7: // Devastating Blow
-            var current_percent = current_effect * 100;
+            var current_percent = 25;
             return "+" + string(current_percent) + "% Critical Damage";
             
         case 8: // Counter Attack

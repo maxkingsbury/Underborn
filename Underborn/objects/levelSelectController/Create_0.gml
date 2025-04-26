@@ -7,7 +7,7 @@ level_name = "The Hollow Gate";
 
 character_options = [
 	{
-		sName: "Gribnuk", 
+		sName: "Gribnuk (strong for testing)", 
 		desc: "A sneaky goblin rogue with a love for \nshiny things and a silver tongue. \nSmall in size, big on mischief. \nGribnuk talks fast, moves faster,\nand always has a trick up his sleeve\n(and probably a stolen coin or two).",
 		stats: "Damage: 1 \nSpeed: 2 \nCrit Chance: 0% \nCrit Damage: 100%",
 		
@@ -17,10 +17,12 @@ character_options = [
 		start_weapon: "Twinblade",
 		pDamage: 1,
 		pSpeed: 2,
+		
+		unlocked: true,
 	},
 
 	{
-		sName: "Kaela Stormheart", 
+		sName: "Kaela Stormheart (realistic stats)", 
 		desc: "A fierce warrior from the northern highlands. \nKaela fights with honor and unmatched strength. \nShe doesn't say much - her sword does the talking.",
 		stats: "Damage: 3 \nSpeed: 1 \nCrit Chance: 10% \nCrit Damage: 125%",
 		
@@ -30,6 +32,8 @@ character_options = [
 		start_weapon: "Bow",
 		pDamage: 3,
 		pSpeed: 1,
+		
+		unlocked: true,
 	},
 
 	{
@@ -43,6 +47,8 @@ character_options = [
 		start_weapon: "Fireball",
 		pDamage: 2,
 		pSpeed: 2,
+		
+		unlocked: false,
 	},
 
 	{
@@ -56,6 +62,8 @@ character_options = [
 		start_weapon: "Shortbow",
 		pDamage: 2,
 		pSpeed: 3,
+		
+		unlocked: false,
 	},
 
 	{
@@ -69,6 +77,8 @@ character_options = [
 		start_weapon: "Javelin",
 		pDamage: 2.5,
 		pSpeed: 1,
+		
+		unlocked: false,
 	}
 ];
 
@@ -77,17 +87,23 @@ level_options = [
 	{
 		sName: "Green Outlands", 
 		desc: "A calm, sunlit region of hills and meadows\nA gentle start for any adventurer.",
-		stats: "Spawn Rate: +25% \nXP Rate: +50% \nEnemy Speed: +0% \nCoin Drop: +100%"
+		stats: "Spawn Rate: +25% \nXP Rate: +50% \nEnemy Speed: +0% \nCoin Drop: +100%",
+		
+		unlocked: true,
 	},
 	{
 		sName: "Crimson Hollow", 
 		desc: "A twisted forest steeped in fog and blood-red leaves.\nEnemies grow faster and more aggressive here.",
-		stats: "Spawn Rate: +50% \nXP Rate: +100% \nEnemy Speed: +25% \nCoin Drop: +75%"
+		stats: "Spawn Rate: +50% \nXP Rate: +100% \nEnemy Speed: +25% \nCoin Drop: +75%",
+		
+		unlocked: true,
 	},
 	{
 		sName: "Obsidian Depths", 
 		desc: "An underground realm of fire and shadow.\nOnly the strong survive the relentless onslaught.",
-		stats: "Spawn Rate: +100% \nXP Rate: +150% \nEnemy Speed: +50% \nCoin Drop: +50%"
+		stats: "Spawn Rate: +100% \nXP Rate: +150% \nEnemy Speed: +50% \nCoin Drop: +50%",
+		
+		unlocked: false,
 	}
 ];
 

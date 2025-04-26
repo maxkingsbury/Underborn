@@ -25,3 +25,5 @@ hit_by_projectiles = ds_list_create();
 
 image_xscale = scale;
 image_yscale = scale;
+
+push_timer = 1;

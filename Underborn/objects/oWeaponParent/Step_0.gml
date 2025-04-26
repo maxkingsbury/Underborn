@@ -26,7 +26,7 @@ if (_num > 0) {
             var final_damage = dmg;
             // Check for critical hit
             if (random(1) < crit_chance) {
-                final_damage *= 2;
+                final_damage *= global.crit_damage_multiplier;
 				crit = true
                 part_particles_create(global.crit_ps, enemy.x, enemy.y, part_crit, 30);
             }

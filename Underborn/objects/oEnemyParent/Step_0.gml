@@ -15,27 +15,38 @@ if (invincibility) {
 }
 
 // === PUSHING AWAY FROM OTHER ENEMIES ===
-with (oEnemyParent) {
-    if (id != other.id) {
-        var dx = x - other.x;
-        var dy = y - other.y;
-        var dist = point_distance(x, y, other.x, other.y);
-        
-        // Calculate minimum distance based on both enemies' scales
-        var min_distance = 16; // Base distance for small enemies
-        
-        // Adjust minimum distance when either enemy is larger
-        if (scale > 1 || other.scale > 1) {
-            min_distance = 16 * max(scale, other.scale);
-        }
-        
-        if (dist < min_distance && dist > 0) {
-            // Use standard push strength of 2 for consistent behavior
-            var push_strength = 2;
+// Create a unique timer for each enemy
+if (!variable_instance_exists(id, "push_timer")) {
+    push_timer = irandom(2); // Random initial value (0-2)
+}
+
+// Increment and check timer
+push_timer++;
+if (push_timer >= 3) { // Only run every 3 frames
+    push_timer = 0;
+    
+    with (oEnemyParent) {
+        if (id != other.id) {
+            var dx = x - other.x;
+            var dy = y - other.y;
+            var dist = point_distance(x, y, other.x, other.y);
             
-            var force = push_strength * (min_distance - dist) / min_distance;
-            x += (dx / dist) * force;
-            y += (dy / dist) * force;
+            // Calculate minimum distance based on both enemies' scales
+            var min_distance = 16; // Base distance for small enemies
+            
+            // Adjust minimum distance when either enemy is larger
+            if (scale > 1 || other.scale > 1) {
+                min_distance = 16 * max(scale, other.scale);
+            }
+            
+            if (dist < min_distance && dist > 0) {
+                // Use standard push strength of 2 for consistent behavior
+                var push_strength = 3;
+                
+                var force = push_strength * (min_distance - dist) / min_distance;
+                x += (dx / dist) * force;
+                y += (dy / dist) * force;
+            }
         }
     }
 }

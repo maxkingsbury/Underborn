@@ -56,7 +56,7 @@ if (!boss1_spawned && minutes >= 1) {
 
 
 
-if (instance_number(oEnemyParent) < 200){
+if (instance_number(oEnemyParent) < 100){
 	var spawn_radius = 220;
 	var buffer = 100; // Must match your activation buffer
 	

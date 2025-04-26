@@ -28,9 +28,14 @@ if (menu_stage == 0) {
     //draw_text(cx, cy - 60, "Choose Your Character:");
 
     for (var i = 0; i < array_length(character_options); i++) {
-        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
-        draw_set_color(color);
-        draw_text(cx, cy + i * 40, character_options[i].sName);
+		if (character_options[i].unlocked == true) {
+	        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
+	        draw_set_color(color);
+	        draw_text(cx, cy + i * 40, character_options[i].sName);
+		} else {
+			draw_set_color(c_red);
+	        draw_text(cx, cy + i * 40, character_options[i].sName);
+		}
     }
 
     // Draw description for the currently selected character
@@ -69,9 +74,14 @@ else if (menu_stage == 1) {
 	
     //draw_text(cx, cy - 40, "Choose Your Path:");
     for (var i = 0; i < array_length(level_options); i++) {
-        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
-        draw_set_color(color);
-        draw_text(cx, cy + i * 40, level_options[i].sName);
+		if (level_options[i].unlocked == true) {
+	        var color = (i == menu_index) ? make_color_rgb(255, 100, 0) : c_white;
+	        draw_set_color(color);
+	        draw_text(cx, cy + i * 40, level_options[i].sName);
+		} else {
+			draw_set_color(c_red);
+	        draw_text(cx, cy + i * 40, level_options[i].sName);
+		}
     }
 
     // Draw description for the currently selected character

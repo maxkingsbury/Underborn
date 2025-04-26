@@ -40,13 +40,6 @@ switch (swordLevel) {
         slash.max_pierce = 100;
         swordTime = 80; // 20% faster cooldown
         
-        // Add a second slash at level 5
-        var slash2 = instance_create_layer(x, y, "Instances", oSword);
-        slash2.image_angle = slash.image_angle + 180; // Opposite direction
-		slash2.addX = -25;
-        slash2.scale = 2.2;
-        slash2.dmg += 4;
-        slash2.max_pierce = 100;
         break;
         
     case 6:
@@ -54,14 +47,7 @@ switch (swordLevel) {
         slash.dmg += 6;
         slash.max_pierce = 100;
         swordTime = 70; // 30% faster cooldown
-        
-        // Second slash
-        var slash2 = instance_create_layer(x, y, "Instances", oSword);
-        slash2.image_angle = slash.image_angle + 180;
-		slash2.addX = -25;
-        slash2.scale = 2.5;
-        slash2.dmg += 6;
-        slash2.max_pierce = 100;
+
         break;
         
     case 7:
@@ -71,13 +57,5 @@ switch (swordLevel) {
         slash.crit_chance = 0.25; // 25% chance to crit
         swordTime = 60; // 40% faster cooldown
         
-        // Second slash
-        var slash2 = instance_create_layer(x, y, "Instances", oSword);
-        slash2.image_angle = slash.image_angle + 180;
-		slash2.addX = -25;
-        slash2.scale = 2.5;
-        slash2.dmg += 8;
-        slash2.max_pierce = 100;
-		slash2.crit_chance = 0.25
         break;
 }

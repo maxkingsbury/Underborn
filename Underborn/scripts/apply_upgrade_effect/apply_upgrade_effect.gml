@@ -10,7 +10,17 @@ function apply_upgrade_effect(upgrade_index) {
             break;
             
         case 1: // Damage Up
-            global.damage += upg.effect_value;
+            // Get the first key in the weapon_data map
+			var key = ds_map_find_first(global.weapon_data);
+
+			// Loop through all keys in the map
+			while (ds_map_exists(global.weapon_data, key)) {
+			    // Add the effect value to the damage property of the current weapon
+			    global.weapon_data[? key].damage += upg.effect_value;
+    
+			    // Move to the next key
+			    key = ds_map_find_next(global.weapon_data, key);
+			}
             break;
             
         case 2: // Speed Up

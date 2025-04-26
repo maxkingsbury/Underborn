@@ -1,4 +1,4 @@
-dmg = 1;
+dmg = global.damage;
 projectile_id = irandom(1000000);  // Generate a unique ID for this projectile
 
 // Default behavior is to break on first impact (pierce_count = 1)

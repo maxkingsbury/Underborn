@@ -10,6 +10,7 @@ if (is_critical) {
 // Set alpha for fading effect
 draw_set_alpha(alpha);
 
+damage_value = round(damage_value);
 // Draw the damage value with a shadow for better visibility
 draw_text_shadow(x, y, string(damage_value), c_black, 0.5, 0.5);
 

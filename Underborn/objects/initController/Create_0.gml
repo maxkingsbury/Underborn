@@ -1,3 +1,4 @@
+audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
     global.hasInitialized = true;
 
@@ -6,10 +7,10 @@ if (!variable_global_exists("hasInitialized")) {
 	global.diamonds = 10;
 	global.max_health = 100;
 	global.current_health = 100;
-	global.damage = 10;
+	global.damage = 0;
 	global.speed = 3;
 	global.crit_chance = 0;
-	global.crit_damage_multiplier = 1.5; // Default critical hits do 1.5x damage
+	global.crit_damage_multiplier = 2; // Default critical hits do 1.5x damage
 	global.dodge_chance = 0;
 	global.armor_penetration = 0;
 	global.stamina_regen_rate = 1;
@@ -130,7 +131,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 3,
 	        cost_multiplier: 2.0,
-	        effect_value: 5, // +5 damage per level
+	        effect_value: 1, // +5 damage per level
 	        unlocks: [3, 5],
 	        radius: 150, angle: 210
 	    },
@@ -196,7 +197,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 1,
 	        cost_multiplier: 1.0,
-	        effect_value: 0.25, // +25% critical damage
+	        effect_value: 0.5, // +50% critical damage
 	        unlocks: [],
 	        radius: 450, angle: 240
 	    },

@@ -1,7 +1,7 @@
 function reset_game(slot) {
     var default_save_data = {
-        coins: 300,
-        diamonds: 4,
+        coins: 3000,
+        diamonds: 40,
 		firstPlay: true,
         upgrades: [
 		    { // 0 - Root node
@@ -22,7 +22,7 @@ function reset_game(slot) {
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 3,
 		        cost_multiplier: 2.0,
-		        effect_value: 5, // +5 damage per level
+		        effect_value: 1, // +5 damage per level
 		        unlocks: [3, 5],
 		        radius: 150, angle: 210
 		    },
@@ -88,7 +88,7 @@ function reset_game(slot) {
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 1,
 		        cost_multiplier: 1.0,
-		        effect_value: 0.25, // +25% critical damage
+		        effect_value: 0.5, // +50% critical damage
 		        unlocks: [],
 		        radius: 450, angle: 240
 		    },

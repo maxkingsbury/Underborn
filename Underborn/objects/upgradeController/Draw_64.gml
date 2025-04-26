@@ -132,4 +132,5 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
             draw_text(tooltip_x, tooltip_y + 80, "Click to Purchase");
         }
     }
+	draw_set_font(fntLore);
 }
