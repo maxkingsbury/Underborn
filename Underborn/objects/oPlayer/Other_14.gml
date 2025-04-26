@@ -1,6 +1,10 @@
 /// @description Ice Shard
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
+if (iceShardLevel > 7) {
+	iceShardLevel = 7;
+}
+
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 var total_arc_degrees = 0;
 if (nearest_enemy != noone) {

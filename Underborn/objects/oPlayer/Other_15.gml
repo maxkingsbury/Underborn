@@ -1,6 +1,11 @@
 /// @description Fireball
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
 
+if (fireballLevel > 7) {
+	fireballLevel = 7;
+}
+
+
 // Determine how many fireballs to create based on level
 var fireball_count = 1;
 if (fireballLevel >= 5) fireball_count = 3;

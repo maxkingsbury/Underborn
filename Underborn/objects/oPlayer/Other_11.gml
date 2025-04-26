@@ -1,5 +1,10 @@
 /// @description Twinblade
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
+if (twinbladeLevel > 7) {
+	twinbladeLevel = 7;
+}
+
 var twinblade = instance_create_layer(x, y, "Instances", oTwinblade);
 twinblade.direction = irandom_range(45, 135);
 twinblade.speed = 4;

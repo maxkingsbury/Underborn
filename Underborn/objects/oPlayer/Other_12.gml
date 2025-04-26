@@ -1,5 +1,10 @@
 /// @description Javelin
 if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
+if (javelinLevel > 7) {
+	javelinLevel = 7;
+}
+
 var nearest_enemy = instance_nearest(x, y, oEnemyParent);
 if (nearest_enemy != noone) {
     var direction_to_enemy = irandom_range(0,359); 

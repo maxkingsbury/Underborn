@@ -1,3 +1,5 @@
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
 if (canFly) {
     // Accelerate up to max speed
     fly_speed = clamp(fly_speed + fly_accel, -1, fly_max_speed);
