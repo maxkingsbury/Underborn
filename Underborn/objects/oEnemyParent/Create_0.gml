@@ -1,5 +1,7 @@
 walk_speed = 0.2;
 
+collision_check_timer = irandom(15);
+
 hp = 1;
 
 scale = 0.75;
@@ -17,6 +19,9 @@ num = 1;
 
 walk_speed = 0.2;
 scale = 0.75;
+
+just_spawned = true;
+unstick_frames = 5;
 
 invincibility = false;
 invincibility_timer = 0;

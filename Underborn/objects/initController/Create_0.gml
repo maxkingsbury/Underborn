@@ -1,7 +1,7 @@
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
     global.hasInitialized = true;
-
+	
 	// Initialize player stats (recommended to put in a create event or game_start script)
 	global.coins = 500;
 	global.diamonds = 10;
@@ -213,6 +213,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        radius: 450, angle: -30
 	    }
 	];
+
 }
 
 

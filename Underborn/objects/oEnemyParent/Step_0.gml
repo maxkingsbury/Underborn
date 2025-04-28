@@ -1,43 +1,73 @@
-// Initialize variables if they don't exist
-if (!variable_instance_exists(id, "push_vx")) {
-    push_vx = 0;
-}
-if (!variable_instance_exists(id, "push_vy")) {
-    push_vy = 0;
-}
-if (!variable_instance_exists(id, "emergency_separation")) {
-    emergency_separation = false;
-    emergency_dir = 0;
-    emergency_frames = 0;
-}
+if (just_spawned) {
+    unstick_frames -= 1;
 
-// Handle emergency separation (high priority, ignores all other movement)
-if (emergency_separation) {
-    // Strong forced movement in emergency direction
-    var emergency_speed = 2.5;
-    x += lengthdir_x(emergency_speed, emergency_dir);
-    y += lengthdir_y(emergency_speed, emergency_dir); // Fixed this line, was using emergency_dir twice
+    // Force simple local unstick using nearby enemies (fast)
+    var nearby_list = ds_list_create();
+    collision_circle_list(x, y, 24, oEnemyParent, false, true, nearby_list, false);
     
-    // Countdown emergency frames
-    emergency_frames--;
-    if (emergency_frames <= 0) {
-        emergency_separation = false;
+    for (var i = 0; i < ds_list_size(nearby_list); i++) {
+        var other_enemy = nearby_list[| i];
+        if (other_enemy == id) continue;
+        
+        var dx = x - other_enemy.x;
+        var dy = y - other_enemy.y;
+        var dist2 = dx * dx + dy * dy;
+        var min_dist = 16 * max(scale, other_enemy.scale);
+        var min_dist2 = min_dist * min_dist;
+        
+        if (dist2 < min_dist2 && dist2 > 0) {
+            var dist = sqrt(dist2);
+            var push = (min_dist - dist);
+            
+            dx /= dist;
+            dy /= dist;
+            
+            x += dx * push * 0.5;
+            y += dy * push * 0.5;
+            other_enemy.x -= dx * push * 0.5;
+            other_enemy.y -= dy * push * 0.5;
+        }
+    }
+    
+    ds_list_destroy(nearby_list);
+
+    // Finish unsticking after a few frames
+    if (unstick_frames <= 0) {
+        just_spawned = false;
     }
 }
 
-// Apply push velocity and decay it
-if (push_vx != 0 || push_vy != 0) {
-    x += push_vx;
-    y += push_vy;
-    
-    // Decay push velocity
-    push_vx *= 0.8;
-    push_vy *= 0.8;
-    
-    // Reset very small values to zero
-    if (abs(push_vx) < 0.1) push_vx = 0;
-    if (abs(push_vy) < 0.1) push_vy = 0;
+// === COLLISION RESOLUTION WITH OTHER ENEMIES ===
+var push_strength = 0.2; // Small push per frame
+var min_distance = 16;   // Minimum distance between enemies
+
+var nearby_list = ds_list_create();
+collision_circle_list(x, y, min_distance * 1.5, oEnemyParent, false, true, nearby_list, false);
+
+for (var i = 0; i < ds_list_size(nearby_list); i++) {
+    var other_enemy = nearby_list[| i];
+    if (other_enemy == id) continue;
+
+    var dx = x - other_enemy.x;
+    var dy = y - other_enemy.y;
+    var dist2 = dx * dx + dy * dy;
+    if (dist2 == 0) dist2 = 0.01; // Avoid division by zero
+
+    var dist = sqrt(dist2);
+
+    if (dist < min_distance) {
+        var overlap = (min_distance - dist) / 2; // Each enemy moves half
+        var nx = dx / dist;
+        var ny = dy / dist;
+
+        x += nx * overlap * push_strength;
+        y += ny * overlap * push_strength;
+        other_enemy.x -= nx * overlap * push_strength;
+        other_enemy.y -= ny * overlap * push_strength;
+    }
 }
+
+ds_list_destroy(nearby_list);
 
 // === INVINCIBILITY TIMER ===
 if (invincibility) {
@@ -54,9 +84,6 @@ if (invincibility) {
         invincibility_cooldown -= 1;
     }
 }
-
-// === PUSHING AWAY FROM OTHER ENEMIES ===
-// This section is now run by a controller
 
 // === DEATH CHECK ===
 if (!invincibility && hp <= 0) {

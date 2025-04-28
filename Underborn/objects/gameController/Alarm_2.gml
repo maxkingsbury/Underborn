@@ -1,6 +1,4 @@
-
 /// @description Enemy spawner
-
 
 alarm[2] = alarmSpawnTime;
 
@@ -49,87 +47,125 @@ if (!boss1_spawned && minutes >= 1) {
     var boss_y = oPlayer.y + lengthdir_y(200, irandom_range(0, 360));
 
     instance_create_layer(boss_x, boss_y, "Instances", oBoss1); 
-	if (instance_exists(oBoss1)) {
-		boss1_spawned = true; // Prevents re-spawning
-	} 
+    if (instance_exists(oBoss1)) {
+        boss1_spawned = true; // Prevents re-spawning
+    } 
 }
 
+// Define our spawn enemy function
+var spawn_enemy = function(XX, YY, enemy_type) {
+    // Check if the position is free of other enemies
+    var is_position_free = true;
+    with (oEnemyParent) {
+        if (point_distance(x, y, XX, YY) < 24) { // Buffer distance
+            is_position_free = false;
+            break;
+        }
+    }
+    
+    // If position is occupied, try to find a free position nearby
+    if (!is_position_free) {
+        // Try a few alternate positions
+        for (var attempt = 0; attempt < 5; attempt++) {
+            var offset_angle = random(360);
+            var offset_dist = random_range(24, 40);
+            var new_x = XX + lengthdir_x(offset_dist, offset_angle);
+            var new_y = YY + lengthdir_y(offset_dist, offset_angle);
+            
+            // Check if new position is free
+            is_position_free = true;
+            with (oEnemyParent) {
+                if (point_distance(x, y, new_x, new_y) < 24) {
+                    is_position_free = false;
+                    break;
+                }
+            }
+            
+            if (is_position_free) {
+                XX = new_x;
+                YY = new_y;
+                break;
+            }
+        }
+    }
+    
+    // Create the enemy at the (potentially adjusted) position
+    return instance_create_layer(XX, YY, "Instances", enemy_type);
+};
 
+if (instance_number(oEnemyParent) < 350){
+    var spawn_radius = 220;
+    var buffer = 100; // Must match your activation buffer
+    
+    if (minutes <= 1){
+        repeat(2) {
+            var valid_spawn = false;
+            var XX, YY;
 
-if (instance_number(oEnemyParent) < 300){
-	var spawn_radius = 220;
-	var buffer = 100; // Must match your activation buffer
-	
-	if (minutes <= 1){
-		repeat(2) {
-		    var valid_spawn = false;
-		    var XX, YY;
+            while (!valid_spawn) {
+                var dir = irandom_range(0, 360);
+                XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+                YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
 
-		    while (!valid_spawn) {
-		        var dir = irandom_range(0, 360);
-		        XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
-		        YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
+                // Check if it's inside the active region
+                if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+                    YY > _vy - buffer && YY < _vy + _vh + buffer) {
+                    valid_spawn = true;
+                }
+            }
+        
+            var percent = random(1); // Generates a random number between 0 and 1
 
-		        // Check if it's inside the active region
-		        if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
-		            YY > _vy - buffer && YY < _vy + _vh + buffer) {
-		            valid_spawn = true;
-		        }
-		    }
-		
-			var percent = random(1); // Generates a random number between 0 and 1
+            if (percent < 0.9 && percent >= 0.45) {
+                spawn_enemy(XX, YY, oEnemyBat);
+            } else if (percent < 0.45) {
+                spawn_enemy(XX, YY, oEnemySpider);
+            } else {
+                spawn_enemy(XX, YY, oEnemySlime);
+            }
+        }
+    }
+    if (minutes > 1 && minutes <= 2) {
+        repeat(2) {
+            var valid_spawn = false;
+            var XX, YY;
 
-			if (percent < 0.9 && percent >= 0.45) {
-				instance_create_layer(XX, YY, "Instances", oEnemyBat);
-			} else if (percent < 0.45) {
-			    instance_create_layer(XX, YY, "Instances", oEnemySpider);
-			} else {
-				instance_create_layer(XX, YY, "Instances", oEnemySlime);
-			}
-		}
-	}
-	if (minutes > 1 && minutes <= 2) {
-		repeat(2) {
-			var valid_spawn = false;
-			var XX, YY;
+            while (!valid_spawn) {
+                var dir = irandom_range(0, 360);
+                XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+                YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
 
-			while (!valid_spawn) {
-			    var dir = irandom_range(0, 360);
-			    XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
-			    YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
+                // Check if it's inside the active region
+                if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+                    YY > _vy - buffer && YY < _vy + _vh + buffer) {
+                    valid_spawn = true;
+                }
+            }
+        
+            var percent = random(1); // Generates a random number between 0 and 1
 
-			    // Check if it's inside the active region
-			    if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
-			        YY > _vy - buffer && YY < _vy + _vh + buffer) {
-			        valid_spawn = true;
-			    }
-			}
-		
-			var percent = random(1); // Generates a random number between 0 and 1
+            if (percent < 0.4) {
+                spawn_enemy(XX, YY, oEnemyBat);
+            } else {
+                spawn_enemy(XX, YY, oEnemySlime);
+            }
+        }
+    }
+    if (minutes > 3 && minutes <= 5) {
+        repeat(4) {
+            var valid_spawn = false;
+            var XX, YY;
 
-			if (percent < 0.4) {
-				instance_create_layer(XX, YY, "Instances", oEnemyBat);
-			} else {
-				instance_create_layer(XX, YY, "Instances", oEnemySlime);
-			}
-		}
-	}
-	if (minutes > 3 && minutes <= 5) {
-		repeat(4) {
-			var valid_spawn = false;
-			var XX, YY;
-
-			while (!valid_spawn) {
-			    var dir = irandom_range(0, 360);
-			    XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
-			    YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
-			    if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
-			        YY > _vy - buffer && YY < _vy + _vh + buffer) {
-			        valid_spawn = true;
-			    }
-			}
-			instance_create_layer(XX, YY, "Instances", oEnemyBat);
-		}
-	}
+            while (!valid_spawn) {
+                var dir = irandom_range(0, 360);
+                XX = oPlayer.x + lengthdir_x(spawn_radius, dir);
+                YY = oPlayer.y + lengthdir_y(spawn_radius, dir);
+                if (XX > _vx - buffer && XX < _vx + _vw + buffer &&
+                    YY > _vy - buffer && YY < _vy + _vh + buffer) {
+                    valid_spawn = true;
+                }
+            }
+            spawn_enemy(XX, YY, oEnemyBat);
+        }
+    }
 }
-

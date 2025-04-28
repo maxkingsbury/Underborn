@@ -10,6 +10,16 @@ for (var i = 0; i < 3; i++) {
         
         global.selected_slot = i + 1;
         load_game(global.selected_slot); // ← loads data into globals
+		// After loading save data
+		for (var i = 0; i < array_length(global.upgrades); i++) {
+		    var upg = global.upgrades[i];
+    
+		    if (upg.level > 0) {
+		        for (var lvl = 0; lvl < upg.level; lvl++) {
+		            apply_upgrade_effect(i);
+		        }
+		    }
+		}
         room_goto(startRoom);       // ← go to your start room
     }
 }
