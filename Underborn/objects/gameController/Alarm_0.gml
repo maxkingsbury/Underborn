@@ -3,7 +3,9 @@
 
 
 if (instance_exists(oUpgrade) || global.isPaused == true) {
-    oEnemyParent.image_speed = 0;
+	if (instance_exists(oEnemyParent)) {
+		oEnemyParent.image_speed = 0;
+	}
     alarm[0] = 1;
     exit;
 }
