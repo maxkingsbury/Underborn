@@ -77,48 +77,96 @@ if (place_meeting(x, y, oXpOrb)) {
         // Collect the XP
         oPlayer.xp += 1;
         if (oPlayer.xp >= oPlayer.xpNext) {
-			oPlayer.level += 1;
+            oPlayer.level += 1;
             oPlayer.xp -= oPlayer.xpNext;
             oPlayer.xpNext *= 1.1;
             oPlayer.xpNext = round(oPlayer.xpNext);
-			
-			global.cached_sprite = sprite_index;
-			global.cached_image_index = image_index;
+    
+            // Cache player state
+            global.cached_sprite = sprite_index;
+            global.cached_image_index = image_index;
+    
+            // Use display dimensions instead of camera view for GUI positioning
+            // This ensures upgrades appear center screen regardless of camera position
+            var view_x = display_get_gui_width() / 2;
+            var view_y = display_get_gui_height() / 2;
+    
+            // Create a list of all weapons
+            var weapon_list = ds_list_create();
+            var key = ds_map_find_first(global.weapon_data);
+    
+            for (var i = 0; i < ds_map_size(global.weapon_data); i++) {
+                ds_list_add(weapon_list, key);
+                key = ds_map_find_next(global.weapon_data, key);
+            }
+    
+            // Shuffle the list
+            ds_list_shuffle(weapon_list);
+    
+            // Take the first 3 weapons (or fewer if there aren't enough)
+            var count = min(3, ds_list_size(weapon_list));
             
-            var _vx = camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0])/2);
-			var _vy = camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0])/2);
-
-			// Fisher–Yates shuffle the pool
-			for (var i = array_length(global.upgrade_pool) - 1; i > 0; i--) {
-			    var j = irandom(i);
-			    var temp = global.upgrade_pool[i];
-			    global.upgrade_pool[i] = global.upgrade_pool[j];
-			    global.upgrade_pool[j] = temp;
-			}
-	
-			var a = instance_create_depth(_vx, _vy, -2000, oUpgrade);
-			a.destinationY = _vy;
-			a.image_alpha = 1;
-			a.sprite_index = global.upgrade_pool[0];
-			a.depth = -2000
-	
-			var b = instance_create_depth(_vx, _vy, -2000, oUpgrade);
-			b.destinationY = _vy - 34;
-			b.image_alpha = 1;
-			b.sprite_index = global.upgrade_pool[1];
-			b.depth = -2000
-	
-			var c = instance_create_depth(_vx, _vy, -2000, oUpgrade);
-			c.destinationY = _vy + 34;
-			c.image_alpha = 1;
-			c.sprite_index = global.upgrade_pool[2];
-			c.depth = -2000
+            // Improved position calculation - explicitly centered on GUI screen
+            var spacing = 120; // Space between upgrade options (reduced slightly)
+            var start_position = view_y - ((count-1) * spacing / 2);
+            
+            for (var i = 0; i < count; i++) {
+                var weapon_key = weapon_list[| i];
+                var weapon_data = global.weapon_data[? weapon_key];
+                
+                // Create the upgrade object centered on screen with vertical spacing
+                var upgrade = instance_create_layer(view_x, start_position + (i * spacing), "Instances", oUpgrade);
+                
+                // Log each upgrade's position
+                upgrade.sprite_index = weapon_data.upgradeSprite;
+                upgrade.depth = -2000;
+                upgrade.image_alpha = 1;
+                upgrade.visible = true;
+        
+                // Set weapon information
+                upgrade.weaponName = weapon_data.name;
+                upgrade.weaponDescription = weapon_data.description;
+        
+                // Get current level
+                var currentLevel = 0;
+                switch(weapon_data.name) {
+                    case "Slash": currentLevel = oPlayer.swordLevel; break;
+                    case "Fireball": currentLevel = oPlayer.fireballLevel; break;
+                    case "Ice Shard": currentLevel = oPlayer.iceShardLevel; break;
+                    case "Bow": currentLevel = oPlayer.arrowLevel; break;
+                    case "Javelin": currentLevel = oPlayer.javelinLevel; break;
+                    case "Twinblade": currentLevel = oPlayer.twinbladeLevel; break;
+                }
+        
+                upgrade.currentLevel = currentLevel;
+        
+                // Check if player already has this weapon
+                var hasWeapon = false;
+                for (var j = 0; j < array_length(oPlayer.slot); j++) {
+                    if (oPlayer.slot[j] == weapon_data.name) {
+                        hasWeapon = true;
+                        break;
+                    }
+                }
+        
+                // Set effect text
+                if (!hasWeapon) {
+                    upgrade.effectText = "Unlock: " + weapon_data.levelEffects[0];
+                } else {
+                    var effectIndex = min(currentLevel, array_length(weapon_data.levelEffects) - 1);
+                    upgrade.effectText = "Upgrade: " + weapon_data.levelEffects[effectIndex];
+                }
+            }
+    
+            // Clean up
+            ds_list_destroy(weapon_list);
+    
         }
-
-        // Destroy the orb or hide it after collection
-		with (xpOrb){
-			instance_destroy();
-		}
+        
+        // Destroy the orb after collection
+        with (xpOrb){
+            instance_destroy();
+        }
     }
 }
 

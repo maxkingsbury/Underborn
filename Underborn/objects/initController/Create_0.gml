@@ -22,66 +22,118 @@ if (!variable_global_exists("hasInitialized")) {
 	global.isPaused = false;
 
 	global.weapon_data = ds_map_create();
-
-	global.weapon_data = ds_map_create();
 	global.weapon_data[? "Slash"] = {
 	    name: "Slash", 
 	    sprite: sSwordIcon, 
+		upgradeSprite: sUpgradeTest,
 	    damage: 3, 
 	    time: 100, 
 	    crit_chance: 0, 
 	    range: 50,
-	    time_left: 0  // New field to track cooldown
+	    time_left: 0,  // New field to track cooldown
+		description: "A quick melee attack",
+        levelEffects: [
+            "Base damage: 5",
+            "+2 damage, +10% attack speed",
+            "+3 damage, +15% attack speed",
+            "+4 damage, larger attack area",
+            "+5 damage, +20% attack speed"
+        ]
 	};
 
 	global.weapon_data[? "Twinblade"] = {
 	    name: "Twinblade", 
 	    sprite: sTwinbladeIcon, 
+		upgradeSprite: sUpgradeTest_5,
 	    damage: 1, 
 	    time: 30, 
 	    crit_chance: 0,  
 	    range: 30,
-	    time_left: 0
+	    time_left: 0,
+		description: "Rapidly spinning blades around you",
+        levelEffects: [
+            "Base damage: 4, orbiting blades",
+            "+2 damage, larger orbit",
+            "+3 damage, faster rotation speed",
+            "+3 damage, adds a third blade",
+            "+4 damage, blades push enemies back"
+        ]
 	};
 
 	global.weapon_data[? "Javelin"] = {
 	    name: "Javelin", 
 	    sprite: sJavelinIcon, 
+		upgradeSprite: sUpgradeTest_4,
 	    damage: 2, 
 	    time: 60, 
 	    crit_chance: 0, 
 	    range: 100,
-	    time_left: 0
+	    time_left: 0,
+		description: "Powerful throwing spear",
+        levelEffects: [
+            "Base damage: 12, slow attack",
+            "+4 damage, reduced cooldown",
+            "+5 damage, penetrates armor",
+            "+6 damage, larger hitbox",
+            "+8 damage, returns to player"
+        ]
 	};
 
 	global.weapon_data[? "Bow"] = {
 	    name: "Bow", 
 	    sprite: sShortbowIcon, 
+		upgradeSprite: sUpgradeTest_3,
 	    damage: 1, 
 	    time: 60, 
 	    crit_chance: 0, 
 	    range: 150,
-	    time_left: 0
+	    time_left: 0,
+		description: "Long-range arrow attacks",
+        levelEffects: [
+            "Base damage: 7, long range",
+            "+2 damage, +15% range",
+            "+3 damage, faster projectiles",
+            "+4 damage, arrows pierce enemies",
+            "+5 damage, fires 2 arrows"
+        ]
 	};
 
 	global.weapon_data[? "Ice Shard"] = {
 	    name: "Ice Shard", 
 	    sprite: sIceShardIcon, 
+		upgradeSprite: sUpgradeTest_2,
 	    damage: 1, 
 	    time: 15, 
 	    crit_chance: 0,  
 	    range: 80,
-	    time_left: 0
+	    time_left: 0,
+		description: "Piercing ice projectiles that slow enemies",
+        levelEffects: [
+            "Base damage: 6, slows by 20%",
+            "+2 damage, slows by 30%",
+            "+3 damage, pierces one more enemy",
+            "+4 damage, slows by 40%", 
+            "+5 damage, freezes enemies briefly"
+        ]
 	};
 
 	global.weapon_data[? "Fireball"] = {
 	    name: "Fireball", 
 	    sprite: sFireballIcon, 
+		upgradeSprite: sUpgradeTest_1,
 	    damage: 5, 
 	    time: 60, 
 	    crit_chance: 0, 
 	    range: 100,
-	    time_left: 0
+	    time_left: 0,
+		description: "Launches fiery projectiles",
+        levelEffects: [
+            "Base damage: 8, 1 projectile",
+            "+3 damage, +10% projectile speed", 
+            "+4 damage, fires 2 projectiles",
+            "+5 damage, larger explosion area",
+            "+7 damage, fires 3 projectiles"
+        ]
 	};
 	
 	global.selected_character = "";

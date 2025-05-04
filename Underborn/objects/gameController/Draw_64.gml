@@ -181,29 +181,29 @@ if (global.isPaused) {
     var centerX = display_get_gui_width() / 2;
 
     // Button dimensions
-    var bw = 300;
-    var bh = 80;
+    var bw = 260;
+    var bh = 140;
     var bx = centerX - (bw / 2);
 
     // Store Y positions for each button
-    global.resume_button = [bx, 200, bx + bw, 240];
-    global.inventory_button = [bx, 280, bx + bw, 320];
-    global.settings_button = [bx, 360, bx + bw, 400];
-    global.exit_button = [bx, 440, bx + bw, 480];
+    global.resume_button = [bx, 300, bx + bw, 340];
+    global.inventory_button = [bx, 380, bx + bw, 420];
+    global.settings_button = [bx, 460, bx + bw, 500];
+    global.exit_button = [bx, 540, bx + bw, 580];
 
     // Draw buttons
     draw_set_color(c_dkgray);
-    draw_rectangle(bx, 205, bx + bw, 240, false);
-    draw_rectangle(bx, 285, bx + bw, 320, false);
-    draw_rectangle(bx, 365, bx + bw, 400, false);
-    draw_rectangle(bx, 445, bx + bw, 480, false);
+    draw_rectangle(bx, 305, bx + bw, 340, false);
+    draw_rectangle(bx, 385, bx + bw, 420, false);
+    draw_rectangle(bx, 465, bx + bw, 500, false);
+    draw_rectangle(bx, 545, bx + bw, 580, false);
 
     draw_set_color(c_white);
     draw_set_halign(fa_center);
-    draw_text(centerX, 205, "Resume");
-    draw_text(centerX, 285, "Inventory");
-    draw_text(centerX, 365, "Settings");
-    draw_text(centerX, 445, "Exit to Menu");
+    draw_text(centerX, 305, "Resume");
+    draw_text(centerX, 385, "Inventory");
+    draw_text(centerX, 465, "Settings");
+    draw_text(centerX, 545, "Exit to Menu");
 }
 
 
