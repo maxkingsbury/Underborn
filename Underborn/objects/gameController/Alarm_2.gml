@@ -97,7 +97,7 @@ if (instance_number(oEnemyParent) < 350){
     var spawn_radius = 220;
     var buffer = 100; // Must match your activation buffer
     
-    if (minutes <= 1){
+    if (minutes == 0){
         repeat(2) {
             var valid_spawn = false;
             var XX, YY;
@@ -113,19 +113,10 @@ if (instance_number(oEnemyParent) < 350){
                     valid_spawn = true;
                 }
             }
-        
-            var percent = random(1); // Generates a random number between 0 and 1
-
-            if (percent < 0.9 && percent >= 0.45) {
-                spawn_enemy(XX, YY, oEnemyBat);
-            } else if (percent < 0.45) {
-                spawn_enemy(XX, YY, oEnemySpider);
-            } else {
-                spawn_enemy(XX, YY, oEnemySlime);
-            }
+            spawn_enemy(XX, YY, oEnemyBat);
         }
     }
-    if (minutes > 1 && minutes <= 2) {
+    else if (minutes == 1) {
         repeat(2) {
             var valid_spawn = false;
             var XX, YY;
@@ -147,11 +138,11 @@ if (instance_number(oEnemyParent) < 350){
             if (percent < 0.4) {
                 spawn_enemy(XX, YY, oEnemyBat);
             } else {
-                spawn_enemy(XX, YY, oEnemySlime);
+                spawn_enemy(XX, YY, oEnemySpider);
             }
         }
     }
-    if (minutes > 3 && minutes <= 5) {
+    else if (minutes == 2 || minutes == 3 || minutes == 4 || minutes == 5) {
         repeat(4) {
             var valid_spawn = false;
             var XX, YY;
@@ -165,7 +156,13 @@ if (instance_number(oEnemyParent) < 350){
                     valid_spawn = true;
                 }
             }
-            spawn_enemy(XX, YY, oEnemyBat);
+            var percent = random(1); // Generates a random number between 0 and 1
+
+            if (percent < 0.5) {
+                spawn_enemy(XX, YY, oEnemyBat);
+            } else {
+                spawn_enemy(XX, YY, oEnemySlime);
+            }
         }
     }
 }

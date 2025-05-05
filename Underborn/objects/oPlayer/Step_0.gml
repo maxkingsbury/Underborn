@@ -170,6 +170,14 @@ if (place_meeting(x, y, oXpOrb)) {
     }
 }
 
+if (keyboard_check_pressed(ord("O")))
+{
+    with (oPickupParent)
+    {
+        canFly = true;
+    }
+}
+
 image_speed = instance_exists(oUpgrade) ? 0 : 1;
 
 // Handle any active status effects from accessories
