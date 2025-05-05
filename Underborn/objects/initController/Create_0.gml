@@ -31,13 +31,15 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0, 
 	    range: 50,
 	    time_left: 0,  // New field to track cooldown
-		description: "A quick melee attack",
+		description: "A heavy hitting melee attack",
         levelEffects: [
-            "Base damage: 5",
-            "+2 damage, +10% attack speed",
-            "+3 damage, +15% attack speed",
-            "+4 damage, larger attack area",
-            "+5 damage, +20% attack speed"
+            "Base damage: 3",
+            "+1 damage, +50% bigger swing size",
+            "+2 damage, +30% bigger swing size",
+            "+3 damage, \n+20% bigger swing size, \n10% faster swing speed",
+            "+4 damage, \n+20% bigger swing size, \n10% faster swing speed",
+			"+6 damage, \n+30% bigger swing size, \n10% faster swing speed",
+			"+8 damage, \n10% faster swing speed",
         ]
 	};
 
@@ -50,13 +52,15 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0,  
 	    range: 30,
 	    time_left: 0,
-		description: "Rapidly spinning blades around you",
+		description: "Throw twinblades into the air",
         levelEffects: [
-            "Base damage: 4, orbiting blades",
-            "+2 damage, larger orbit",
-            "+3 damage, faster rotation speed",
-            "+3 damage, adds a third blade",
-            "+4 damage, blades push enemies back"
+            "Base damage: 1, maximum of 5 pierces",
+            "+25% size",
+            "+2 damage",
+            "+3 damage, +5 piercing",
+            "+4 damage, +5 piercing",
+			"+5 damage, throw a second twinblade",
+			"+7 damage, +5 piercing, \n+20% crit chance, \nthrow a third twinblade",
         ]
 	};
 

@@ -60,6 +60,7 @@
     {"id":{"name":"fntLore","path":"fonts/fntLore/fntLore.yy",},},
     {"id":{"name":"fntLoreBig","path":"fonts/fntLoreBig/fntLoreBig.yy",},},
     {"id":{"name":"fntLoreSmall","path":"fonts/fntLoreSmall/fntLoreSmall.yy",},},
+    {"id":{"name":"fntLoreSmaller","path":"fonts/fntLoreSmaller/fntLoreSmaller.yy",},},
     {"id":{"name":"fntLoreTiny","path":"fonts/fntLoreTiny/fntLoreTiny.yy",},},
     {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},},
     {"id":{"name":"fntMainBig","path":"fonts/fntMainBig/fntMainBig.yy",},},

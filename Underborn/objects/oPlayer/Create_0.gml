@@ -105,35 +105,6 @@ accessory[1] = "speed_ring";
 accessory[2] = "turtle_shield";
 accessory[3] = undefined;
 
-for (var i = 0; i < array_length(global.upgrades); i++) {
-    var upg = global.upgrades[i];
-	if (upg.purchased) {
-		switch (upg.name) {
-				case "Health Up":
-							
-					global.hp_max += 10;
-					// global.player_hp = global.player_max_hp; // also heal if you want
-					break;
-        
-				case "Damage Up":
-					global.damage += 1;
-					break;
-        
-				case "Speed Up":
-					global.move_speed += 1;
-					break;
-        
-				case "Critical Hit":
-					global.crit_chance += 0.5; // 10%
-					break;
-        
-				case "Dodge Boost":
-					global.dodge_cooldown -= 300; // faster dodge?
-					break;
-		}
-	}
-}
-
 // Player base stats (without accessories)
 base_max_health = 100;
 base_damage = 1;

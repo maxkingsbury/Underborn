@@ -151,10 +151,10 @@ if (place_meeting(x, y, oXpOrb)) {
         
                 // Set effect text
                 if (!hasWeapon) {
-                    upgrade.effectText = "Unlock: " + weapon_data.levelEffects[0];
+                    upgrade.effectText = "Unlock: \n" + weapon_data.levelEffects[0];
                 } else {
                     var effectIndex = min(currentLevel, array_length(weapon_data.levelEffects) - 1);
-                    upgrade.effectText = "Upgrade: " + weapon_data.levelEffects[effectIndex];
+                    upgrade.effectText = "Upgrade: \n" + weapon_data.levelEffects[effectIndex];
                 }
             }
     

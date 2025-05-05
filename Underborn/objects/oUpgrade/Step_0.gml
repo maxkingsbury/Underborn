@@ -25,7 +25,6 @@ var mouse_hovering = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y
 if (mouse_hovering) {
     // Mouse is hovering over this instance
     if (mouse_check_button_pressed(mb_left)) {
-        show_debug_message("LEFT PRESSED on oUpgrade: " + string(id) + " - Weapon: " + weaponName);
         event_user(0);
     }
 }

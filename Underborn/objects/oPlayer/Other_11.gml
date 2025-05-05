@@ -41,14 +41,14 @@ switch (twinbladeLevel) {
         twinblade.scale = 1;
         twinblade.dmg += 4;
         twinblade.friction = 0;
-        twinblade.max_pierce = 10; // Can hit 2 enemies
+        twinblade.max_pierce = 15; // Can hit 2 enemies
         break;
         
     case 6:
         twinblade.scale = 1;
         twinblade.dmg += 5;
         twinblade.friction = 0;
-        twinblade.max_pierce = 10; // Can hit 3 enemies
+        twinblade.max_pierce = 15; // Can hit 3 enemies
         // Spawn a second twinblade at higher levels
         var twinblade2 = instance_create_layer(x, y, "Instances", oTwinblade);
         twinblade2.direction = irandom_range(45, 135);
@@ -57,14 +57,14 @@ switch (twinbladeLevel) {
         twinblade2.friction = 0;
         twinblade2.scale = 1;
         twinblade2.dmg += 5;
-        twinblade2.max_pierce = 25;
+        twinblade2.max_pierce = 15;
         break;
         
     case 7:
         twinblade.scale = 1;
         twinblade.dmg += 7;
         twinblade.friction = 0;
-        twinblade.max_pierce = 25;
+        twinblade.max_pierce = 15;
         twinblade.speed = 4; // Faster blade
         // Higher crit chance
         twinblade.crit_chance = 0.2; // 20% chance to crit
@@ -78,7 +78,7 @@ switch (twinbladeLevel) {
             twin.friction = 0;
             twin.scale = 1;
             twin.dmg += 7;
-            twin.max_pierce = 25;
+            twin.max_pierce = 15;
             twin.crit_chance = 0.2;
         }
         break;
