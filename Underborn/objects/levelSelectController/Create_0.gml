@@ -86,24 +86,24 @@ character_options = [
 level_options = [
 	{
 		sName: "Green Outlands", 
-		desc: "A calm, sunlit region of hills and meadows\nA gentle start for any adventurer.",
+		desc: "\n\nA calm, sunlit region of hills and meadows\nA gentle start for any adventurer.",
 		stats: "Spawn Rate: +25% \nXP Rate: +50% \nEnemy Speed: +0% \nCoin Drop: +100%",
 		
 		unlocked: true,
 	},
 	{
 		sName: "Crimson Hollow", 
-		desc: "A twisted forest steeped in fog and blood-red leaves.\nEnemies grow faster and more aggressive here.",
+		desc: "\n\nA twisted forest steeped in fog and blood-red leaves.\nEnemies grow faster and more aggressive here.",
 		stats: "Spawn Rate: +50% \nXP Rate: +100% \nEnemy Speed: +25% \nCoin Drop: +75%",
 		
 		unlocked: true,
 	},
 	{
 		sName: "Obsidian Depths", 
-		desc: "An underground realm of fire and shadow.\nOnly the strong survive the relentless onslaught.",
+		desc: "\n\nAn underground realm of fire and shadow.\nOnly the strong survive the relentless onslaught.",
 		stats: "Spawn Rate: +100% \nXP Rate: +150% \nEnemy Speed: +50% \nCoin Drop: +50%",
 		
-		unlocked: false,
+		unlocked: true,
 	}
 ];
 

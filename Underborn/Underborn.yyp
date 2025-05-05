@@ -181,6 +181,7 @@
     {"id":{"name":"sXpOrb","path":"sprites/sXpOrb/sXpOrb.yy",},},
     {"id":{"name":"tile_set","path":"tilesets/tile_set/tile_set.yy",},},
     {"id":{"name":"tile_set1","path":"tilesets/tile_set1/tile_set1.yy",},},
+    {"id":{"name":"tile_set2","path":"tilesets/tile_set2/tile_set2.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
