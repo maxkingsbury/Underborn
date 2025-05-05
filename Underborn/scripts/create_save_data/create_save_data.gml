@@ -16,5 +16,6 @@ function create_save_data() {
         upgrades: global.upgrades,
 		lastSave: global.last_save_time,
 		firstPlay: global.firstPlay,
+		volumeLevel: global.master_volume,
     };
 }

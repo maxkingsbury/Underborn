@@ -1,7 +1,4 @@
-// Settings values (use globals so they carry over)
-if (!variable_global_exists("global.master_volume")) {
-    global.master_volume = 1; // range 0.0 to 1.0
-}
+
 if (!variable_global_exists("global.fullscreen_enabled")) {
     global.fullscreen_enabled = window_get_fullscreen();
 }

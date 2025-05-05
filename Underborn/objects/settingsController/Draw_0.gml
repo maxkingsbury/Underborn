@@ -15,7 +15,7 @@ draw_rectangle(slider_x, slider_y, slider_x + slider_width, slider_y + slider_he
 
 // Draw slider knob
 draw_set_color(c_lime);
-var knob_x = slider_x + global.master_volume * slider_width;
+var knob_x = slider_x + (global.master_volume * slider_width);
 draw_rectangle(knob_x - 4, slider_y - 4, knob_x + 4, slider_y + slider_height + 4, false);
 
 // Fullscreen status

@@ -3,6 +3,7 @@ function reset_game(slot) {
         coins: 3000,
         diamonds: 40,
 		firstPlay: true,
+		volumeLevel: 0.5,
         upgrades: [
 		    { // 0 - Root node
 		        name: "Health Up",

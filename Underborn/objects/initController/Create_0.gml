@@ -1,6 +1,7 @@
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
     global.hasInitialized = true;
+	global.master_volume = 0.5; // range 0.0 to 1.0
 	
 	// Initialize player stats (recommended to put in a create event or game_start script)
 	global.coins = 500;

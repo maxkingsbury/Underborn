@@ -75,14 +75,18 @@ for (var i = 0; i < array_length(global.upgrades); i++) {
         else cost_text_color = c_yellow;
         
         draw_set_color(cost_text_color);
-        draw_text(upg.x, upg.y - 90, string(round(current_cost_coins)) + " Coins");
-        
+		if (current_cost_coins > 0) {
+			draw_text(upg.x, upg.y - 90, string(round(current_cost_coins)) + " Coins");
+		}
+		
         // Show diamond cost in red if can't afford
         if (global.diamonds < upg.cost_diamonds) cost_text_color = c_red;
         else cost_text_color = c_aqua;
         
         draw_set_color(cost_text_color);
-        draw_text(upg.x, upg.y - 110, string(upg.cost_diamonds) + " Diamond(s)");
+		if (upg.cost_diamonds > 0) {
+			draw_text(upg.x, upg.y - 110, string(upg.cost_diamonds) + " Diamond(s)");
+		}
     }
     
     draw_set_font(fntLore);
