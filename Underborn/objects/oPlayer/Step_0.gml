@@ -107,7 +107,7 @@ if (place_meeting(x, y, oXpOrb)) {
             var count = min(3, ds_list_size(weapon_list));
             
             // Improved position calculation - explicitly centered on GUI screen
-            var spacing = 120; // Space between upgrade options (reduced slightly)
+            var spacing = 200; // Space between upgrade options (reduced slightly)
             var start_position = view_y - ((count-1) * spacing / 2);
             
             for (var i = 0; i < count; i++) {

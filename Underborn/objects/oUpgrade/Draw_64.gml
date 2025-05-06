@@ -6,24 +6,31 @@ if (!visible || state != "idle") return;
 var gui_x = display_get_gui_width() / 2;  // Center horizontally
 var gui_y = display_get_gui_height() / 2;  // Scale y-position to GUI space
 
+// Scale factor
+var scale = 3;
+
 // Draw the upgrade sprite in GUI space
-draw_sprite_ext(sprite_index, image_index, x, y, 2, 2, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x, y, scale, scale, image_angle, image_blend, image_alpha);
+
+// Adjust hover area for the scaled sprite size
+var half_width = (sprite_width * scale) / 2;
+var half_height = (sprite_height * scale) / 2;
 
 // Check if mouse is hovering over this upgrade using GUI coordinates
 var mouse_hovering = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 
-                                       x - sprite_width/2, y - sprite_height/2, 
-                                       x + sprite_width/2, y + sprite_height/2);
+                                       x - half_width, y - half_height, 
+                                       x + half_width, y + half_height);
 
 // Highlight when hovered
 if (mouse_hovering) {
     // Draw highlight using GUI coordinates
     draw_sprite_ext(sprite_index, image_index, x, y, 
-                   2, 2, 
+                   3, 3, 
                    image_angle, c_yellow, 0.5);
     
     // Draw information box using GUI coordinates
     var box_width = 380;
-    var box_height = 170;
+    var box_height = 160;
     var box_x = x + sprite_width/2 + 10;
     var box_y = y - box_height/2;
     
