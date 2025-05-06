@@ -31,7 +31,7 @@ if (mouse_hovering) {
     // Draw information box using GUI coordinates
     var box_width = 380;
     var box_height = 160;
-    var box_x = x + sprite_width/2 + 10;
+    var box_x = x + sprite_width/2 + 100;
     var box_y = y - box_height/2;
     
     // Make sure box stays on screen

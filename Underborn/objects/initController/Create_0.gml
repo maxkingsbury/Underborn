@@ -74,7 +74,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0, 
 	    range: 100,
 	    time_left: 0,
-		description: "Powerful throwing spear",
+		description: "this weapon will be delet :(",
         levelEffects: [
             "Base damage: 12, slow attack",
             "+4 damage, reduced cooldown",

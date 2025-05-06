@@ -17,11 +17,15 @@ if (state = "go away") {
 	if (percent <= 0.01) { instance_destroy(); }
 }
 
-/// Step Event for oUpgrade
-// Debug mouse position relative to this instance
+var scale = 3;
+// Adjust hover area for the scaled sprite size
+var half_width = (sprite_width * scale) / 2;
+var half_height = (sprite_height * scale) / 2;
+
+// Check if mouse is hovering over this upgrade using GUI coordinates
 var mouse_hovering = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 
-                                       x - sprite_width/2, y - sprite_height/2, 
-                                       x + sprite_width/2, y + sprite_height/2);
+                                       x - half_width, y - half_height, 
+                                       x + half_width, y + half_height);
 if (mouse_hovering) {
     // Mouse is hovering over this instance
     if (mouse_check_button_pressed(mb_left)) {
