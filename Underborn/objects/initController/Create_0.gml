@@ -93,13 +93,15 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0, 
 	    range: 150,
 	    time_left: 0,
-		description: "Long-range arrow attacks",
+		description: "Basic arrow attacks",
         levelEffects: [
-            "Base damage: 7, long range",
-            "+2 damage, +15% range",
-            "+3 damage, faster projectiles",
-            "+4 damage, arrows pierce enemies",
-            "+5 damage, fires 2 arrows"
+            "Base damage: 1\n Speed: 3",
+            "+1 damage\n +0.5 speed",
+            "+2 damage\n +1 pierce",
+            "+3 damage\n +0.5 speed",
+            "+4 damage",
+			"+5 damage\n +0.5 speed\n +15% crit chance",
+			"+7 damage, +0.5 speed\n +5% crit chance\n +1 pierce"
         ]
 	};
 
@@ -112,13 +114,16 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0,  
 	    range: 80,
 	    time_left: 0,
-		description: "Piercing ice projectiles that slow enemies",
+		description: "Ice projectiles that shoot quickly",
         levelEffects: [
-            "Base damage: 6, slows by 20%",
-            "+2 damage, slows by 30%",
-            "+3 damage, pierces one more enemy",
-            "+4 damage, slows by 40%", 
-            "+5 damage, freezes enemies briefly"
+            "Base damage: 1",
+            "+1 damage, +1 shard",
+			"+2 damage, +0.2 speed",
+			"+3 damage, +1 pierce\n +1 shard",
+			"+4 damage, +0.3 speed\n 20% bigger shards",
+			"+5 damage, 10% bigger shards\n  +1 shard",
+			"+6 damage, +0.5 speed\n  +1 pierce\n  20% bigger shards",
+
         ]
 	};
 
@@ -131,9 +136,9 @@ if (!variable_global_exists("hasInitialized")) {
 	    crit_chance: 0, 
 	    range: 100,
 	    time_left: 0,
-		description: "Launches fiery projectiles",
+		description: "untested",
         levelEffects: [
-            "Base damage: 8, 1 projectile",
+            "Base damage: 5",
             "+3 damage, +10% projectile speed", 
             "+4 damage, fires 2 projectiles",
             "+5 damage, larger explosion area",

@@ -21,7 +21,7 @@ if (_num > 0) {
             var dir = point_direction(x, y, enemy.x, enemy.y);
             enemy.x += lengthdir_x(3, dir);
             enemy.y += lengthdir_y(3, dir);
-            
+			
 			var crit = false;
             var final_damage = dmg;
             // Check for critical hit

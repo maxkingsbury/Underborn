@@ -30,7 +30,7 @@ if (mouse_hovering) {
     
     // Draw information box using GUI coordinates
     var box_width = 380;
-    var box_height = 160;
+    var box_height = 180;
     var box_x = x + sprite_width/2 + 100;
     var box_y = y - box_height/2;
     
@@ -54,7 +54,11 @@ if (mouse_hovering) {
     
     var header_text = weaponName;
     if (currentLevel > 0) {
-        header_text += " (Level " + string(currentLevel+1) + ")";
+		var temp = string(currentLevel+1);
+		if (temp == "8") {
+			temp = "MAX";
+		} 
+        header_text += " (Level " + temp + ")";
     }
     
     draw_set_color(c_yellow);

@@ -7,6 +7,8 @@ crit_chance = global.weapon_data[? "Ice Shard"].crit_chance + global.crit_chance
 image_xscale = 0.5;
 image_yscale = 0.5;
 
+canSlow = true;
+
 ps_ice = part_system_create();
 part_system_depth(ps_ice, depth + 1);
 

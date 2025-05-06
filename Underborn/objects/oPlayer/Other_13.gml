@@ -56,7 +56,7 @@ if (nearest_enemy != noone) {
                 case 3:
                     speed = 3.5;
                     dmg += 2;
-                    max_pierce = 1;
+                    max_pierce = 2;
                     break;
                     
                 case 4:

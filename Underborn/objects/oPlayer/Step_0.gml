@@ -69,6 +69,10 @@ if (is_moving) {
     sprite_index = s.anim_idle;
 }
 
+if (keyboard_check_pressed(ord("I"))) {
+	oPlayer.xp += 10;
+}
+
 // Check if the player is touching the XP orb (or near it)
 if (place_meeting(x, y, oXpOrb)) {
     var xpOrb = instance_place(x, y, oXpOrb); // Find the XP orb instance
