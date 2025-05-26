@@ -117,6 +117,7 @@ if (instance_number(oEnemyParent) < 350){
         }
     }
     else if (minutes == 1) {
+		enemyHpMult = 1.5;
         repeat(2) {
             var valid_spawn = false;
             var XX, YY;
@@ -136,13 +137,16 @@ if (instance_number(oEnemyParent) < 350){
             var percent = random(1); // Generates a random number between 0 and 1
 
             if (percent < 0.4) {
-                spawn_enemy(XX, YY, oEnemyBat);
+                var temp = spawn_enemy(XX, YY, oEnemyBat);
+				temp.hp *= enemyHpMult;
             } else {
-                spawn_enemy(XX, YY, oEnemySpider);
+                var temp = spawn_enemy(XX, YY, oEnemySpider);
+				temp.hp *= enemyHpMult;
             }
         }
     }
     else if (minutes == 2 || minutes == 3 || minutes == 4 || minutes == 5) {
+		enemyHpMult = 2;
         repeat(4) {
             var valid_spawn = false;
             var XX, YY;
@@ -159,9 +163,11 @@ if (instance_number(oEnemyParent) < 350){
             var percent = random(1); // Generates a random number between 0 and 1
 
             if (percent < 0.5) {
-                spawn_enemy(XX, YY, oEnemyBat);
+                var temp = spawn_enemy(XX, YY, oEnemyBat);
+				temp.hp *= enemyHpMult;
             } else {
-                spawn_enemy(XX, YY, oEnemySlime);
+                var temp = spawn_enemy(XX, YY, oEnemySlime);
+				temp.hp *= enemyHpMult;
             }
         }
     }

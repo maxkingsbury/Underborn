@@ -130,22 +130,23 @@ if (!variable_global_exists("hasInitialized")) {
 	global.weapon_data[? "Fireball"] = {
 	    name: "Fireball", 
 	    sprite: sFireballIcon, 
-		upgradeSprite: sUpgradeTest_1,
+	    upgradeSprite: sUpgradeTest_1,
 	    damage: 5, 
 	    time: 60, 
 	    crit_chance: 0, 
 	    range: 100,
 	    time_left: 0,
-		description: "untested",
-        levelEffects: [
-            "Base damage: 5",
-            "+3 damage, +10% projectile speed", 
-            "+4 damage, fires 2 projectiles",
-            "+5 damage, larger explosion area",
-            "+7 damage, fires 3 projectiles"
-        ]
+	    description: "Heavy explosive magic that sets enemies ablaze.",
+	    levelEffects: [
+	        "Base damage: 5\nExplodes on hit (20 radius)\nPierces 1 enemy",
+	        "+2 damage\n+20% explosion radius",
+	        "+1 damage\nFires 2 projectiles\n+50% explosion radius",
+	        "+1 damage\nPierces 2 enemies\nSlightly larger projectile",
+	        "+1 damage\nApplies burn (1 DPS, 2s)",
+	        "+2 damage\nFires 3 orbiting fireballs\nApplies burn (2 DPS, 3s)",
+	        "+1 damage\n+10% crit chance\n+3 DPS burn (4s)\nFireballs pierce 3 enemies\nAdds 2 homing fireballs"
+	    ]
 	};
-	
 	global.selected_character = "";
 	global.selected_level = "";
 	

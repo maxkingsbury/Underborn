@@ -1,6 +1,15 @@
 // Inherit the parent event
 event_inherited();
 
+burn_effect = false;
+burn_timer = 0;
+burn_damage = 0;
+orbit_player = false;
+orbit_angle = 0;
+orbit_speed = 0;
+orbit_radius = 0;
+homing = false;
+
 dmg = global.weapon_data[? "Fireball"].damage;
 crit_chance = global.weapon_data[? "Fireball"].crit_chance + global.crit_chance;
 

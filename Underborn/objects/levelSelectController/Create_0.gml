@@ -14,7 +14,7 @@ character_options = [
 		anim_idle: spr_PlayerIdle,
 		anim_walk: spr_PlayerRunning,
 		
-		start_weapon: "Twinblade",
+		start_weapon: "Fireball",
 		pDamage: 1,
 		pSpeed: 2,
 		

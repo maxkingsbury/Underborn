@@ -17,6 +17,8 @@ is_paused = false;
 
 speed = 0;
 
+enemyHpMult = 1;
+
 alaTime = 1;
 alaTime1 = 10;
 

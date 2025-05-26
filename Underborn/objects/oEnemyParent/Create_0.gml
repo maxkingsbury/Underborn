@@ -1,4 +1,5 @@
 walk_speed = 0.2;
+burn_timer = 0;
 
 collision_check_timer = irandom(15);
 

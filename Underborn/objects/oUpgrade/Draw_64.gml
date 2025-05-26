@@ -56,7 +56,7 @@ if (mouse_hovering) {
     if (currentLevel > 0) {
 		var temp = string(currentLevel+1);
 		if (temp == "8") {
-			temp = "MAX... no effects will apply";
+			temp = "MAX... (no effect)";
 		} 
         header_text += " (Level " + temp + ")";
     }
