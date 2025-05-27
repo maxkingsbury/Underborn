@@ -6,7 +6,7 @@ image_xscale = scale;
 image_yscale = scale;
 
 hp = 1;
-walk_speed = 0.3;
+walk_speed = 0.5;
 
 spr = sEnemySpider;
 sprW = sEnemySpiderWhite;

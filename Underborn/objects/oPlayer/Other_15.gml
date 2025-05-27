@@ -1,6 +1,6 @@
 /// @description Fireball
 if (instance_exists(oUpgrade) || global.isPaused) exit;
-if (instance_number(oFireball) >= 2) exit;
+if (instance_number(oFireball) >= 8) exit;
 
 if (fireballLevel > 7) fireballLevel = 7;
 
@@ -91,7 +91,7 @@ for (var f = 0; f < fireball_count; f++) {
                 } else {
                     speed = 2;
                     homing = true;
-                    homing_strength = 0.05;
+                    homing_strength = 0.02;
                 }
                 dmg = 13;
                 max_pierce = 3;
@@ -105,7 +105,7 @@ for (var f = 0; f < fireball_count; f++) {
     }
 
     // Extra homing fireballs at level 7
-    if (fireballLevel == 7 && f < 3) {
+    if (fireballLevel == 7 && f < 1) {
         var target = instance_nearest(x, y, oEnemyParent);
         if (target != noone) {
             for (var h = 0; h < 2; h++) {

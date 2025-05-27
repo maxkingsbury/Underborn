@@ -18,7 +18,7 @@ num = 1;
 
 // Initialize enemy properties
 
-walk_speed = 0.2;
+walk_speed = 0.4;
 scale = 0.75;
 
 just_spawned = true;

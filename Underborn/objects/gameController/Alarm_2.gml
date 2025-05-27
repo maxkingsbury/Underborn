@@ -98,7 +98,7 @@ if (instance_number(oEnemyParent) < 350){
     var buffer = 100; // Must match your activation buffer
     
     if (minutes == 0){
-        repeat(2) {
+        repeat(5) {
             var valid_spawn = false;
             var XX, YY;
 
