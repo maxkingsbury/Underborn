@@ -14,7 +14,7 @@ character_options = [
 		anim_idle: spr_PlayerIdle,
 		anim_walk: spr_PlayerRunning,
 		
-		start_weapon: "Fireball",
+		start_weapon: "Ice Shard",
 		pDamage: 1,
 		pSpeed: 2,
 		

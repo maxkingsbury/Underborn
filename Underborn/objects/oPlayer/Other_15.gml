@@ -1,5 +1,6 @@
 /// @description Fireball
 if (instance_exists(oUpgrade) || global.isPaused) exit;
+if (instance_number(oFireball) >= 2) exit;
 
 if (fireballLevel > 7) fireballLevel = 7;
 
