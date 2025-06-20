@@ -1,3 +1,5 @@
+if (instance_exists(oUpgrade) || global.isPaused == true) { instance_destroy(); exit; }
+
 var _list = ds_list_create();
 var _num = collision_rectangle_list(bbox_left, bbox_top, bbox_right, bbox_bottom, oEnemyParent, false, true, _list, false);
 if (_num > 0) {

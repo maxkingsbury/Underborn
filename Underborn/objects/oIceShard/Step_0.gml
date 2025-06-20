@@ -1,6 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
 var swerve_angle = random(360); // unique start
 var swerve_speed = 10 + random(5); // how fast the swerve animates
 var swerve_magnitude = 4 + random(2); // how far it swerves left/right

@@ -1,3 +1,5 @@
+if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+
 if (just_spawned) {
     unstick_frames -= 1;
 

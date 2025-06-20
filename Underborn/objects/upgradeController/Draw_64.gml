@@ -1,3 +1,6 @@
+draw_set_font(fntLore);
+draw_set_color(c_white);
+draw_text(400, 320, "Given currency for testing");
 draw_set_font(fntMain);
 draw_set_color(c_aqua);
 draw_text(400, 400, "Diamonds  " + string(round(global.diamonds)));
