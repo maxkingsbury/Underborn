@@ -1,7 +1,7 @@
 function reset_game(slot) {
     var default_save_data = {
-        coins: 3000,
-        diamonds: 40,
+        coins: 300,
+        diamonds: 4,
 		firstPlay: true,
 		volumeLevel: 0.5,
         upgrades: [
