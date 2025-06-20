@@ -8,7 +8,7 @@ function reset_game(slot) {
 		    { // 0 - Root node
 		        name: "Health Up",
 		        x: 0, y: 0,
-		        cost_coins: 100, cost_diamonds: 0,
+		        cost_coins: 10, cost_diamonds: 0,
 		        unlocked: true, purchased: false,
 		        level: 0, max_level: 5,
 		        cost_multiplier: 1.5, // Cost increases by this factor each level
@@ -19,7 +19,7 @@ function reset_game(slot) {
 		    { // 1 - Left child of root
 		        name: "Damage Up",
 		        x: 0, y: 0,
-		        cost_coins: 150, cost_diamonds: 1,
+		        cost_coins: 15, cost_diamonds: 1,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 3,
 		        cost_multiplier: 2.0,
@@ -30,7 +30,7 @@ function reset_game(slot) {
 		    { // 2 - Right child of root
 		        name: "Speed Up",
 		        x: 0, y: 0,
-		        cost_coins: 150, cost_diamonds: 1,
+		        cost_coins: 15, cost_diamonds: 1,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 3,
 		        cost_multiplier: 1.8,
@@ -41,7 +41,7 @@ function reset_game(slot) {
 		    { // 3 - Child of Damage Up
 		        name: "Critical Hit",
 		        x: 0, y: 0,
-		        cost_coins: 300, cost_diamonds: 2,
+		        cost_coins: 30, cost_diamonds: 2,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 3,
 		        cost_multiplier: 2.0,
@@ -52,7 +52,7 @@ function reset_game(slot) {
 		    { // 4 - Child of Speed Up
 		        name: "Dodge Boost",
 		        x: 0, y: 0,
-		        cost_coins: 300, cost_diamonds: 2,
+		        cost_coins: 30, cost_diamonds: 2,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 3,
 		        cost_multiplier: 2.0,
@@ -63,7 +63,7 @@ function reset_game(slot) {
 		    { // 5 - Second child of Damage Up
 		        name: "Armor Pierce",
 		        x: 0, y: 0,
-		        cost_coins: 350, cost_diamonds: 2,
+		        cost_coins: 35, cost_diamonds: 2,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 2,
 		        cost_multiplier: 2.5,
@@ -74,7 +74,7 @@ function reset_game(slot) {
 		    { // 6 - Second child of Speed Up
 		        name: "Stamina Regen",
 		        x: 0, y: 0,
-		        cost_coins: 350, cost_diamonds: 2,
+		        cost_coins: 35, cost_diamonds: 2,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 2,
 		        cost_multiplier: 2.5,
@@ -85,7 +85,7 @@ function reset_game(slot) {
 		    { // 7 - Tier 3 upgrade from Critical Hit
 		        name: "Devastating Blow",
 		        x: 0, y: 0,
-		        cost_coins: 800, cost_diamonds: 5,
+		        cost_coins: 80, cost_diamonds: 5,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 1,
 		        cost_multiplier: 1.0,
@@ -96,7 +96,7 @@ function reset_game(slot) {
 		    { // 8 - Tier 3 upgrade from Dodge Boost
 		        name: "Counter Attack",
 		        x: 0, y: 0,
-		        cost_coins: 800, cost_diamonds: 5,
+		        cost_coins: 80, cost_diamonds: 5,
 		        unlocked: false, purchased: false,
 		        level: 0, max_level: 1, 
 		        cost_multiplier: 1.0,

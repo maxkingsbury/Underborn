@@ -5,8 +5,8 @@ if (!variable_global_exists("global.fullscreen_enabled")) {
 
 
 // Centered positions based on the screen size
-tx = display_get_width() / 2;
-ty = display_get_height() / 2;
+tx = display_get_gui_width() / 2;
+ty = display_get_gui_height() / 2;
 
 slider_width = 300;
 slider_height = 16;

@@ -1,3 +1,25 @@
+// Target internal resolution
+var target_width = 1920;
+var target_height = 1080;
+
+// Resize the application surface
+surface_resize(application_surface, target_width, target_height);
+
+// Assuming using camera system (GMS2+)
+var cam = view_camera[0];
+camera_set_view_size(cam, target_width, target_height);
+camera_set_view_pos(cam, 0, 0);
+view_camera[0] = cam;
+
+display_set_gui_size(target_width, target_height);
+
+var scale = min(display_get_width() / 1920, display_get_height() / 1080);
+var final_w = 1920 * scale;
+var final_h = 1080 * scale;
+
+window_set_size(final_w, final_h);
+window_set_position((display_get_width() - final_w)/2, (display_get_height() - final_h)/2);
+
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
     global.hasInitialized = true;
@@ -179,7 +201,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 0 - Root node
 	        name: "Health Up",
 	        x: 0, y: 0,
-	        cost_coins: 100, cost_diamonds: 0,
+	        cost_coins: 10, cost_diamonds: 0,
 	        unlocked: true, purchased: false,
 	        level: 0, max_level: 5,
 	        cost_multiplier: 1.5, // Cost increases by this factor each level
@@ -190,7 +212,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 1 - Left child of root
 	        name: "Damage Up",
 	        x: 0, y: 0,
-	        cost_coins: 150, cost_diamonds: 1,
+	        cost_coins: 15, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 3,
 	        cost_multiplier: 2.0,
@@ -201,7 +223,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 2 - Right child of root
 	        name: "Speed Up",
 	        x: 0, y: 0,
-	        cost_coins: 150, cost_diamonds: 1,
+	        cost_coins: 15, cost_diamonds: 1,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 3,
 	        cost_multiplier: 1.8,
@@ -212,7 +234,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 3 - Child of Damage Up
 	        name: "Critical Hit",
 	        x: 0, y: 0,
-	        cost_coins: 300, cost_diamonds: 2,
+	        cost_coins: 30, cost_diamonds: 2,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 3,
 	        cost_multiplier: 2.0,
@@ -223,7 +245,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 4 - Child of Speed Up
 	        name: "Dodge Boost",
 	        x: 0, y: 0,
-	        cost_coins: 300, cost_diamonds: 2,
+	        cost_coins: 30, cost_diamonds: 2,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 3,
 	        cost_multiplier: 2.0,
@@ -234,7 +256,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 5 - Second child of Damage Up
 	        name: "Armor Pierce",
 	        x: 0, y: 0,
-	        cost_coins: 350, cost_diamonds: 2,
+	        cost_coins: 35, cost_diamonds: 2,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 2,
 	        cost_multiplier: 2.5,
@@ -245,7 +267,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 6 - Second child of Speed Up
 	        name: "Stamina Regen",
 	        x: 0, y: 0,
-	        cost_coins: 350, cost_diamonds: 2,
+	        cost_coins: 35, cost_diamonds: 2,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 2,
 	        cost_multiplier: 2.5,
@@ -256,7 +278,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 7 - Tier 3 upgrade from Critical Hit
 	        name: "Devastating Blow",
 	        x: 0, y: 0,
-	        cost_coins: 800, cost_diamonds: 5,
+	        cost_coins: 80, cost_diamonds: 5,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 1,
 	        cost_multiplier: 1.0,
@@ -267,7 +289,7 @@ if (!variable_global_exists("hasInitialized")) {
 	    { // 8 - Tier 3 upgrade from Dodge Boost
 	        name: "Counter Attack",
 	        x: 0, y: 0,
-	        cost_coins: 800, cost_diamonds: 5,
+	        cost_coins: 80, cost_diamonds: 5,
 	        unlocked: false, purchased: false,
 	        level: 0, max_level: 1, 
 	        cost_multiplier: 1.0,

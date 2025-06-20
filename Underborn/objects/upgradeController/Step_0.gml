@@ -2,8 +2,8 @@
 for (var i = 0; i < array_length(global.upgrades); i++) {
     var upg = global.upgrades[i];
     // Ensure radius and angle are set before using
-    var offset_x = display_get_width() / 2;
-    var offset_y = display_get_height() / 2;
+	var offset_x = display_get_gui_width() / 2;
+	var offset_y = display_get_gui_height() / 2;
     var radius = upg.radius;
     var angle = upg.angle;
     // Update the position of the upgrade
