@@ -60,35 +60,7 @@ for (var i = 0; i < slot_count; i++) {
     }
 }
 
-// Accessory Slot Layout (Bottom Right, Vertical Upward)
-var acc_slot_width = 70;
-var acc_slot_height = 70;
-var acc_slot_spacing = 15;
-var acc_slot_count = 4;
 
-var acc_start_x = display_get_gui_width() - acc_slot_width - 20;
-var acc_start_y = display_get_gui_height() - acc_slot_height - 20;
-
-var acc_offset_x = 18;
-var acc_offset_y = 17;
-
-for (var i = 0; i < acc_slot_count; i++) {
-    var ax = acc_start_x;
-    var ay = acc_start_y - i * (acc_slot_height + acc_slot_spacing); // Going up
-
-    draw_set_color(c_dkgray);
-    draw_rectangle(ax, ay, ax + acc_slot_width, ay + acc_slot_height, false);
-
-    // Draw accessory sprite if one is equipped
-    var accessory = global.accessory_data[? oPlayer.accessory[i]];
-    
-    if (accessory != undefined) {
-        draw_sprite_ext(accessory.sprite, 0,
-            ax + (acc_slot_width - sprite_get_width(accessory.sprite)) / 2 + acc_offset_x,
-            ay + (acc_slot_height - sprite_get_height(accessory.sprite)) / 2 + acc_offset_y,
-            2.3, 2.3, 0, c_white, 1);
-    }
-}
 
 // === XP Bar Settings ===
 draw_set_font(fntLore);
@@ -214,6 +186,38 @@ if (global.isPaused) {
     draw_text(centerX, 545, "Exit to Menu");
 }
 
+var gui_w = display_get_gui_width();
+var gui_h = display_get_gui_height();
+
+var cam = view_camera[0];
+var view_x = camera_get_view_x(cam);
+var view_y = camera_get_view_y(cam);
+var view_w = camera_get_view_width(cam);
+var view_h = camera_get_view_height(cam);
+
+with (oBossDoor) {
+    margin = 50;
+	var inside_x = (x > view_x + margin*2.75) && (x < view_x + view_w - margin*2.75);
+	var inside_y = (y > view_y + margin) && (y < view_y + view_h - margin);
+	if (inside_x && inside_y) {
+	    continue;
+	}
+
+    // Hide arrow if player is very close to door
+    if (point_distance(oPlayer.x, oPlayer.y, x, y) < 10) {
+        continue;
+    }
+
+    var dx = x - oPlayer.x;
+    var dy = y - oPlayer.y;
+    var angle = point_direction(0, 0, dx, dy);
+
+    var edge_dist = min(gui_w, gui_h) / 2 - 400; // adjust padding if needed
+    var arrow_x = gui_w / 2 + lengthdir_x(edge_dist, angle);
+    var arrow_y = gui_h / 2 + lengthdir_y(edge_dist, angle);
+
+    draw_sprite_ext(sArrowIcon, 0, arrow_x, arrow_y, 2, 2, angle, c_white, 1);
+}
 
 
 

@@ -17,14 +17,14 @@ var _vy = camera_get_view_y(view_camera[0]);
 var _vw = camera_get_view_width(view_camera[0]);
 var _vh = camera_get_view_height(view_camera[0]);
 instance_activate_region(_vx - 100, _vy - 100, _vw + 200, _vh + 200, true);
-instance_deactivate_region(
-    _vx - 200,    // Left: 200px before the viewport's X position
-    _vy - 200,    // Top: 200px before the viewport's Y position
-    _vw + 400,    // Width: Viewport + 200px on the right side
-    _vh + 450,    // Height: Viewport + 200px on the bottom
-    false,        // false means deactivate outside the region
-    true          // true means include all objects (not excluding any)
-);
+with (oEnemyParent) {
+    if (
+        x < _vx - 200 || x > _vx + _vw + 200 ||
+        y < _vy - 200 || y > _vy + _vh + 250
+    ) {
+        instance_deactivate_object(id);
+    }
+}
 instance_activate_object(oThumbstick);
 
 if (instance_exists(oBoss1)) {
