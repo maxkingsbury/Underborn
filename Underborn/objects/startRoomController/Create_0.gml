@@ -1,3 +1,4 @@
+instance_destroy(oPlayer);
 
 angle = 0;
 

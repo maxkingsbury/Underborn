@@ -22,6 +22,13 @@ window_set_position((display_get_width() - final_w)/2, (display_get_height() - f
 
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
+	global.boss_pool = [
+	    oSpiderBoss,
+	    oFlameDemon,
+	    oFrostQueen,
+	    oLaserCubeBoss
+	];
+	
     global.hasInitialized = true;
 	global.master_volume = 0.5; // range 0.0 to 1.0
 	
