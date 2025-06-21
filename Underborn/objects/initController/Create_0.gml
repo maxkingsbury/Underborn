@@ -12,13 +12,14 @@ camera_set_view_pos(cam, 0, 0);
 view_camera[0] = cam;
 
 display_set_gui_size(target_width, target_height);
-
 var scale = min(display_get_width() / 1920, display_get_height() / 1080);
 var final_w = 1920 * scale;
 var final_h = 1080 * scale;
 
 window_set_size(final_w, final_h);
 window_set_position((display_get_width() - final_w)/2, (display_get_height() - final_h)/2);
+
+gpu_set_texfilter(false);
 
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
