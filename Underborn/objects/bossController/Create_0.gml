@@ -25,9 +25,6 @@ enemyHpMult = 1;
 alaTime = 1;
 alaTime1 = 10;
 
-//enemy spawning
-alarmSpawnTime = 15;
-
 boss1_spawned = false;
 alarm[1] = alaTime1;
 

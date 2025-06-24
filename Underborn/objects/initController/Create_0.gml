@@ -209,9 +209,10 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_coins: 10, cost_diamonds: 0,
 	        unlocked: true, purchased: false,
 	        level: 0, max_level: 5,
-	        cost_multiplier: 1.5, // Cost increases by this factor each level
-	        effect_value: 10, // +10 health per level
+	        cost_multiplier: 1.5,
+	        effect_value: 10,
 	        unlocks: [1, 2],
+	        parents: [],
 	        radius: 150, angle: 90
 	    },
 	    { // 1 - Left child of root
@@ -223,6 +224,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 2.0,
 	        effect_value: 1, // +5 damage per level
 	        unlocks: [3, 5],
+			parents: [],
 	        radius: 150, angle: 210
 	    },
 	    { // 2 - Right child of root
@@ -234,6 +236,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 1.8,
 	        effect_value: 0.2, // +20% speed per level
 	        unlocks: [4, 6],
+			parents: [],
 	        radius: 150, angle: -30
 	    },
 	    { // 3 - Child of Damage Up
@@ -245,6 +248,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 2.0,
 	        effect_value: 0.1, // +10% crit chance per level
 	        unlocks: [7],
+			parents: [],
 	        radius: 300, angle: 240
 	    },
 	    { // 4 - Child of Speed Up
@@ -256,6 +260,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 2.0,
 	        effect_value: 0.05, // +5% dodge chance per level
 	        unlocks: [8],
+			parents: [],
 	        radius: 300, angle: -30
 	    },
 	    { // 5 - Second child of Damage Up
@@ -267,6 +272,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 2.5,
 	        effect_value: 0.1, // +10% armor penetration per level
 	        unlocks: [],
+			parents: [],
 	        radius: 300, angle: 180
 	    },
 	    { // 6 - Second child of Speed Up
@@ -278,6 +284,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 2.5,
 	        effect_value: 0.15, // +15% stamina regen per level
 	        unlocks: [],
+			parents: [],
 	        radius: 300, angle: 0
 	    },
 	    { // 7 - Tier 3 upgrade from Critical Hit
@@ -289,6 +296,7 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 1.0,
 	        effect_value: 0.5, // +50% critical damage
 	        unlocks: [],
+			parents: [],
 	        radius: 450, angle: 240
 	    },
 	    { // 8 - Tier 3 upgrade from Dodge Boost
@@ -300,10 +308,11 @@ if (!variable_global_exists("hasInitialized")) {
 	        cost_multiplier: 1.0,
 	        effect_value: 0.5, // 50% chance to counter when dodging
 	        unlocks: [],
+			parents: [],
 	        radius: 450, angle: -30
 	    }
 	];
-
+	upgrade_controller_rebuild_parents();
 }
 
 

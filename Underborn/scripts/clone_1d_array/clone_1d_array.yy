@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"clone_1d_array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"clone_1d_array",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

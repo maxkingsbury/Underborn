@@ -10,7 +10,8 @@ for (var i = 0; i < 3; i++) {
         
         global.selected_slot = i + 1;
         load_game(global.selected_slot); // ← loads data into globals
-		// After loading save data
+		upgrade_controller_rebuild_parents();
+		show_debug_message("Upgrades count: " + string(array_length(global.upgrades)));
 		for (var i = 0; i < array_length(global.upgrades); i++) {
 		    var upg = global.upgrades[i];
     

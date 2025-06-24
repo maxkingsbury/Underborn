@@ -13,9 +13,9 @@ function create_save_data() {
     return {
         coins: global.coins,
         diamonds: global.diamonds,
-        upgrades: global.upgrades,
-		lastSave: global.last_save_time,
-		firstPlay: global.firstPlay,
-		volumeLevel: global.master_volume,
+        upgrades: prepare_upgrades_for_save(),
+        lastSave: global.last_save_time,
+        firstPlay: global.firstPlay,
+        volumeLevel: global.master_volume,
     };
 }

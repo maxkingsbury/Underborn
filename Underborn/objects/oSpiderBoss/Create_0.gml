@@ -11,7 +11,7 @@ scale = 2.5;
 image_xscale = scale;
 image_yscale = scale;
 
-hp = 50;
+hp = 100;
 
 edge_index = 0; // 0=top, 1=right, 2=bottom, 3=left
 move_speed = 2;

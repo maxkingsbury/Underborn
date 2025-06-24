@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"upgrade_controller_rebuild_parents",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"upgrade_controller_rebuild_parents",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
