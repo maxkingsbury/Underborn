@@ -183,11 +183,3 @@ if (keyboard_check_pressed(ord("O")))
 }
 
 image_speed = instance_exists(oUpgrade) ? 0 : 1;
-
-// Handle any active status effects from accessories
-if (shield_timer > 0) {
-    shield_timer -= 1/60; // Countdown based on seconds
-    has_shield = true;
-} else {
-    has_shield = false;
-}

@@ -25,9 +25,6 @@ audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
 	global.boss_pool = [
 	    oSpiderBoss,
-	    oFlameDemon,
-	    oFrostQueen,
-	    oLaserCubeBoss
 	];
 	
     global.hasInitialized = true;

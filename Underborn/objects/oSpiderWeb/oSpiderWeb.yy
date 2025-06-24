@@ -1,22 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"oArrow",
+  "%Name":"oSpiderWeb",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":40,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oArrow",
+  "name":"oSpiderWeb",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Weapons/Player.yy",
+    "name":"Enemy",
+    "path":"folders/Objects/Weapons/Enemy.yy",
   },
-  "parentObjectId":{
-    "name":"oWeaponParent",
-    "path":"objects/oWeaponParent/oWeaponParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sArrow",
-    "path":"sprites/sArrow/sArrow.yy",
+    "name":"sSpiderWeb",
+    "path":"sprites/sSpiderWeb/sSpiderWeb.yy",
   },
   "spriteMaskId":null,
   "visible":true,

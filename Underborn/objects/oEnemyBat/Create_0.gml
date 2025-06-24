@@ -2,6 +2,9 @@
 event_inherited();
 scale = 0.75;
 
+isBoss = false;
+
+
 image_xscale = scale;
 image_yscale = scale;
 

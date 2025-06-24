@@ -11,8 +11,8 @@
   "name":"oIceShard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Weapons",
-    "path":"folders/Objects/Weapons.yy",
+    "name":"Player",
+    "path":"folders/Objects/Weapons/Player.yy",
   },
   "parentObjectId":{
     "name":"oWeaponParent",

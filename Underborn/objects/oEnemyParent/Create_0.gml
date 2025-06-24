@@ -4,7 +4,7 @@ burn_timer = 0;
 collision_check_timer = irandom(15);
 
 hp = 1;
-
+isBoss = false;
 scale = 0.75;
 
 image_xscale = scale;
@@ -26,7 +26,7 @@ unstick_frames = 5;
 
 invincibility = false;
 invincibility_timer = 0;
-invincibility_cooldown = 0; // NEW
+invincibility_cooldown = 0;
 hit_by_projectiles = ds_list_create();
 
 image_xscale = scale;
