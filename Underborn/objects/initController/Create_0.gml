@@ -31,7 +31,7 @@ if (!variable_global_exists("hasInitialized")) {
 	global.master_volume = 0.5; // range 0.0 to 1.0
 	
 	// Initialize player stats (recommended to put in a create event or game_start script)
-	global.coins = 500;
+	global.coins = 700;
 	global.diamonds = 10;
 	global.max_health = 100;
 	global.current_health = 100;
