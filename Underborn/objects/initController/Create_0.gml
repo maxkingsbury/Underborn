@@ -24,7 +24,6 @@ gpu_set_texfilter(false);
 audio_play_sound(sndStartMenuMusic, 1, true);
 if (!variable_global_exists("hasInitialized")) {
 	
-	// Global variables in controller
 	global.shake_strength = 0;
 	global.shake_timer = 0;
 

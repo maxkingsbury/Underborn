@@ -1,4 +1,27 @@
 
+// Create a global particle system
+global.ptc_sys = part_system_create();
+part_system_depth(global.ptc_sys, -50); // draw on top
+
+global.ptc_waveTrail = part_type_create();
+part_type_shape(global.ptc_waveTrail, pt_shape_circle);
+part_type_size(global.ptc_waveTrail, 0.15, 0.3, 0, 0);
+part_type_color1(global.ptc_waveTrail, make_color_rgb(200, 100, 255)); // purple
+part_type_alpha2(global.ptc_waveTrail, 0.4, 0); // fades out
+part_type_life(global.ptc_waveTrail, 5, 10);
+part_type_speed(global.ptc_waveTrail, 0, 0, 0, 0); // doesn't move
+part_type_blend(global.ptc_waveTrail, true); // additive glow
+
+global.ptc_bulletTrail = part_type_create();
+part_type_shape(global.ptc_bulletTrail, pt_shape_circle);
+part_type_size(global.ptc_bulletTrail, 0.05, 0.10, 0, 0);
+part_type_color1(global.ptc_bulletTrail, make_color_rgb(200, 100, 255)); // purple
+part_type_alpha2(global.ptc_bulletTrail, 0.4, 0); // fades out
+part_type_life(global.ptc_bulletTrail, 10, 20);
+part_type_speed(global.ptc_bulletTrail, 0, 0, 0, 0); // doesn't move
+part_type_blend(global.ptc_bulletTrail, true); // additive glow
+
+
 global.enemiesKilled = 0;
 global.coinsThisRound = 0;
 global.isPaused = false;

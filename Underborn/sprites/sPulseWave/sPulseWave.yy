@@ -23,7 +23,7 @@
   ],
   "name":"sPulseWave",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Projectiles",
     "path":"folders/Sprites/Enemies/Projectiles.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":10,
+    "xorigin":3,
     "yorigin":10,
   },
   "swatchColours":null,

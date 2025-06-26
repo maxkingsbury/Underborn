@@ -1,10 +1,11 @@
 // Fire 5 bullets in a fan toward last known player pos
 var base_dir = point_direction(x, y, last_player_x, last_player_y);
-var spread = 15;
+var spread = 12;
 
 for (var i = -2; i <= 2; i++) {
     var angle = base_dir + i * spread;
     var inst = instance_create_layer(x, y, "Instances", oPulseBullet);
+	inst.depth = -100;
     inst.direction = angle;
 	inst.image_angle = angle;
     inst.speed = 2;
