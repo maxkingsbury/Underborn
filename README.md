@@ -4,7 +4,7 @@
 
 
 <div align="center">
-  <h3>Underborn is a roguelike with fast-paced action, procedural gameplay, and deep lore. <br> You will battle through waves of enemies and unlock new abilities as you progress.</h3>
+  <h3>Underborn is a roguelike with fast-paced action and some procedural gameplay. <br> You will battle through waves of enemies and unlock new abilities as you progress.</h3>
 </div>
 
 
@@ -12,11 +12,11 @@
 
 ## Features
 
-- **Roguelike Action**: Face endless enemies each run with bosses at set times.
+- **Roguelike Action**: Face endless enemies each run with bosses appearing occasionally.
 - **Procedural Generation**: Randomly generated levels for unique experiences.
 - **Character Progression**: Unlock new abilities and items as you play.
 - **Lore-Rich World**: Uncover the mysteries of Underborn through exploration.
-- **Permanent Upgrades**: Upon death select permanent upgrades to return even stronger
+- **Permanent Upgrades**: Upon death, select permanent upgrades to return even stronger
 
 ---
 
