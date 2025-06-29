@@ -12,6 +12,7 @@ image_xscale = scale;
 image_yscale = scale;
 
 hp = 200;
+canDrop = false;
 
 edge_index = 0; // 0=top, 1=right, 2=bottom, 3=left
 move_speed = 2;

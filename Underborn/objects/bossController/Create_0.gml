@@ -63,8 +63,12 @@ dragging_item = undefined;
 mx = mouse_x;
 my = mouse_y;
 
-if (global.boss_to_spawn != noone) {
+if (global.boss_to_spawn != noone && global.boss_to_spawn != oTwinsController) {
     instance_create_layer(room_width / 2, room_height / 2, "Instances", global.boss_to_spawn);
+} 
+else if (global.boss_to_spawn == oTwinsController) {
+	instance_create_layer(-20, -20, "Instances", oTwinsController);
+	
 }
 oPlayer.x = room_width / 2;
 oPlayer.y = room_height / 2+100;

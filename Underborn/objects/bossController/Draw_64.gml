@@ -158,22 +158,16 @@ if (global.isPaused) {
     var bx = centerX - (bw / 2);
 
     // Store Y positions for each button
-    global.resume_button = [bx, 300, bx + bw, 340];
-    global.inventory_button = [bx, 380, bx + bw, 420];
-    global.settings_button = [bx, 460, bx + bw, 500];
+    global.resume_button = [bx, 450, bx + bw, 490];
     global.exit_button = [bx, 540, bx + bw, 580];
 
     // Draw buttons
     draw_set_color(c_dkgray);
-    draw_rectangle(bx, 305, bx + bw, 340, false);
-    draw_rectangle(bx, 385, bx + bw, 420, false);
-    draw_rectangle(bx, 465, bx + bw, 500, false);
+    draw_rectangle(bx, 455, bx + bw, 490, false);
     draw_rectangle(bx, 545, bx + bw, 580, false);
 
     draw_set_color(c_white);
     draw_set_halign(fa_center);
-    draw_text(centerX, 305, "Resume");
-    draw_text(centerX, 385, "Inventory");
-    draw_text(centerX, 465, "Settings");
-    draw_text(centerX, 545, "Exit to Menu");
+    draw_text(centerX, 475, "Resume");
+    draw_text(centerX, 565, "Exit to Menu");
 }

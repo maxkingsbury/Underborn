@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oFlameDemon",
+  "%Name":"oLightningBullet",
   "eventList":[],
   "managed":true,
-  "name":"oFlameDemon",
+  "name":"oLightningBullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bosses",
-    "path":"folders/Objects/Enemies/Bosses.yy",
+    "name":"Enemy",
+    "path":"folders/Objects/Weapons/Enemy.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sEnemyBatWhite",
-    "path":"sprites/sEnemyBatWhite/sEnemyBatWhite.yy",
+    "name":"sLightningBullet",
+    "path":"sprites/sLightningBullet/sLightningBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,

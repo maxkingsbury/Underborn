@@ -1,5 +1,6 @@
 walk_speed = 0.2;
 burn_timer = 0;
+rand = random(1);
 
 collision_check_timer = irandom(15);
 
@@ -15,7 +16,7 @@ last_y = y;
 stuck_timer = 0;
 
 num = 1; 
-
+canDrop = true;
 // Initialize enemy properties
 
 walk_speed = 0.4;

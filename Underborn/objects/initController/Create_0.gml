@@ -29,7 +29,8 @@ if (!variable_global_exists("hasInitialized")) {
 
 	global.boss_pool = [
 		oWidowshade,
-	    oPulseWarden
+	    oPulseWarden,
+		oTwinsController,
 	];
 	
     global.hasInitialized = true;

@@ -22,3 +22,5 @@ alarm[0] = 1; // Start sequence immediately
 // For fan attack
 last_player_x = 0;
 last_player_y = 0;
+rand = 0;
+canDrop = false;

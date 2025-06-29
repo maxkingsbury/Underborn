@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oFrostQueen",
+  "%Name":"oWindBullet",
   "eventList":[],
   "managed":true,
-  "name":"oFrostQueen",
+  "name":"oWindBullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bosses",
-    "path":"folders/Objects/Enemies/Bosses.yy",
+    "name":"Enemy",
+    "path":"folders/Objects/Weapons/Enemy.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sEnemySlimeWhite",
-    "path":"sprites/sEnemySlimeWhite/sEnemySlimeWhite.yy",
+    "name":"sWindBullet",
+    "path":"sprites/sWindBullet/sWindBullet.yy",
   },
   "spriteMaskId":null,
   "visible":true,
