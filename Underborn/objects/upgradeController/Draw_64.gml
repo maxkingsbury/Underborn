@@ -104,28 +104,28 @@ if (hovered_upgrade_index != -1) {
 
     draw_set_color(c_dkgray);
     draw_set_alpha(1);
-    draw_rectangle(tooltip_x - 100, tooltip_y - 20, tooltip_x + 100, tooltip_y + 100, false);
+    draw_rectangle(tooltip_x - 120, tooltip_y + 20, tooltip_x + 120, tooltip_y + 140, false);
     draw_set_alpha(1);
 
     draw_set_color(c_white);
     draw_set_font(fntLoreSmaller);
 
     var effect_desc = get_upgrade_description(hovered_upgrade_index);
-    draw_text(tooltip_x, tooltip_y, upg.name + " (" + string(upg.level) + "/" + string(upg.max_level) + ")");
-    draw_text(tooltip_x, tooltip_y + 40, effect_desc);
+    draw_text(tooltip_x, tooltip_y + 40, upg.name + " (" + string(upg.level) + "/" + string(upg.max_level) + ")");
+    draw_text(tooltip_x, tooltip_y + 80, effect_desc);
 
     if (!upg.unlocked) {
         draw_set_color(c_red);
-        draw_text(tooltip_x, tooltip_y + 80, "Locked");
+        draw_text(tooltip_x, tooltip_y + 120, "Locked");
     } else if (upg.level >= upg.max_level) {
         draw_set_color(c_fuchsia);
-        draw_text(tooltip_x, tooltip_y + 80, "Maximum Level Reached");
+        draw_text(tooltip_x, tooltip_y + 120, "Maximum Level Reached");
     } else if (global.coins < upg.cost_coins * power(upg.cost_multiplier, upg.level) || 
                global.diamonds < upg.cost_diamonds) {
         draw_set_color(c_red);
-        draw_text(tooltip_x, tooltip_y + 80, "Can't Afford");
+        draw_text(tooltip_x, tooltip_y + 120, "Can't Afford");
     } else {
         draw_set_color(c_green);
-        draw_text(tooltip_x, tooltip_y + 80, "Click to Purchase");
+        draw_text(tooltip_x, tooltip_y + 120, "Click to Purchase");
     }
 }
