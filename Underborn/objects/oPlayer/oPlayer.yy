@@ -46,8 +46,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_PlayerIdle",
-    "path":"sprites/spr_PlayerIdle/spr_PlayerIdle.yy",
+    "name":"spr_gribnukIdle",
+    "path":"sprites/spr_gribnukIdle/spr_gribnukIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

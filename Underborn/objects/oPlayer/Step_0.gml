@@ -1,72 +1,105 @@
 /// oPlayer - Step Event
+
+// Pause toggle
 if (keyboard_check_pressed(vk_escape)) {
     global.isPaused = !global.isPaused;
 }
-if (instance_exists(oUpgrade) || global.isPaused == true) { exit; }
+if (instance_exists(oUpgrade) || global.isPaused) exit;
 
-// Variables to store movement input
+// Movement variables
 var move_x = 0;
 var move_y = 0;
 var is_moving = false;
 
-// Check for keyboard (WASD) input first
+// Keyboard input
 var key_right = keyboard_check(ord("D"));
-var key_left = keyboard_check(ord("A"));
-var key_down = keyboard_check(ord("S"));
-var key_up = keyboard_check(ord("W"));
+var key_left  = keyboard_check(ord("A"));
+var key_down  = keyboard_check(ord("S"));
+var key_up    = keyboard_check(ord("W"));
 
-// Calculate keyboard movement (horizontal and vertical)
 var hor_key = key_right - key_left;
 var ver_key = key_down - key_up;
 
-// If there's keyboard input, use it
+// --------------------------------------------------
+// KEYBOARD MOVEMENT
+// --------------------------------------------------
 if (hor_key != 0 || ver_key != 0) {
+
     // Normalize diagonal movement
-	if (hor_key != 0 && ver_key != 0) {
-	    var len = (sqrt(hor_key * hor_key + ver_key * ver_key))*0.9;
-	    hor_key = (hor_key / len);
-	    ver_key = (ver_key / len);
-	}
-    
-    // Apply keyboard movement
+    if (hor_key != 0 && ver_key != 0) {
+        var len = sqrt(hor_key * hor_key + ver_key * ver_key) * 0.9;
+        hor_key /= len;
+        ver_key /= len;
+    }
+
     move_x = hor_key * mvspd;
     move_y = ver_key * mvspd;
     is_moving = true;
-    
-    // Flip sprite based on horizontal direction
-    if (hor_key > 0) image_xscale = 1;
-    if (hor_key < 0) image_xscale = -1;
-}
-// If no keyboard input but thumbstick is active, use thumbstick
-else if (instance_exists(oThumbstick) && oThumbstick.thumb_active) {
-    // Get direction and magnitude from thumbstick
-    var move_dir = oThumbstick.thumb_direction;
-    var move_amount = oThumbstick.thumb_magnitude;
-    
-    // Calculate horizontal and vertical components
-    var hor = lengthdir_x(1, move_dir);
-    var ver = lengthdir_y(1, move_dir);
-    
-    // Apply movement (already normalized through direction calculation)
-    move_x = hor * mvspd * move_amount;
-    move_y = ver * mvspd * move_amount;
-    is_moving = (move_amount > 0);
-    
-    // Flip sprite based on horizontal direction
-    if (hor > 0) image_xscale = 1;
-    if (hor < 0) image_xscale = -1;
+
+    // Update facing direction (dominant axis)
+    if (abs(hor_key) > abs(ver_key)) {
+        facing = (hor_key > 0) ? DIR.RIGHT : DIR.LEFT;
+    } else {
+        facing = (ver_key > 0) ? DIR.DOWN : DIR.UP;
+    }
 }
 
-// Apply the calculated movement
+// --------------------------------------------------
+// THUMBSTICK MOVEMENT
+// --------------------------------------------------
+else if (instance_exists(oThumbstick) && oThumbstick.thumb_active) {
+
+    var move_dir = oThumbstick.thumb_direction;
+    var move_amt = oThumbstick.thumb_magnitude;
+
+    var hor = lengthdir_x(1, move_dir);
+    var ver = lengthdir_y(1, move_dir);
+
+    move_x = hor * mvspd * move_amt;
+    move_y = ver * mvspd * move_amt;
+    is_moving = (move_amt > 0);
+
+    if (is_moving) {
+        if (abs(hor) > abs(ver)) {
+            facing = (hor > 0) ? DIR.RIGHT : DIR.LEFT;
+        } else {
+            facing = (ver > 0) ? DIR.DOWN : DIR.UP;
+        }
+    }
+}
+
+// --------------------------------------------------
+// APPLY MOVEMENT (PIXEL PERFECT)
+// --------------------------------------------------
 x = round(x + move_x);
 y = round(y + move_y);
 
-// Set sprite based on movement
+// --------------------------------------------------
+// ANIMATION SELECTION
+// --------------------------------------------------
 var s = global.selected_character;
+var new_sprite;
+
 if (is_moving) {
-    sprite_index = s.anim_walk;
+    switch (facing) {
+        case DIR.DOWN:  new_sprite = s.anim_walk_down;  break;
+        case DIR.UP:    new_sprite = s.anim_walk_up;    break;
+        case DIR.LEFT:  new_sprite = s.anim_walk_left;  break;
+        case DIR.RIGHT: new_sprite = s.anim_walk_right; break;
+    }
 } else {
-    sprite_index = s.anim_idle;
+    switch (facing) {
+        case DIR.DOWN:  new_sprite = s.anim_idle_down;  break;
+        case DIR.UP:    new_sprite = s.anim_idle_up;    break;
+        case DIR.LEFT:  new_sprite = s.anim_idle_left;  break;
+        case DIR.RIGHT: new_sprite = s.anim_idle_right; break;
+    }
+}
+
+// Prevent animation reset every frame
+if (sprite_index != new_sprite) {
+    sprite_index = new_sprite;
+    image_index = 0;
 }
 
 if (keyboard_check_pressed(ord("I"))) {

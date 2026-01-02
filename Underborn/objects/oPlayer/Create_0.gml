@@ -1,3 +1,9 @@
+image_xscale = 0.5;
+image_yscale = 0.5;
+
+enum DIR { DOWN = 0, LEFT = 1, RIGHT = 2, UP = 3 };
+facing = DIR.DOWN;
+
 // Player movement speed
 mvspd = global.selected_character.pSpeed;
 // Sub-pixel movement tracking

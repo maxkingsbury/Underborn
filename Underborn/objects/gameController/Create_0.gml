@@ -6,7 +6,7 @@ global.isPaused = false;
 var player = instance_create_layer(1600, 1600, "Instances", oPlayer);
 var c = global.selected_character;
 
-player.sprite_index = c.anim_idle;
+player.sprite_index = c.anim_idle_down;
 player.pDamage = c.pDamage;
 player.pSpeed = c.pSpeed;
 player.slot[0] = c.start_weapon;

@@ -11,8 +11,8 @@ character_options = [
 		desc: "A sneaky goblin rogue with a love for \nshiny things and a silver tongue. \nSmall in size, big on mischief. \nGribnuk talks fast, moves faster,\nand always has a trick up his sleeve\n(and probably a stolen coin or two).",
 		stats: "Damage: 1 \nSpeed: 2 \nCrit Chance: 0% \nCrit Damage: 100%",
 		
-		anim_idle: spr_PlayerIdle,
-		anim_walk: spr_PlayerRunning,
+		anim_idle: spr_gribnukIdle,
+		anim_walk: spr_gribnukRun,
 		
 		start_weapon: "Ice Shard",
 		pDamage: 1,
@@ -26,8 +26,15 @@ character_options = [
 		desc: "A fierce warrior from the northern highlands. \nKaela fights with honor and unmatched strength. \nShe doesn't say much - her sword does the talking.",
 		stats: "Damage: 3 \nSpeed: 1 \nCrit Chance: 10% \nCrit Damage: 125%",
 		
-		anim_idle: spr_PlayerIdle,
-		anim_walk: spr_PlayerRunning,
+		anim_idle_down: spr_kaelaIdleDown,
+		anim_idle_up: spr_kaelaIdleUp,
+		anim_idle_left: spr_kaelaIdleLeft,
+		anim_idle_right: spr_kaelaIdleRight,
+
+		anim_walk_down: spr_kaelaRunDown,
+		anim_walk_up: spr_kaelaRunUp,
+		anim_walk_left: spr_kaelaRunLeft,
+		anim_walk_right: spr_kaelaRunRight,
 		
 		start_weapon: "Bow",
 		pDamage: 3,
@@ -41,8 +48,8 @@ character_options = [
 		desc: "A quirky alchemist with unstable potions. \nZogg uses science to solve problems. \nDon't ask about the lab incident.",
 		stats: "Damage: 2 \nSpeed: 2 \nCrit Chance: 15% \nCrit Damage: 175%",
 		
-		anim_idle: spr_PlayerIdle,
-		anim_walk: spr_PlayerRunning,
+		anim_idle: spr_gribnukIdle,
+		anim_walk: spr_gribnukRun,
 		
 		start_weapon: "Fireball",
 		pDamage: 2,
@@ -56,8 +63,8 @@ character_options = [
 		desc: "A silent assassin from the Shadow Monastery. \nShe strikes unseen and vanishes into darkness. \nDeadly elegance in motion.",
 		stats: "Damage: 2 \nSpeed: 3 \nCrit Chance: 30% \nCrit Damage: 150%",
 		
-		anim_idle: spr_PlayerIdle,
-		anim_walk: spr_PlayerRunning,
+		anim_idle: spr_gribnukIdle,
+		anim_walk: spr_gribnukRun,
 		
 		start_weapon: "Shortbow",
 		pDamage: 2,
@@ -71,8 +78,8 @@ character_options = [
 		desc: "Once a chef, now a rampaging beast. \nGronk smashes enemies and snacks alike. \nHe's not picky - everything is food.",
 		stats: "Damage: 2.5 \nSpeed: 1 \nCrit Chance: 5% \nCrit Damage: 110%",
 		
-		anim_idle: spr_PlayerIdle,
-		anim_walk: spr_PlayerRunning,
+		anim_idle: spr_gribnukIdle,
+		anim_walk: spr_gribnukRun,
 		
 		start_weapon: "Javelin",
 		pDamage: 2.5,
