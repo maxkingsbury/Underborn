@@ -9,7 +9,7 @@ isBoss = true;
 spr = sPulseWarden;
 sprW = sPulseWardenWhite;
 
-scale = 1.8;
+scale = 0.9;
 
 image_xscale = scale;
 image_yscale = scale;
